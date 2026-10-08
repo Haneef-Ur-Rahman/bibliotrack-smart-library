@@ -112,6 +112,25 @@ BiblioTrack manages both **physical books** and **digital resources (PDFs)** wit
 
 ---
 
+## 👥 Team
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <h3>🎨 Syeda Dilawaiz</h3>
+      <p><strong>Designer</strong></p>
+      <p>UI/UX Design &amp; Visual Experience</p>
+    </td>
+    <td align="center" width="50%">
+      <h3>💻 Haneef Ur Rahman</h3>
+      <p><strong>Developer</strong></p>
+      <p>Full-Stack Development &amp; System Architecture</p>
+    </td>
+  </tr>
+</table>
+
+---
+
 <div align="center">
 
 ### ⭐ If you found this project helpful, please give it a star!
