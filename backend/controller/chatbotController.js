@@ -3,7 +3,6 @@ const Book = require("../models/Book");
 const { recommendBooks } = require("../services/recommendationService");
 let lastRecommendations = [];
 const userMemory = new Map();
-const API_URL = import.meta.env.VITE_API_URL;
 
 async function chatbot(req, res) {
   try {
