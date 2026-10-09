@@ -52,7 +52,7 @@ app.use(
       "http://localhost:5176",
       "http://localhost:5177",
       "http://localhost:5178",
-      "https://bibliotrack-smart-library-8tc1hidj8-haneef-ur-rahmans-projects.vercel.app"
+      "https://bibliotrack-smart-library.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
