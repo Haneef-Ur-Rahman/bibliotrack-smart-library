@@ -23,7 +23,7 @@
 
 //       try {
 //         const res = await axios.get(
-//           "http://localhost:3002/api/books/student/reserved-books",
+//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
 //           {
 //             headers: { Authorization: `Bearer ${token}` },
 //           },
@@ -53,7 +53,7 @@
 
 //     try {
 //       await axios.post(
-//         `http://localhost:3002/api/books/cancel-reservation/${reservationId}`,
+//         `${import.meta.env.VITE_API_URL}/api/books/cancel-reservation/${reservationId}`,
 //         {},
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
@@ -221,7 +221,7 @@
 
 //       try {
 //         const res = await axios.get(
-//           "http://localhost:3002/api/books/student/reserved-books",
+//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
 //           {
 //             headers: { Authorization: `Bearer ${token}` },
 //           },
@@ -251,7 +251,7 @@
 
 //     try {
 //       await axios.post(
-//         `http://localhost:3002/api/books/cancel-reservation/${reservationId}`,
+//         `${import.meta.env.VITE_API_URL}/api/books/cancel-reservation/${reservationId}`,
 //         {},
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
@@ -839,7 +839,7 @@ export default function Reservations({ darkMode }) {
       setLoading(true);
       try {
         const res = await axios.get(
-          "http://localhost:3002/api/books/student/reserved-books",
+          "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
           { headers: { Authorization: `Bearer ${token}` } },
         );
         setReservations(res.data.reservations || []);
@@ -863,7 +863,7 @@ export default function Reservations({ darkMode }) {
       if (!confirmed) return;
       try {
         await axios.post(
-          `http://localhost:3002/api/books/cancel-reservation/${reservationId}`,
+          `${import.meta.env.VITE_API_URL}/api/books/cancel-reservation/${reservationId}`,
           {},
           { headers: { Authorization: `Bearer ${token}` } },
         );

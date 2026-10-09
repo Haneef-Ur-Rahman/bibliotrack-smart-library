@@ -15,7 +15,7 @@
 //   const fetchBooks = async () => {
 //     try {
 //       setLoading(true);
-//       const res = await axios.get("http://localhost:3002/api/books", {
+//       const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -94,7 +94,7 @@
 //   useEffect(() => {
 //     const fetchRecentBooks = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:3002/api/books/recent");
+//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books/recent");
 //         // backend ab { success, count, books } return karega
 //         setBooks(res.data.books || []);
 //       } catch (err) {
@@ -137,7 +137,7 @@
 //     const fetchRecentBooks = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get("http://localhost:3002/api/books/recent");
+//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books/recent");
 //         if (res.data.success) {
 //           setBooks(res.data.books || []);
 //         } else {
@@ -212,7 +212,7 @@
 //     const fetchBooks = async () => {
 //       try {
 //         setLoading(true);
-//         const res = await axios.get("http://localhost:3002/api/books"); // existing BookList route
+//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books"); // existing BookList route
 //         if (res.data.books) {
 //           // Sort by createdAt descending (recent first)
 //           const sortedBooks = res.data.books.sort(
@@ -303,7 +303,7 @@ const RecentlyAddedBooks = ({ darkMode }) => {
     const fetchBooks = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("http://localhost:3002/api/books");
+        const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
         if (res.data.books) {
           const sortedBooks = res.data.books.sort(
             (a, b) => new Date(b.createdAt) - new Date(a.createdAt),

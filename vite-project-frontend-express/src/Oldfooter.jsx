@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-// import HaneefPic from "./assets/HaneefNewProfilePicture.png";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Footer() {
   const [url, setUrl] = useState("");
@@ -8,10 +8,10 @@ function Footer() {
   const handleUpload = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const res = await fetch("http://localhost:3002/upload", {
-      method: "POST",
-      body: formData,
-    });
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/upload`, {
+  method: "POST",
+  body: formData,
+});
     const data = await res.json();
     setUrl(data.cloudinary?.secure_url);
     setUploaded(true);

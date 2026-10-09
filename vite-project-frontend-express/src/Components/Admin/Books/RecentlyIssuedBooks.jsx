@@ -97,7 +97,7 @@ const RecentlyIssuedBooks = ({ darkMode }) => {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "http://localhost:3002/api/books/admin/issued-books",
+        "${import.meta.env.VITE_API_URL}/api/books/admin/issued-books",
         { headers: { Authorization: `Bearer ${token}` } },
       );
 

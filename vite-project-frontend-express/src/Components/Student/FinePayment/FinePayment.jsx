@@ -1037,7 +1037,7 @@ export default function FinePayment({ darkMode }) {
   const fetchIssuedBooks = useCallback(async () => {
     try {
       const res = await axios.get(
-        "http://localhost:3002/api/books/student/issued-books",
+        "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
         { headers: { Authorization: `Bearer ${token}` } },
       );
       setIssuedBooks(res.data.issuedBooks || []);

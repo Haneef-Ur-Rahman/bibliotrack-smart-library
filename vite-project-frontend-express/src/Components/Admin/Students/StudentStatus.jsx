@@ -39,7 +39,7 @@ const StudentStatus = ({ darkMode }) => {
       setLoading(true);
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "http://localhost:3002/api/books/admin/issued-books",
+        "${import.meta.env.VITE_API_URL}/api/books/admin/issued-books",
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
@@ -51,7 +51,7 @@ const StudentStatus = ({ darkMode }) => {
         notReturned.map(async (book) => {
           // Get the due date from the same API used in StudentIssuedBooks
           const fineRes = await axios.get(
-            `http://localhost:3002/api/fines/calculate/${book._id}`,
+            `${import.meta.env.VITE_API_URL}/api/fines/calculate/${book._id}`,
             { headers: { Authorization: `Bearer ${token}` } },
           );
 
@@ -70,7 +70,7 @@ const StudentStatus = ({ darkMode }) => {
       ) {
         // Fetch all books to get complete details
         const booksResponse = await axios.get(
-          "http://localhost:3002/api/books",
+          "${import.meta.env.VITE_API_URL}/api/books",
           { headers: { Authorization: `Bearer ${token}` } },
         );
 
@@ -123,7 +123,7 @@ const StudentStatus = ({ darkMode }) => {
       }
       const token = localStorage.getItem("token");
       const { data } = await axios.post(
-        `http://localhost:3002/api/books/return/${issuedId}`,
+        `${import.meta.env.VITE_API_URL}/api/books/return/${issuedId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } },
       );

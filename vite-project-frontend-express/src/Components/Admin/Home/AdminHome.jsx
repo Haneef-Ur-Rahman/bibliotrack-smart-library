@@ -26,19 +26,19 @@
 
 //       // Total Students
 //       const { data: studentsData } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
 //       // Total Books
 //       const { data: booksData } = await axios.get(
-//         "http://localhost:3002/api/books",
+//         "${import.meta.env.VITE_API_URL}/api/books",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
 //       // Issued Books
 //       const { data: issuedData } = await axios.get(
-//         "http://localhost:3002/api/books/admin/issued-books",
+//         "${import.meta.env.VITE_API_URL}/api/books/admin/issued-books",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
@@ -153,19 +153,19 @@
 
 //       // Total Students
 //       const { data: studentsData } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
 //       // Total Books
 //       const { data: booksData } = await axios.get(
-//         "http://localhost:3002/api/books",
+//         "${import.meta.env.VITE_API_URL}/api/books",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
 //       // Issued Books
 //       const { data: issuedData } = await axios.get(
-//         "http://localhost:3002/api/books/admin/issued-books",
+//         "${import.meta.env.VITE_API_URL}/api/books/admin/issued-books",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
@@ -307,19 +307,19 @@
 
 //       // Total Students
 //       const { data: studentsData } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
 //       // Total Books
 //       const { data: booksData } = await axios.get(
-//         "http://localhost:3002/api/books",
+//         "${import.meta.env.VITE_API_URL}/api/books",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
 //       // Issued Books
 //       const { data: issuedData } = await axios.get(
-//         "http://localhost:3002/api/books/admin/issued-books",
+//         "${import.meta.env.VITE_API_URL}/api/books/admin/issued-books",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
@@ -510,7 +510,7 @@ const AdminHome = ({ darkMode }) => {
 
       // ✅ Fetch all students
       const { data: studentsData } = await axios.get(
-        "http://localhost:3002/api/users/getAllUsers",
+        "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
@@ -520,7 +520,7 @@ const AdminHome = ({ darkMode }) => {
 
       // ✅ Total Books
       const { data: booksData } = await axios.get(
-        "http://localhost:3002/api/books",
+        "${import.meta.env.VITE_API_URL}/api/books",
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
@@ -541,13 +541,13 @@ const AdminHome = ({ darkMode }) => {
 
       // ✅ Issued Books
       const { data: issuedData } = await axios.get(
-        "http://localhost:3002/api/books/admin/issued-books",
+        "${import.meta.env.VITE_API_URL}/api/books/admin/issued-books",
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
       // ✅ Book Requests
       const { data: requestsData } = await axios.get(
-        "http://localhost:3002/api/books/admin/requests",
+        "${import.meta.env.VITE_API_URL}/api/books/admin/requests",
         { headers: { Authorization: `Bearer ${token}` } },
       );
 

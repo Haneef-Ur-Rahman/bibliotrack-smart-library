@@ -38,7 +38,7 @@ const NewBookRequest = ({ darkMode }) => {
     setError(null);
     try {
       const { data } = await axios.get(
-        "http://localhost:3002/api/books/admin/requests",
+        "${import.meta.env.VITE_API_URL}/api/books/admin/requests",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -81,7 +81,7 @@ const NewBookRequest = ({ darkMode }) => {
     setUpdateLoading(true);
     try {
       const { data } = await axios.put(
-        `http://localhost:3002/api/books/admin/request/${selectedRequest._id}`,
+        `${import.meta.env.VITE_API_URL}/api/books/admin/request/${selectedRequest._id}`,
         updateForm,
         {
           headers: {
@@ -108,7 +108,7 @@ const NewBookRequest = ({ darkMode }) => {
 
     try {
       const { data } = await axios.delete(
-        `http://localhost:3002/api/books/admin/request/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/books/admin/request/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

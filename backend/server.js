@@ -149,7 +149,6 @@ app.use("/api", chatbotRoutes); // ✅ Add chatbot routes
 //     if (query.includes("fine") || query.includes("issued")) {
 //       // Fetch issued books from the existing API
 //       const issuedRes = await axios.get(
-//         "http://localhost:3002/api/books/student/issued-books",
 //         axiosConfig,
 //       );
 //       const issuedBooks = issuedRes.data.issuedBooks || [];
@@ -187,7 +186,6 @@ app.use("/api", chatbotRoutes); // ✅ Add chatbot routes
 //     // 📖 Reserved Books
 //     if (query.includes("reserved")) {
 //       const reservedRes = await axios.get(
-//         "http://localhost:3002/api/books/student/reserved-books",
 //         axiosConfig,
 //       );
 //       const reservedBooks = reservedRes.data.reservations || [];
@@ -392,7 +390,7 @@ const startServer = async () => {
     console.log("DB_URI", process.env.DB_URI); // Debugging only
     await connectDB();
     server.listen(3002, () => {
-      console.log("🚀 Server running on http://localhost:3002");
+      console.log("🚀 Server running on port 3002");
     });
   } catch (error) {
     console.log("❌ Error starting server:", error.message);

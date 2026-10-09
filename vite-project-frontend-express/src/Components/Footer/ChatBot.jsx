@@ -35,14 +35,14 @@
 //     setMessages((prev) => [...prev, userMessage]);
 
 //     try {
-//       let url = "http://localhost:3002/api/chatbot";
+//       let url = "${import.meta.env.VITE_API_URL}/api/chatbot";
 
 //       // Agar last bot message features ke liye pooch raha tha
 //       const lastBotMsg = messages[messages.length - 1];
 //       if (
 //         lastBotMsg?.text?.includes("Do you want to see the unique features")
 //       ) {
-//         url = "http://localhost:3002/api/chatbot/features";
+//         url = "${import.meta.env.VITE_API_URL}/api/chatbot/features";
 //       }
 
 //       const res = await axios.post(url, { message: input });
@@ -180,7 +180,7 @@
 //     setInput(""); // Clear input immediately
 
 //     try {
-//       let url = "http://localhost:3002/api/chatbot";
+//       let url = "${import.meta.env.VITE_API_URL}/api/chatbot";
 
 //       // Check if the last bot message is asking about features
 //       const lastBotMsg = messages[messages.length - 1];
@@ -193,7 +193,7 @@
 //           lastBotMsg.text.includes("key features of this book") ||
 //           lastBotMsg.text.includes("see the unique features"))
 //       ) {
-//         url = "http://localhost:3002/api/chatbot/features";
+//         url = "${import.meta.env.VITE_API_URL}/api/chatbot/features";
 //       }
 
 //       const res = await axios.post(url, { message: input });
@@ -340,7 +340,7 @@
 //     setInput("");
 
 //     try {
-//       let url = "http://localhost:3002/api/chatbot";
+//       let url = "${import.meta.env.VITE_API_URL}/api/chatbot";
 //       const lastBotMsg = messages[messages.length - 1];
 //       if (
 //         lastBotMsg?.sender === "bot" &&
@@ -349,7 +349,7 @@
 //             "Type 'yes' to see what makes this book special",
 //           ))
 //       ) {
-//         url = "http://localhost:3002/api/chatbot/features";
+//         url = "${import.meta.env.VITE_API_URL}/api/chatbot/features";
 //       }
 
 //       const res = await axios.post(url, { message: input });
@@ -513,7 +513,7 @@ const glowStyle = `
 }
 `;
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3002";
+const API_URL = import.meta.env.VITE_API_URL || "${import.meta.env.VITE_API_URL}";
 
 const ChatBot = ({ darkMode }) => {
   const [open, setOpen] = useState(false);

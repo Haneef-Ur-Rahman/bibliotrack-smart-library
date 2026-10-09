@@ -11,7 +11,7 @@ const RecentlyAddedStudents = () => {
 
   const fetchRecent = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3002/members");
+      const { data } = await axios.get("${import.meta.env.VITE_API_URL}/members");
       const sorted = data.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );

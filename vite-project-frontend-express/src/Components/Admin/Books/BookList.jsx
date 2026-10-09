@@ -9,7 +9,6 @@
 
 // //   const fetchBooks = async () => {
 // //     try {
-// //       const res = await axios.get("http://localhost:3002/api/books");
 // //       setBooks(res.data.books || []);
 // //     } catch (err) {
 // //       console.error(err);
@@ -24,7 +23,6 @@
 // //   const handleIssue = async (bookId) => {
 // //     try {
 // //       const res = await axios.post(
-// //         `http://localhost:3002/api/books/issue/${bookId}`,
 // //         {},
 // //         {
 // //           headers: { Authorization: `Bearer ${token}` },
@@ -42,7 +40,6 @@
 // //   const HandleReturn = async (issuedId) => {
 // //     try {
 // //       const res = await axios.post(
-// //         `http://localhost:3002/api/books/return/${issuedId}`,
 // //         {},
 // //         {
 // //           headers: { Authorization: `Bearer ${token}` },
@@ -81,7 +78,6 @@
 
 //   const fetchBooks = async () => {
 //     try {
-//       const res = await axios.get("http://localhost:3002/api/books");
 //       setBooks(res.data.books);
 //     } catch (err) {
 //       console.error("Error fetching books:", err);
@@ -101,7 +97,6 @@
 //   const handleSave = async (id) => {
 //     try {
 //       setLoading(true);
-//       await axios.put(`http://localhost:3002/api/books/${id}`, editData);
 //       setEditRow(null);
 //       fetchBooks();
 //       alert("Book updated successfully");
@@ -116,7 +111,6 @@
 //   const handleDelete = async (id) => {
 //     if (!window.confirm("Are you sure you want to delete this book?")) return;
 //     try {
-//       await axios.delete(`http://localhost:3002/api/books/${id}`);
 //       fetchBooks();
 //       alert("Book deleted successfully");
 //     } catch (err) {
@@ -293,7 +287,6 @@
 
 //   const fetchBooks = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:3002/api/books");
 //       setBooks(response.data);
 //     } catch (error) {
 //       console.error("Error fetching books:", error);
@@ -302,7 +295,6 @@
 
 //   const handleDelete = async (id) => {
 //     if (window.confirm("Are you sure you want to delete this book?")) {
-//       await axios.delete(`http://localhost:3002/api/books/${id}`);
 //       fetchBooks();
 //     }
 //   };
@@ -319,7 +311,6 @@
 
 //   const handleSave = async (book) => {
 //     try {
-//       await axios.put(`http://localhost:3002/api/books/${book._id}`, book);
 //       setEditMode(null);
 //       fetchBooks();
 //     } catch (error) {
@@ -494,7 +485,6 @@
 //   const fetchBooks = async () => {
 //     try {
 //       setLoading(true);
-//       const res = await axios.get("http://localhost:3002/api/books", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       setBooks(res.data.books || []);
@@ -531,7 +521,6 @@
 //   const handleSave = async (updatedBook) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:3002/api/books/update/${updatedBook._id}`,
 //         updatedBook,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -672,7 +661,6 @@
 // const fetchBooks = async () => {
 //   try {
 //     setLoading(true);
-//     const res = await axios.get("http://localhost:3002/api/books", {
 //       headers: { Authorization: `Bearer ${token}` },
 //     });
 //     setBooks(res.data.books || []);
@@ -687,7 +675,6 @@
 //   const fetchBooks = async () => {
 //     try {
 //       setLoading(true);
-//       const res = await axios.get("http://localhost:3002/api/books", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -712,7 +699,6 @@
 
 //   const handleDelete = async (id) => {
 //     try {
-//       await axios.delete(`http://localhost:3002/api/books/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Book deleted successfully!");
@@ -739,7 +725,6 @@
 //   const handleSave = async () => {
 //     try {
 //       await axios.put(
-//         `http://localhost:3002/api/books/update/${editBook._id}`,
 //         editBook,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -995,7 +980,6 @@
 //   const fetchBooks = async () => {
 //     try {
 //       setLoading(true);
-//       const res = await axios.get("http://localhost:3002/api/books", {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -1018,7 +1002,6 @@
 
 //   const handleDelete = async (id) => {
 //     try {
-//       await axios.delete(`http://localhost:3002/api/books/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Book deleted successfully!");
@@ -1045,7 +1028,6 @@
 //   const handleSave = async () => {
 //     try {
 //       await axios.put(
-//         `http://localhost:3002/api/books/update/${editBook._id}`,
 //         editBook,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1568,7 +1550,7 @@ const BookList = ({ darkMode }) => {
   const fetchBooks = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:3002/api/books", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.books) {
@@ -1589,7 +1571,7 @@ const BookList = ({ darkMode }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3002/api/books/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/books/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Book deleted successfully!");
@@ -1616,7 +1598,7 @@ const BookList = ({ darkMode }) => {
   const handleSave = async () => {
     try {
       await axios.put(
-        `http://localhost:3002/api/books/update/${editBook._id}`,
+        `${import.meta.env.VITE_API_URL}/api/books/update/${editBook._id}`,
         editBook,
         { headers: { Authorization: `Bearer ${token}` } },
       );

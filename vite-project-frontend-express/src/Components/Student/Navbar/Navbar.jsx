@@ -93,7 +93,7 @@
 //     const fetchStudent = async () => {
 //       if (!token) return;
 //       try {
-//         const res = await axios.get("http://localhost:3002/auth/me", {
+//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         const user = res.data.user;
@@ -217,7 +217,7 @@ function Navbar({ darkMode }) {
     const fetchStudent = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("http://localhost:3002/auth/me", {
+        const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const user = res.data.user;

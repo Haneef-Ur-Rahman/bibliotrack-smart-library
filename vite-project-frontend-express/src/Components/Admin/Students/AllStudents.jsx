@@ -15,7 +15,7 @@
 //     try {
 //       const token = localStorage.getItem("token"); // or sessionStorage, depending on your login logic
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         {
 //           headers: {
 //             Authorization: `Bearer ${token}`,
@@ -34,7 +34,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: {
 //           Authorization: `Bearer ${token}`,
 //         },
@@ -177,7 +177,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -194,7 +194,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -222,7 +222,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -239,7 +239,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/resetPassword/${id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/resetPassword/${id}`,
 //         { newPassword: "asdf1234" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -446,7 +446,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -463,7 +463,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -492,7 +492,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -509,7 +509,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/resetPassword/${id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/resetPassword/${id}`,
 //         { newPassword: "asdf1234" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -732,7 +732,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -749,7 +749,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -795,7 +795,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -812,7 +812,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/resetPassword/${id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/resetPassword/${id}`,
 //         { newPassword: "asdf1234" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1037,7 +1037,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -1054,7 +1054,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -1101,7 +1101,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1118,7 +1118,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/resetPassword/${id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/resetPassword/${id}`,
 //         { newPassword: "asdf1234" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1414,7 +1414,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -1431,7 +1431,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -1478,7 +1478,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1495,7 +1495,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/resetPassword/${id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/resetPassword/${id}`,
 //         { newPassword: "asdf1234" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1800,7 +1800,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -1817,7 +1817,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -1886,7 +1886,7 @@
 //       }
 
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1907,7 +1907,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/resetPassword/${id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/resetPassword/${id}`,
 //         { newPassword: "asdf1234" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -2235,7 +2235,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
@@ -2263,7 +2263,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -2332,7 +2332,7 @@
 //       }
 
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -2728,7 +2728,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
@@ -2755,7 +2755,7 @@
 //       return;
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Student deleted successfully ✅");
@@ -2820,7 +2820,7 @@
 //       }
 
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -3018,7 +3018,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "http://localhost:3002/api/users/getAllUsers",
+//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 //       setStudents(data.users);
@@ -3032,7 +3032,7 @@
 
 //     try {
 //       const token = localStorage.getItem("token");
-//       await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+//       await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       toast.success("Deleted successfully");
@@ -3069,7 +3069,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       await axios.put(
-//         `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+//         `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
 //         editStudent,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -3316,7 +3316,7 @@ const AllStudents = ({ darkMode }) => {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "http://localhost:3002/api/users/getAllUsers",
+        "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
@@ -3344,7 +3344,7 @@ const AllStudents = ({ darkMode }) => {
       return;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:3002/api/users/deleteUser/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/deleteUser/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Student deleted successfully ✅");
@@ -3409,7 +3409,7 @@ const AllStudents = ({ darkMode }) => {
       }
 
       await axios.put(
-        `http://localhost:3002/api/users/updateUser/${editStudent._id}`,
+        `${import.meta.env.VITE_API_URL}/api/users/updateUser/${editStudent._id}`,
         editStudent,
         { headers: { Authorization: `Bearer ${token}` } },
       );

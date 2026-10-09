@@ -8,7 +8,7 @@ const StudentBooksList = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get("http://localhost:3002/api/books");
+        const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
         setBooks(res.data.books);
       } catch (err) {
         console.error(err);
@@ -22,7 +22,7 @@ const StudentBooksList = () => {
   const handleIssueOrReserve = async (bookId) => {
     try {
       const res = await axios.post(
-        `http://localhost:3002/api/books/issue/${bookId}`,
+        `${import.meta.env.VITE_API_URL}/api/books/issue/${bookId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } },
       );

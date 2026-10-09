@@ -28,7 +28,7 @@
 //       }
 
 //       try {
-//         const res = await axios.get("http://localhost:3002/auth/me", {
+//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
@@ -76,7 +76,7 @@
 //     }
 //     try {
 //       const res = await axios.put(
-//         "http://localhost:3002/auth/update-password",
+//         "${import.meta.env.VITE_API_URL}/auth/update-password",
 //         { password: formData.password },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -232,7 +232,7 @@
 //       }
 
 //       try {
-//         const res = await axios.get("http://localhost:3002/auth/me", {
+//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
@@ -275,7 +275,7 @@
 
 //     try {
 //       const res = await axios.put(
-//         "http://localhost:3002/auth/admin/update-profile",
+//         "${import.meta.env.VITE_API_URL}/auth/admin/update-profile",
 //         formData,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -441,7 +441,7 @@ const AdminUpdateProfile = ({ darkMode }) => {
       }
 
       try {
-        const res = await axios.get("http://localhost:3002/auth/me", {
+        const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -484,7 +484,7 @@ const AdminUpdateProfile = ({ darkMode }) => {
 
     try {
       const res = await axios.put(
-        "http://localhost:3002/auth/admin/update-profile",
+        "${import.meta.env.VITE_API_URL}/auth/admin/update-profile",
         formData,
         { headers: { Authorization: `Bearer ${token}` } },
       );

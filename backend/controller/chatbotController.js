@@ -3,6 +3,7 @@ const Book = require("../models/Book");
 const { recommendBooks } = require("../services/recommendationService");
 let lastRecommendations = [];
 const userMemory = new Map();
+const API_URL = import.meta.env.VITE_API_URL;
 
 async function chatbot(req, res) {
   try {
@@ -22,10 +23,10 @@ async function chatbot(req, res) {
     ====================== */
 
     if (query.includes("fine") || query.includes("issued")) {
-      const issuedRes = await axios.get(
-        "http://localhost:3002/api/books/student/issued-books",
-        axiosConfig,
-      );
+    const issuedRes = await axios.get(
+  `${API_URL}/api/books/student/issued-books`,
+  axiosConfig,
+);
 
       const issuedBooks = issuedRes.data.issuedBooks || [];
 
@@ -61,11 +62,11 @@ async function chatbot(req, res) {
        RESERVED BOOKS
     ====================== */
 
-    if (query.includes("reserved")) {
-      const reservedRes = await axios.get(
-        "http://localhost:3002/api/books/student/reserved-books",
-        axiosConfig,
-      );
+   if (query.includes("reserved")) {
+  const reservedRes = await axios.get(
+    `${API_URL}/api/books/student/reserved-books`,
+    axiosConfig,
+  );
 
       const reservedBooks = reservedRes.data.reservations || [];
 

@@ -1,1 +1,1 @@
-export const Add_User = "http://localhost:3002/api/v0/users";
+export const Add_User = `${import.meta.env.VITE_API_URL}/api/v0/users`;

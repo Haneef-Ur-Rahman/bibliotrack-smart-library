@@ -56,7 +56,6 @@
 //       books.forEach((b) => formData.append("images", b.image));
 
 //       const res = await axios.post(
-//         "http://localhost:3002/api/books/add-multiple",
 //         formData,
 //         {
 //           headers: {
@@ -243,7 +242,6 @@
 //       books.forEach((book) => formData.append("images", book.image));
 
 //       const res = await axios.post(
-//         "http://localhost:3002/api/books/add-multiple",
 //         formData,
 //         {
 //           headers: {
@@ -372,6 +370,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const AddBooks = ({ darkMode }) => {
   const [books, setBooks] = useState([
@@ -440,16 +439,16 @@ const AddBooks = ({ darkMode }) => {
       formData.append("books", JSON.stringify(payload));
       books.forEach((book) => formData.append("images", book.image));
 
-      const res = await axios.post(
-        "http://localhost:3002/api/books/add-multiple",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-          },
-        },
-      );
+     const res = await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/books/add-multiple`,
+  formData,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`,
+    },
+  },
+);
 
       toast.success(res.data.message || "Books added successfully!");
       setBooks([
@@ -487,7 +486,6 @@ const AddBooks = ({ darkMode }) => {
   //         });
 
   //         await axios.post(
-  //           "http://localhost:3002/api/books/add-multiple",
   //           formData,
   //           {
   //             headers: {
