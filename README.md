@@ -6,12 +6,17 @@
 
 **A modern digital platform for the Computer Science Department Library, University of Peshawar**
 
+### 🌐 [🔗 Live Demo — bibliotrack-smart-library.vercel.app](https://bibliotrack-smart-library.vercel.app/)
+
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://bibliotrack-smart-library.vercel.app/)
+[![Live](https://img.shields.io/badge/Status-Live-brightgreen?style=for-the-badge)](https://bibliotrack-smart-library.vercel.app/)
 
 </div>
 
@@ -26,6 +31,16 @@ The system addresses critical challenges faced by students and library staff —
 BiblioTrack manages both **physical books** and **digital resources (PDFs)** within a single integrated platform, offering separate portals for students and administrators to ensure secure access and efficient library operations.
 
 > **BiblioTrack bridges the gap between physical and digital library resources — all within one seamless platform.**
+
+---
+
+## 🚀 Live Demo
+
+**Experience BiblioTrack in action:**
+
+### 👉 [https://bibliotrack-smart-library.vercel.app/](https://bibliotrack-smart-library.vercel.app/)
+
+Deployed on **Vercel** with a fully functional frontend and backend integration.
 
 ---
 
@@ -88,6 +103,7 @@ BiblioTrack manages both **physical books** and **digital resources (PDFs)** wit
 | **Database** | MongoDB |
 | **Security** | Bcrypt, Session-based Authentication |
 | **Integrations** | AI ChatBot, 1-Bill Payment Gateway, Email Service |
+| **Deployment** | Vercel |
 
 ---
 
@@ -133,7 +149,7 @@ BiblioTrack manages both **physical books** and **digital resources (PDFs)** wit
 
 <div align="center">
 
-### ⭐ If you found this project helpful, please give it a star!
+### 🌐 [Visit Live Site](https://bibliotrack-smart-library.vercel.app/) &nbsp;|&nbsp; ⭐ If you found this project helpful, please give it a star!
 
 **Built with ❤️ for the Computer Science Department, University of Peshawar**
 
