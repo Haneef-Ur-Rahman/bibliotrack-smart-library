@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 import Navbarall from "../../Navbar/Navbarall";
 
@@ -32,11 +33,12 @@ const MemberLogin = ({ darkMode }) => {
       localStorage.removeItem("token");
       localStorage.removeItem("role");
 
-      const res = await fetch("http://localhost:3002/auth/member/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+     // Phir fetch wali line aise update karo:
+const res = await fetch(`${API_URL}/auth/member/login`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
 
       const data = await res.json();
       if (!res.ok) {
