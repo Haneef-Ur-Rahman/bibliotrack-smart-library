@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbarall from "../../Navbar/Navbarall";
 import FooterAll from "../../Footer/FooterAll";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const MemberSignup = ({ darkMode }) => {
   const navigate = useNavigate();
