@@ -321,7 +321,13 @@ app.get("/api/chatbot/health", (req, res) => {
 
 // ✅ Socket.io setup
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: "*" } });
+const io = new Server(server, { 
+  cors: { 
+    origin: ["http://localhost:5173", "https://bibliotrack-smart-library.vercel.app"], // localhost testing ke liye, Vercel live ke liye
+    methods: ["GET", "POST"],
+    credentials: true
+  } 
+});
 
 io.on("connection", (socket) => {
   console.log("a user connected");
@@ -331,12 +337,12 @@ io.on("connection", (socket) => {
 
     socket.broadcast.emit("receive_new_user", {
       username: data.username,
-      email: data.email, // optional
+      email: data.email,
     });
+  });
 
-    socket.on("disconnect", () => {
-      console.log("a user disconnected");
-    });
+  socket.on("disconnect", () => {
+    console.log("a user disconnected");
   });
 });
 
