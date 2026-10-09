@@ -1,211 +1,3 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import "../../../index.css";
-// import Navbarall from "../../Navbar/Navbarall";
-// import FooterAll from "../../Footer/FooterAll";
-// import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-
-// const AdminSignup = () => {
-//   const navigate = useNavigate();
-//   const [showPassword, setShowPassword] = useState(false);
-//   const [showPassword2, setShowPassword2] = useState(false);
-
-//   const [formData, setFormData] = useState({
-//     firstName: "",
-//     lastName: "",
-//     phoneNumber: "",
-//     username: "",
-//     cnic: "",
-//     email: "",
-//     password: "",
-//     confirmPassword: "",
-//     passkey: "",
-//     acceptedTerms: false,
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value, type, checked } = e.target;
-//     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     if (!formData.acceptedTerms) {
-//       toast.error("You must accept the terms");
-//       return;
-//     }
-
-//     if (formData.password !== formData.confirmPassword) {
-//       toast.error("Passwords do not match");
-//       return;
-//     }
-
-//     const payload = { ...formData };
-//     delete payload.confirmPassword;
-
-//     try {
-//       const res = await fetch("http://localhost:3002/auth/admin/signup", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify(payload),
-//       });
-
-//       const data = await res.json();
-//       if (!res.ok) throw new Error(data.message);
-
-//       toast.success("Admin registered successfully!");
-
-//       navigate("/admin-login");
-//     } catch (err) {
-//       toast.error(err.message);
-//     }
-//   };
-//   return (
-//     <div className="bg-gradient-to-b from-[#2e3a87] via-[#475aa7] to-[#cfcfd6] min-h-screen">
-//       <Navbarall />
-//       <div className="flex items-center justify-center py-6">
-//         <div className="max-w-md w-full p-3 bg-white rounded-lg shadow-lg">
-//           <h2 className="text-2xl font-bold mb-4 text-center text-dark">
-//             Admin Signup
-//           </h2>
-//           <form onSubmit={handleSubmit} className="space-y-4">
-//             <div className="flex gap-2">
-//               <input
-//                 type="text"
-//                 name="firstName"
-//                 placeholder="First Name"
-//                 onChange={handleChange}
-//                 className="w-full border p-1 rounded border-gray-400"
-//                 required
-//               />
-//               <input
-//                 type="text"
-//                 name="lastName"
-//                 placeholder="Last Name"
-//                 onChange={handleChange}
-//                 className="w-full border p-1 rounded border-gray-400"
-//                 required
-//               />
-//             </div>
-//             <div className="flex gap-2">
-//               <input
-//                 type="text"
-//                 name="phoneNumber"
-//                 placeholder="Phone Number"
-//                 onChange={handleChange}
-//                 className="w-full border p-1 rounded border-gray-400"
-//                 required
-//               />
-//               <input
-//                 type="password"
-//                 name="passkey"
-//                 placeholder="Enter Security Passcode"
-//                 onChange={handleChange}
-//                 className="w-full border border- p-1 rounded border-gray-400"
-//                 required
-//               />
-//             </div>
-
-//             <input
-//               type="number"
-//               name="cnic"
-//               placeholder=" CNIC (Without dashes)"
-//               onChange={handleChange}
-//               className="w-full border p-2 rounded bg-white focus:ring-2 focus:ring-indigo-500 focus:outline-none border-gray-400"
-//               required
-//             />
-
-//             <input
-//               type="email"
-//               name="email"
-//               placeholder="Email"
-//               onChange={handleChange}
-//               className="w-full border p-1 rounded border-gray-400"
-//               required
-//             />
-//             <input
-//               type="text"
-//               name="username"
-//               placeholder="Username"
-//               onChange={handleChange}
-//               className="w-full border p-1 rounded border-gray-400"
-//               required
-//             />
-//             <div className="flex gap-2">
-//               <div className="relative flex-1">
-//                 <input
-//                   type={showPassword ? "text" : "password"}
-//                   name="password"
-//                   placeholder="Password"
-//                   onChange={handleChange}
-//                   className="w-full border p-1 rounded border-gray-400"
-//                   required
-//                 />
-//                 <span
-//                   onClick={() => setShowPassword(!showPassword)}
-//                   className="absolute right-3 top-2.5 text-gray-600 cursor-pointer"
-//                 >
-//                   {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
-//                 </span>
-//               </div>
-
-//               <div className="relative flex-1">
-//                 <input
-//                   type={showPassword2 ? "text" : "password"}
-//                   name="confirmPassword"
-//                   placeholder="Confirm Password"
-//                   onChange={handleChange}
-//                   className="w-full border p-1 rounded border-gray-400"
-//                   required
-//                 />
-//                 <span
-//                   onClick={() => setShowPassword2(!showPassword2)}
-//                   className="absolute right-3 top-2.5 text-gray-600 cursor-pointer"
-//                 >
-//                   {showPassword2 ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
-//                 </span>
-//               </div>
-//             </div>
-
-//             <label className="flex items-center">
-//               <input
-//                 type="checkbox"
-//                 name="acceptedTerms"
-//                 onChange={handleChange}
-//                 className="mr-2"
-//               />
-//               I accept the terms of the user and Privacy Policy
-//             </label>
-
-//             <button
-//               type="submit"
-//               className="w-full bg-[#28156F] text-white py-2 rounded hover:bg-indigo-700"
-//             >
-//               Signup
-//             </button>
-//           </form>
-
-//           <p className="text-center text-sm text-gray-600 mt-4">
-//             Already have an account?{" "}
-//             <span
-//               onClick={() => navigate("/admin-login")}
-//               className="text-red-600 cursor-pointer font-semibold"
-//             >
-//               Login
-//             </span>
-//           </p>
-//         </div>
-//       </div>
-//       <FooterAll />
-//     </div>
-//   );
-// };
-
-// export default AdminSignup;
-
 //-----------------------------------------------------------------
 
 import React, { useState } from "react";
@@ -216,6 +8,9 @@ import "../../../index.css";
 import Navbarall from "../../Navbar/Navbarall";
 import FooterAll from "../../Footer/FooterAll";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+const API_URL = import.meta.env.VITE_API_URL; 
+
+
 
 const AdminSignup = ({ darkMode }) => {
   const navigate = useNavigate();
@@ -256,12 +51,12 @@ const AdminSignup = ({ darkMode }) => {
     const payload = { ...formData };
     delete payload.confirmPassword;
 
-    try {
-      const res = await fetch("http://localhost:3002/auth/admin/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+   try {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/admin/signup`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
