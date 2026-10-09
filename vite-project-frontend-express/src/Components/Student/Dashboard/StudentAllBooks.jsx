@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //       } catch (err) {
 //         console.error("Error fetching books:", err);
@@ -25,7 +25,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 //         const issuedObj = {};
@@ -135,7 +135,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //       } catch (err) {
 //         console.error("Error fetching books:", err);
@@ -150,7 +150,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 //         const issuedObj = {};
@@ -171,7 +171,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 //         const reservedObj = {};
@@ -316,7 +316,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //       } catch (err) {
 //         console.error("Error fetching books:", err);
@@ -331,7 +331,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 //         const issuedObj = {};
@@ -352,7 +352,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 //         const reservedObj = {};
@@ -567,7 +567,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //       } catch (err) {
 //         console.error("Error fetching books:", err);
@@ -582,7 +582,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 //         const issuedObj = {};
@@ -603,7 +603,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 //         const reservedObj = {};
@@ -769,7 +769,7 @@ export default function StudentAllBooks({ darkMode }) {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
         setBooks(res.data.books || []);
       } catch (err) {
         console.error("Error fetching books:", err);
@@ -784,7 +784,7 @@ export default function StudentAllBooks({ darkMode }) {
       if (!token) return;
       try {
         const res = await axios.get(
-          "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+          `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
           { headers: { Authorization: `Bearer ${token}` } },
         );
         const issuedObj = {};
@@ -807,7 +807,7 @@ export default function StudentAllBooks({ darkMode }) {
       if (!token) return;
       try {
         const res = await axios.get(
-          "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+          `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
           { headers: { Authorization: `Bearer ${token}` } },
         );
         const reservedObj = {};

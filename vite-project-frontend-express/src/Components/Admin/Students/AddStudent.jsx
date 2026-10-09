@@ -24,7 +24,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
-//       await axios.post("${import.meta.env.VITE_API_URL}/auth/member/signup", form);
+//       await axios.post(`${import.meta.env.VITE_API_URL}/auth/member/signup`, form);
 //       toast.success("Student registered successfully ✅");
 //       setForm({
 //         firstName: "",
@@ -215,7 +215,7 @@
 
 //     try {
 //       const res = await axios.post(
-//         "${import.meta.env.VITE_API_URL}/auth/member/signup",
+//         `${import.meta.env.VITE_API_URL}/auth/member/signup`,
 //         payload
 //       );
 //       toast.success(res.data.message || "Student registered successfully ✅");
@@ -471,7 +471,7 @@ const AddStudent = ({ darkMode }) => {
     };
 
     try {
-      const res = await fetch("${import.meta.env.VITE_API_URL}/auth/member/signup", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/member/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

@@ -8,7 +8,7 @@ const StudentBooksList = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
         setBooks(res.data.books);
       } catch (err) {
         console.error(err);

@@ -22,7 +22,7 @@
 //     const fetchStudent = async () => {
 //       if (!token) return;
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user || {});
@@ -38,7 +38,7 @@
 //   // ================= FETCH ISSUED =================
 //   useEffect(() => {
 //     axios
-//       .get("${import.meta.env.VITE_API_URL}/api/books/student/issued-books", {
+//       .get(`${import.meta.env.VITE_API_URL}/api/books/student/issued-books`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       })
 //       .then((res) => setIssuedCount(res.data.issuedBooks?.length || 0))
@@ -48,7 +48,7 @@
 //   // ================= FETCH RESERVED =================
 //   useEffect(() => {
 //     axios
-//       .get("${import.meta.env.VITE_API_URL}/api/books/student/reserved-books", {
+//       .get(`${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       })
 //       .then((res) => setReservedCount(res.data.reservations?.length || 0))
@@ -326,7 +326,7 @@
 //     const fetchStudent = async () => {
 //       if (!token) return;
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user || {});
@@ -342,7 +342,7 @@
 //   // ================= FETCH ISSUED =================
 //   useEffect(() => {
 //     axios
-//       .get("${import.meta.env.VITE_API_URL}/api/books/student/issued-books", {
+//       .get(`${import.meta.env.VITE_API_URL}/api/books/student/issued-books`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       })
 //       .then((res) => setIssuedCount(res.data.issuedBooks?.length || 0))
@@ -352,7 +352,7 @@
 //   // ================= FETCH RESERVED =================
 //   useEffect(() => {
 //     axios
-//       .get("${import.meta.env.VITE_API_URL}/api/books/student/reserved-books", {
+//       .get(`${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       })
 //       .then((res) => setReservedCount(res.data.reservations?.length || 0))
@@ -646,7 +646,7 @@ function Report({ darkMode }) {
     const fetchStudent = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStudent(res.data.user || {});
@@ -662,7 +662,7 @@ function Report({ darkMode }) {
   // ================= FETCH ISSUED =================
   useEffect(() => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/api/books/student/issued-books", {
+      .get(`${import.meta.env.VITE_API_URL}/api/books/student/issued-books`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setIssuedCount(res.data.issuedBooks?.length || 0))
@@ -672,7 +672,7 @@ function Report({ darkMode }) {
   // ================= FETCH RESERVED =================
   useEffect(() => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/api/books/student/reserved-books", {
+      .get(`${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setReservedCount(res.data.reservations?.length || 0))
@@ -685,7 +685,7 @@ function Report({ darkMode }) {
   // useEffect(() => {
   //   if (!token) return;
   //   axios
-  //     .get("${import.meta.env.VITE_API_URL}/api/fines/student", {
+  //     .get(`${import.meta.env.VITE_API_URL}/api/fines/student`, {
   //       headers: { Authorization: `Bearer ${token}` },
   //     })
   //     .then((res) => {
@@ -702,7 +702,7 @@ function Report({ darkMode }) {
   // useEffect(() => {
   //   if (!token) return;
   //   axios
-  //     .get("${import.meta.env.VITE_API_URL}/api/fines/student", {
+  //     .get(`${import.meta.env.VITE_API_URL}/api/fines/student`, {
   //       headers: { Authorization: `Bearer ${token}` },
   //     })
   //     .then((res) => {
@@ -730,7 +730,7 @@ function Report({ darkMode }) {
       try {
         // Fetch all issued books
         const res = await axios.get(
-          "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+          `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
           { headers: { Authorization: `Bearer ${token}` } },
         );
         const issuedBooks = res.data.issuedBooks || [];

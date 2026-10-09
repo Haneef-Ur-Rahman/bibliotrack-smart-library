@@ -15,7 +15,7 @@
 //     try {
 //       const token = localStorage.getItem("token"); // or sessionStorage, depending on your login logic
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         {
 //           headers: {
 //             Authorization: `Bearer ${token}`,
@@ -177,7 +177,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -446,7 +446,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -732,7 +732,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -1037,7 +1037,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -1414,7 +1414,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -1800,7 +1800,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
 //         }
@@ -2235,7 +2235,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
@@ -2728,7 +2728,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 
@@ -3018,7 +3018,7 @@
 //     try {
 //       const token = localStorage.getItem("token");
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+//         `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
 //       setStudents(data.users);
@@ -3316,7 +3316,7 @@ const AllStudents = ({ darkMode }) => {
     try {
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "${import.meta.env.VITE_API_URL}/api/users/getAllUsers",
+        `${import.meta.env.VITE_API_URL}/api/users/getAllUsers`,
         { headers: { Authorization: `Bearer ${token}` } },
       );
 

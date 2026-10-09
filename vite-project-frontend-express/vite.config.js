@@ -39,7 +39,7 @@ export default defineConfig({
     proxy: {
       // Forward any request that starts with '/api' to your backend server
       "/api": {
-        target: "${import.meta.env.VITE_API_URL}", // Your Express server address
+        target: `${import.meta.env.VITE_API_URL}`, // Your Express server address
         changeOrigin: true, // Needed for virtual hosted sites
         secure: false, // Don't verify SSL certs (for local dev)
       },

@@ -59,7 +59,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         const user = res.data.user; // correct
@@ -312,7 +312,7 @@
 //   useEffect(() => {
 //     const fetchStudentData = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         const user = res.data.user;
@@ -349,7 +349,7 @@
 
 //     try {
 //       const res = await axios.put(
-//         "${import.meta.env.VITE_API_URL}/auth/update-password",
+//         `${import.meta.env.VITE_API_URL}/auth/update-password`,
 //         { password: formData.password },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -487,7 +487,7 @@
 //   useEffect(() => {
 //     const fetchStudentData = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         // const user = res.data.user;
@@ -526,7 +526,7 @@
 
 //     try {
 //       const res = await axios.put(
-//         "${import.meta.env.VITE_API_URL}/auth/update-password",
+//         `${import.meta.env.VITE_API_URL}/auth/update-password`,
 //         { password: formData.password },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -673,7 +673,7 @@
 //       }
 
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
@@ -721,7 +721,7 @@
 //     }
 //     try {
 //       const res = await axios.put(
-//         "${import.meta.env.VITE_API_URL}/auth/update-password",
+//         `${import.meta.env.VITE_API_URL}/auth/update-password`,
 //         { password: formData.password },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -878,7 +878,7 @@
 //       }
 
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
@@ -919,7 +919,7 @@
 //     }
 //     try {
 //       const res = await axios.put(
-//         "${import.meta.env.VITE_API_URL}/auth/update-password",
+//         `${import.meta.env.VITE_API_URL}/auth/update-password`,
 //         { password: formData.password },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1091,7 +1091,7 @@
 //       }
 
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
@@ -1132,7 +1132,7 @@
 //     }
 //     try {
 //       const res = await axios.put(
-//         "${import.meta.env.VITE_API_URL}/auth/update-password",
+//         `${import.meta.env.VITE_API_URL}/auth/update-password`,
 //         { password: formData.password },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -1312,7 +1312,7 @@ const StudentUpdateProfile = ({ darkMode }) => {
       }
 
       try {
-        const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -1353,7 +1353,7 @@ const StudentUpdateProfile = ({ darkMode }) => {
     }
     try {
       const res = await axios.put(
-        "${import.meta.env.VITE_API_URL}/auth/update-password",
+        `${import.meta.env.VITE_API_URL}/auth/update-password`,
         { password: formData.password },
         { headers: { Authorization: `Bearer ${token}` } },
       );

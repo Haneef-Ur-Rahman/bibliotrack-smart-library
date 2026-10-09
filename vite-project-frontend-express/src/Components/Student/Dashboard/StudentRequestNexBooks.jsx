@@ -30,7 +30,7 @@
 //   const fetchRequests = async () => {
 //     try {
 //       const { data } = await axios.get(
-//         "${import.meta.env.VITE_API_URL}/api/books/my-requests",
+//         `${import.meta.env.VITE_API_URL}/api/books/my-requests`,
 //         {
 //           headers: {
 //             Authorization: `Bearer ${token}`,
@@ -278,7 +278,7 @@ const StudentRequestNewBooks = ({ darkMode }) => {
     setFetchingRequests(true);
     try {
       const { data } = await axios.get(
-        "${import.meta.env.VITE_API_URL}/api/books/my-requests",
+        `${import.meta.env.VITE_API_URL}/api/books/my-requests`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

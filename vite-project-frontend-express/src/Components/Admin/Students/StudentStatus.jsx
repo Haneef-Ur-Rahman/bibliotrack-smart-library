@@ -39,7 +39,7 @@ const StudentStatus = ({ darkMode }) => {
       setLoading(true);
       const token = localStorage.getItem("token");
       const { data } = await axios.get(
-        "${import.meta.env.VITE_API_URL}/api/books/admin/issued-books",
+        `${import.meta.env.VITE_API_URL}/api/books/admin/issued-books`,
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
@@ -70,7 +70,7 @@ const StudentStatus = ({ darkMode }) => {
       ) {
         // Fetch all books to get complete details
         const booksResponse = await axios.get(
-          "${import.meta.env.VITE_API_URL}/api/books",
+          `${import.meta.env.VITE_API_URL}/api/books`,
           { headers: { Authorization: `Bearer ${token}` } },
         );
 

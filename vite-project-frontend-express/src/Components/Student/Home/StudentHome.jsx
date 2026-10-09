@@ -44,7 +44,7 @@
 //   // Fetch Books
 //   const fetchStudentBooks = async () => {
 //     try {
-//       const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//       const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //       setBooks(res.data.books);
 //       setFilteredBooks(res.data.books);
 //       setLoading(false);
@@ -81,7 +81,7 @@
 //     if (!confirmIssue) return;
 
 //     try {
-//       await axios.post("${import.meta.env.VITE_API_URL}/api/student/issue-book", {
+//       await axios.post(`${import.meta.env.VITE_API_URL}/api/student/issue-book`, {
 //         bookId: book._id,
 //         studentId: "Haneef001",
 //       });
@@ -281,7 +281,7 @@
 //   useEffect(() => {
 //     const fetchStudentBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -337,7 +337,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/student/request-issue",
+//         `${import.meta.env.VITE_API_URL}/api/student/request-issue`,
 //         payload
 //       );
 //       setIssuedBooks((prev) => ({
@@ -643,7 +643,7 @@
 //   useEffect(() => {
 //     const fetchStudentBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -708,7 +708,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/student/request-issue",
+//         `${import.meta.env.VITE_API_URL}/api/student/request-issue`,
 //         payload
 //       );
 //       setIssuedBooks((prev) => ({
@@ -1110,7 +1110,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -1128,7 +1128,7 @@
 //   useEffect(() => {
 //     const fetchStudentBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -1211,7 +1211,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/student/request-issue",
+//         `${import.meta.env.VITE_API_URL}/api/student/request-issue`,
 //         payload
 //       );
 
@@ -1492,7 +1492,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -1510,7 +1510,7 @@
 //   useEffect(() => {
 //     const fetchStudentBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -1783,7 +1783,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -1801,7 +1801,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -1821,7 +1821,7 @@
 //     const fetchIssuedBooks = async () => {
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 
@@ -2161,7 +2161,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -2179,7 +2179,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -2199,7 +2199,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 
@@ -2503,7 +2503,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -2520,7 +2520,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -2540,7 +2540,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 
@@ -2915,7 +2915,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -2932,7 +2932,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -2952,7 +2952,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 
@@ -3298,7 +3298,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -3315,7 +3315,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -3335,7 +3335,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 
@@ -3726,7 +3726,7 @@
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -3743,7 +3743,7 @@
 //   useEffect(() => {
 //     const fetchBooks = async () => {
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         setBooks(res.data.books || []);
 //         setFilteredBooks(res.data.books || []);
 //         setLoading(false);
@@ -3763,7 +3763,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } },
 //         );
 
@@ -3787,7 +3787,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //           { headers: { Authorization: `Bearer ${token}` } },
 //         );
 
@@ -3919,7 +3919,7 @@
 
 //   const fetchWishlist = async () => {
 //     try {
-//       const res = await axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+//       const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 
@@ -3945,7 +3945,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/wishlist",
+//         `${import.meta.env.VITE_API_URL}/api/wishlist`,
 //         {
 //           bookId: book._id,
 //           action: isInWishlist ? "remove" : "add",
@@ -4995,7 +4995,7 @@ export default function StudentHome({ darkMode }) {
   useEffect(() => {
     const fetchStudent = async () => {
       try {
-        const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStudent(res.data.user);
@@ -5012,7 +5012,7 @@ export default function StudentHome({ darkMode }) {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
         setBooks(res.data.books || []);
         setFilteredBooks(res.data.books || []);
         setLoading(false);
@@ -5031,7 +5031,7 @@ export default function StudentHome({ darkMode }) {
     if (!token) return;
     try {
       const res = await axios.get(
-        "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+        `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
@@ -5054,7 +5054,7 @@ export default function StudentHome({ darkMode }) {
     if (!token) return;
     try {
       const res = await axios.get(
-        "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+        `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
         { headers: { Authorization: `Bearer ${token}` } },
       );
 
@@ -5471,7 +5471,7 @@ export default function StudentHome({ darkMode }) {
 
   const fetchWishlist = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -5497,7 +5497,7 @@ export default function StudentHome({ darkMode }) {
 
     try {
       await axios.post(
-        "${import.meta.env.VITE_API_URL}/api/wishlist",
+        `${import.meta.env.VITE_API_URL}/api/wishlist`,
         {
           bookId: book._id,
           action: isInWishlist ? "remove" : "add",

@@ -22,7 +22,7 @@ const HomeAllBooks = () => {
   const fetchBooks = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/api/books", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.books) {

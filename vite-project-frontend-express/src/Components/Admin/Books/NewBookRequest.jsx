@@ -38,7 +38,7 @@ const NewBookRequest = ({ darkMode }) => {
     setError(null);
     try {
       const { data } = await axios.get(
-        "${import.meta.env.VITE_API_URL}/api/books/admin/requests",
+        `${import.meta.env.VITE_API_URL}/api/books/admin/requests`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

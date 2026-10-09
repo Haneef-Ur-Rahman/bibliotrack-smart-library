@@ -23,7 +23,7 @@
 
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //           {
 //             headers: { Authorization: `Bearer ${token}` },
 //           },
@@ -221,7 +221,7 @@
 
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //           {
 //             headers: { Authorization: `Bearer ${token}` },
 //           },
@@ -839,7 +839,7 @@ export default function Reservations({ darkMode }) {
       setLoading(true);
       try {
         const res = await axios.get(
-          "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+          `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
           { headers: { Authorization: `Bearer ${token}` } },
         );
         setReservations(res.data.reservations || []);

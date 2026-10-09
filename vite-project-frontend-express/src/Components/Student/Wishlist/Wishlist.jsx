@@ -26,7 +26,7 @@
 
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/wishlist",
+//           `${import.meta.env.VITE_API_URL}/api/books/wishlist`,
 //           {
 //             headers: { Authorization: `Bearer ${token}` },
 //           }
@@ -52,7 +52,7 @@
 //     const fetchStudent = async () => {
 //       if (!token) return;
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -101,7 +101,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/books/wishlist",
+//         `${import.meta.env.VITE_API_URL}/api/books/wishlist`,
 //         { bookId, action: "remove" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -357,11 +357,11 @@
 //           "Fetching wishlist with token:",
 //           token.substring(0, 20) + "..."
 //         );
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
-//         const allBooks = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const allBooks = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         const books = res.data.wishlist
 //           .map((item) => allBooks.data.books.find((b) => b._id === item.bookId))
 //           .filter((b) => b !== undefined);
@@ -386,7 +386,7 @@
 //     const fetchStudent = async () => {
 //       if (!token) return;
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -435,7 +435,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/wishlist",
+//         `${import.meta.env.VITE_API_URL}/api/wishlist`,
 //         { bookId, action: "remove" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -453,7 +453,7 @@
 //   const handleWishlist = async (book) => {
 //     try {
 //       const res = await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/wishlist",
+//         `${import.meta.env.VITE_API_URL}/api/wishlist`,
 //         { bookId: book._id, action: "add" },
 //         { headers: { Authorization: `Bearer ${token}` } }
 //       );
@@ -664,11 +664,11 @@
 //       if (!token) return;
 
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
-//         const allBooks = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const allBooks = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 
 //         const books = res.data.wishlist
 //           .map((item) => allBooks.data.books.find((b) => b._id === item.bookId))
@@ -693,7 +693,7 @@
 //       if (!token) return;
 
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -741,7 +741,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/wishlist",
+//         `${import.meta.env.VITE_API_URL}/api/wishlist`,
 //         {
 //           bookId: book._id,
 //           action: isInWishlist ? "remove" : "add",
@@ -769,7 +769,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } }
 //         );
 
@@ -916,11 +916,11 @@
 //       if (!token) return;
 
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 
-//         const allBooks = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const allBooks = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 
 //         const books = res.data.wishlist
 //           .map((item) => allBooks.data.books.find((b) => b._id === item.bookId))
@@ -946,7 +946,7 @@
 //       if (!token) return;
 
 //       try {
-//         const res = await axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//         const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setStudent(res.data.user);
@@ -994,7 +994,7 @@
 
 //     try {
 //       await axios.post(
-//         "${import.meta.env.VITE_API_URL}/api/wishlist",
+//         `${import.meta.env.VITE_API_URL}/api/wishlist`,
 //         {
 //           bookId: book._id,
 //           action: isInWishlist ? "remove" : "add",
@@ -1039,7 +1039,7 @@
 //       if (!token) return;
 //       try {
 //         const res = await axios.get(
-//           "${import.meta.env.VITE_API_URL}/api/books/student/issued-books",
+//           `${import.meta.env.VITE_API_URL}/api/books/student/issued-books`,
 //           { headers: { Authorization: `Bearer ${token}` } },
 //         );
 
@@ -1686,21 +1686,21 @@
 //       try {
 //         const [wishlistRes, issuedRes, reservedRes, studentRes] =
 //           await Promise.all([
-//             axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+//             axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
 //               headers: { Authorization: `Bearer ${token}` },
 //             }),
-//             axios.get("${import.meta.env.VITE_API_URL}/api/books/student/issued-books", {
+//             axios.get(`${import.meta.env.VITE_API_URL}/api/books/student/issued-books`, {
 //               headers: { Authorization: `Bearer ${token}` },
 //             }),
 //             axios.get(
-//               "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//               `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //               { headers: { Authorization: `Bearer ${token}` } },
 //             ),
-//             axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//             axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //               headers: { Authorization: `Bearer ${token}` },
 //             }),
 //           ]);
-//         const allBooksRes = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const allBooksRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         const books = wishlistRes.data.wishlist
 //           .map((item) => ({
 //             ...allBooksRes.data.books.find((b) => b._id === item.bookId),
@@ -1795,7 +1795,7 @@
 //       if (!window.confirm(`Remove "${book.title}" from wishlist?`)) return;
 //       try {
 //         await axios.post(
-//           "${import.meta.env.VITE_API_URL}/api/wishlist",
+//           `${import.meta.env.VITE_API_URL}/api/wishlist`,
 //           { bookId: book._id, action: "remove" },
 //           { headers: { Authorization: `Bearer ${token}` } },
 //         );
@@ -2277,21 +2277,21 @@
 //       try {
 //         const [wishlistRes, issuedRes, reservedRes, studentRes] =
 //           await Promise.all([
-//             axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+//             axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
 //               headers: { Authorization: `Bearer ${token}` },
 //             }),
-//             axios.get("${import.meta.env.VITE_API_URL}/api/books/student/issued-books", {
+//             axios.get(`${import.meta.env.VITE_API_URL}/api/books/student/issued-books`, {
 //               headers: { Authorization: `Bearer ${token}` },
 //             }),
 //             axios.get(
-//               "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+//               `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
 //               { headers: { Authorization: `Bearer ${token}` } },
 //             ),
-//             axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+//             axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
 //               headers: { Authorization: `Bearer ${token}` },
 //             }),
 //           ]);
-//         const allBooksRes = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+//         const allBooksRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
 //         const books = wishlistRes.data.wishlist
 //           .map((item) => ({
 //             ...allBooksRes.data.books.find((b) => b._id === item.bookId),
@@ -2386,7 +2386,7 @@
 //       if (!window.confirm(`Remove "${book.title}" from wishlist?`)) return;
 //       try {
 //         await axios.post(
-//           "${import.meta.env.VITE_API_URL}/api/wishlist",
+//           `${import.meta.env.VITE_API_URL}/api/wishlist`,
 //           { bookId: book._id, action: "remove" },
 //           { headers: { Authorization: `Bearer ${token}` } },
 //         );
@@ -2954,21 +2954,21 @@ export default function Wishlist({ darkMode }) {
       try {
         const [wishlistRes, issuedRes, reservedRes, studentRes] =
           await Promise.all([
-            axios.get("${import.meta.env.VITE_API_URL}/api/wishlist", {
+            axios.get(`${import.meta.env.VITE_API_URL}/api/wishlist`, {
               headers: { Authorization: `Bearer ${token}` },
             }),
-            axios.get("${import.meta.env.VITE_API_URL}/api/books/student/issued-books", {
+            axios.get(`${import.meta.env.VITE_API_URL}/api/books/student/issued-books`, {
               headers: { Authorization: `Bearer ${token}` },
             }),
             axios.get(
-              "${import.meta.env.VITE_API_URL}/api/books/student/reserved-books",
+              `${import.meta.env.VITE_API_URL}/api/books/student/reserved-books`,
               { headers: { Authorization: `Bearer ${token}` } },
             ),
-            axios.get("${import.meta.env.VITE_API_URL}/auth/me", {
+            axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
               headers: { Authorization: `Bearer ${token}` },
             }),
           ]);
-        const allBooksRes = await axios.get("${import.meta.env.VITE_API_URL}/api/books");
+        const allBooksRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`);
         const books = wishlistRes.data.wishlist
           .map((item) => ({
             ...allBooksRes.data.books.find((b) => b._id === item.bookId),
@@ -3063,7 +3063,7 @@ export default function Wishlist({ darkMode }) {
       if (!window.confirm(`Remove "${book.title}" from wishlist?`)) return;
       try {
         await axios.post(
-          "${import.meta.env.VITE_API_URL}/api/wishlist",
+          `${import.meta.env.VITE_API_URL}/api/wishlist`,
           { bookId: book._id, action: "remove" },
           { headers: { Authorization: `Bearer ${token}` } },
         );
