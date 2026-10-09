@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -8,7 +9,7 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL;
+       
 // ... baaki code ...
 const res = await axios.get(
   `${API_URL}/api/v0/users/getAllUsers`
