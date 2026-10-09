@@ -28,22 +28,19 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  // Note: 'darkMode' is usually configured in tailwind.config.js,
-  // but if this works for your setup, you can keep it.
   darkMode: "class",
 
   plugins: [react(), tailwindcss()],
 
-  // ==================== ADD THIS PROXY CONFIGURATION ====================
   server: {
     proxy: {
-      // Forward any request that starts with '/api' to your backend server
       "/api": {
-        target: `${import.meta.env.VITE_API_URL}`, // Your Express server address
-        changeOrigin: true, // Needed for virtual hosted sites
-        secure: false, // Don't verify SSL certs (for local dev)
+        target: "http://localhost:3002", // ← Yeh waise hi rakho
+        changeOrigin: true,
+        secure: false,
       },
     },
   },
-  // ===================================================================
 });
+  // ===================================================================
+
