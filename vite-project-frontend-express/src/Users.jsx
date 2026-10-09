@@ -8,9 +8,11 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:3002/api/v0/users/getAllUsers"
-        );
+        const API_URL = import.meta.env.VITE_API_URL;
+// ... baaki code ...
+const res = await axios.get(
+  `${API_URL}/api/v0/users/getAllUsers`
+);
         console.log("Users data:", res.data); // Debugging
         setUsers(res.data.users || []); // backend se "users" aa raha hai
       } catch (err) {
