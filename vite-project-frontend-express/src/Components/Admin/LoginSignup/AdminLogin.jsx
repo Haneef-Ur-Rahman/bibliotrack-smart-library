@@ -123,6 +123,7 @@ const AdminLogin = ({ darkMode }) => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -139,11 +140,11 @@ const AdminLogin = ({ darkMode }) => {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:3002/auth/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/admin/login`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
@@ -160,162 +161,8 @@ const AdminLogin = ({ darkMode }) => {
   };
 
   return (
-    // <div
-    //   className={`min-h-screen flex flex-col transition-colors duration-500 ${
-    //     darkMode
-    //       ? "bg-slate-900"
-    //       : "bg-gradient-to-br from-indigo-50 via-white to-purple-50"
-    //   }`}
-    // >
-    //   <Navbarall darkMode={darkMode} />
-
-    //   <div className="flex-grow flex items-center justify-center px-4 py-12">
-    //     <div
-    //       className={`w-full max-w-md p-8 rounded-2xl shadow-xl transition-all duration-300 ${
-    //         darkMode
-    //           ? "bg-slate-800 border border-slate-700"
-    //           : "bg-white border border-gray-100"
-    //       }`}
-    //     >
-    //       <h2
-    //         className={`text-3xl font-bold text-center mb-2 ${
-    //           darkMode ? "text-white" : "text-gray-900"
-    //         }`}
-    //       >
-    //         Admin Login
-    //       </h2>
-    //       <p
-    //         className={`text-center mb-8 ${
-    //           darkMode ? "text-gray-400" : "text-gray-600"
-    //         }`}
-    //       >
-    //         Please enter your credentials
-    //       </p>
-
-    //       <form onSubmit={handleSubmit} className="space-y-6">
-    //         {/* Username Input with Floating Label */}
-    //         <div className="relative">
-    //           <input
-    //             id="username"
-    //             name="username"
-    //             type="text"
-    //             required
-    //             onChange={handleChange}
-    //             className={`peer w-full px-4 py-3 bg-transparent border rounded-lg text-sm placeholder-transparent focus:outline-none focus:ring-2 transition-all ${
-    //               darkMode
-    //                 ? "border-slate-600 text-white focus:ring-indigo-500 focus:border-indigo-500"
-    //                 : "border-gray-300 text-gray-900 focus:ring-indigo-500 focus:border-indigo-500"
-    //             }`}
-    //             placeholder="Username"
-    //           />
-    //           <label
-    //             htmlFor="username"
-    //             className={`absolute left-4 -top-2.5 px-1 text-xs bg-inherit transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-xs ${
-    //               darkMode
-    //                 ? "text-gray-400 peer-focus:text-indigo-400 bg-slate-800"
-    //                 : "text-gray-500 peer-focus:text-indigo-500 bg-white"
-    //             }`}
-    //           >
-    //             Username
-    //           </label>
-    //         </div>
-
-    //         {/* Password Input with Floating Label */}
-    //         <div className="relative">
-    //           <input
-    //             id="password"
-    //             name="password"
-    //             type={showPassword ? "text" : "password"}
-    //             required
-    //             onChange={handleChange}
-    //             className={`peer w-full px-4 py-3 pr-12 bg-transparent border rounded-lg text-sm placeholder-transparent focus:outline-none focus:ring-2 transition-all ${
-    //               darkMode
-    //                 ? "border-slate-600 text-white focus:ring-indigo-500 focus:border-indigo-500"
-    //                 : "border-gray-300 text-gray-900 focus:ring-indigo-500 focus:border-indigo-500"
-    //             }`}
-    //             placeholder="Password"
-    //           />
-    //           <label
-    //             htmlFor="password"
-    //             className={`absolute left-4 -top-2.5 px-1 text-xs bg-inherit transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-xs ${
-    //               darkMode
-    //                 ? "text-gray-400 peer-focus:text-indigo-400 bg-slate-800"
-    //                 : "text-gray-500 peer-focus:text-indigo-500 bg-white"
-    //             }`}
-    //           >
-    //             Password
-    //           </label>
-    //           <button
-    //             type="button"
-    //             onClick={() => setShowPassword(!showPassword)}
-    //             className={`absolute right-3 top-3.5 p-1 rounded-md transition-colors ${
-    //               darkMode
-    //                 ? "text-gray-400 hover:text-gray-300"
-    //                 : "text-gray-500 hover:text-gray-700"
-    //             }`}
-    //           >
-    //             {showPassword ? (
-    //               <AiOutlineEye size={20} />
-    //             ) : (
-    //               <AiOutlineEyeInvisible size={20} />
-    //             )}
-    //           </button>
-    //         </div>
-
-    //         {/* Submit Button */}
-    //         <button
-    //           type="submit"
-    //           disabled={loading}
-    //           className="w-full flex justify-center items-center gap-2 py-3 px-4 rounded-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-    //         >
-    //           {loading && (
-    //             <svg
-    //               className="animate-spin -ml-1 mr-2 h-5 w-5 text-white"
-    //               xmlns="http://www.w3.org/2000/svg"
-    //               fill="none"
-    //               viewBox="0 0 24 24"
-    //             >
-    //               <circle
-    //                 className="opacity-25"
-    //                 cx="12"
-    //                 cy="12"
-    //                 r="10"
-    //                 stroke="currentColor"
-    //                 strokeWidth="4"
-    //               ></circle>
-    //               <path
-    //                 className="opacity-75"
-    //                 fill="currentColor"
-    //                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-    //               ></path>
-    //             </svg>
-    //           )}
-    //           {loading ? "Logging in..." : "Login"}
-    //         </button>
-    //       </form>
-
-    //       <p
-    //         className={`text-center text-sm mt-6 ${
-    //           darkMode ? "text-gray-400" : "text-gray-600"
-    //         }`}
-    //       >
-    //         Don’t have an account?{" "}
-    //         <span
-    //           onClick={() => navigate("/admin-signup")}
-    //           className={`font-semibold cursor-pointer transition-colors ${
-    //             darkMode
-    //               ? "text-indigo-400 hover:text-indigo-300"
-    //               : "text-indigo-600 hover:text-indigo-700"
-    //           }`}
-    //         >
-    //           Signup as Admin
-    //         </span>
-    //       </p>
-    //     </div>
-    //   </div>
-
-    //   <FooterAll darkMode={darkMode} />
-    // </div>
+        
+  
     //--------------------------------------------------------------
     <>
       <div
