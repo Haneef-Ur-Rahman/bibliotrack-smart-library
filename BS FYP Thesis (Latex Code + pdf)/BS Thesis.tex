@@ -1,0 +1,3412 @@
+\documentclass[12pt,a4paper]{report}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{times}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{layout}
+\usepackage{caption} % allows \captionof outside float
+\usepackage{tabularx}  % Preamble mein add karo
+\usepackage{needspace}
+
+
+% Page geometry - Reduced margins for more text per line
+\geometry{
+    a4paper,
+   left=1.3in,
+    right=1.2in,
+    top=1in,
+    bottom=1in
+}
+
+% Spacing - Increased for better readability
+\onehalfspacing
+\setlength{\parskip}{0.5em}
+
+% Chapter formatting - More professional with space
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries\centering\Large}
+    {\chaptertitlename\ \thechapter}{20pt}{\Large}
+\titlespacing*{\chapter}{0pt}{-10pt}{40pt}
+
+% Section formatting
+\titleformat{\section}
+    {\normalfont\bfseries\large}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{20pt}{10pt}
+
+\titleformat{\subsection}
+    {\normalfont\bfseries\normalsize}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{15pt}{5pt}
+
+% Header and footer - Only page number at bottom center
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+\fancyfoot[C]{\thepage} % Page number centered at bottom
+\fancypagestyle{plain}{
+    \fancyhf{} % Clear all for plain pages
+    \renewcommand{\headrulewidth}{0pt} % No header line
+    \fancyfoot[C]{\thepage} % Page number centered at bottom
+}
+
+% List settings - Compact but readable
+\setlist[itemize]{leftmargin=*, itemsep=0.1em, topsep=0.3em, parsep=0.1em}
+\setlist[enumerate]{leftmargin=*, itemsep=0.1em, topsep=0.3em, parsep=0.1em}
+
+% Paragraph indentation
+\setlength{\parindent}{0.3in}
+
+\setstretch{1.5}
+
+% Begin document
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+ {\huge \textbf{Smart Library Management System (BiblioTrack)} \par}
+     \vspace{0.9cm}
+      \includegraphics[width=5cm]{UOP.png} \\
+    \vspace{0.8cm}
+    {\Large Submitted by\par}
+    \vspace{0.2cm}
+    {\large \textbf{ Haneef Ur Rahman}\par}
+    {\large \textbf{ Syeda Dilawaiz} \par}
+    \vspace{0.5cm}
+    {\Large Supervised by\par}
+    \vspace{0.2cm}
+    {\large \textbf {Dr. Javed Iqbal} \par}
+    \vspace{0.6cm}
+    
+   {\large \textbf{ BS Computer Science} \par
+   \textbf{ Session: 2022 - 2026} \par}
+    
+   \vspace{1.2cm}
+     {\Large \textbf {Department of Computer Science} \par
+   \textbf{ University of Peshawar }\par }
+    
+    \vfill
+\end{titlepage}
+
+
+%--------------------------------------
+
+% Title Page
+\begin{titlepage}
+    \centering
+ {\huge \textbf{Smart Library Management System (BiblioTrack)} \par}
+     \vspace{0.4cm}
+      \includegraphics[width=5cm]{UOP.png} \\
+       \vspace{0.4cm}
+    {\large This thesis is submitted to Department of Computer Science University \par
+    of Peshawar, in partial fulfillment for the award of BS degree in Computer Science\par}
+    \vspace{0.5cm}
+    {\Large Submitted by\par}
+    \vspace{0.2cm}
+    {\large \textbf{ Haneef Ur Rahman}\par}
+    {\large \textbf{ Syeda Dilawaiz} \par}
+    \vspace{0.4cm}
+    {\Large Supervised by\par}
+    \vspace{0.2cm}
+    {\large \textbf {Dr. Javed Iqbal} \par}
+    \vspace{0.6cm}
+    
+   {\large \textbf{ BS Computer Science} \par
+   \textbf{ Session: 2022 - 2026} \par}
+    
+   \vspace{0.5cm}
+     {\large \textbf {Department of Computer Science} \par
+   \textbf{ University of Peshawar }\par }
+    
+    \vfill
+\end{titlepage}
+
+%--------------------------------------
+
+% ---------------- Approval Page ----------------
+
+\pagenumbering{roman}
+
+\begin{center}
+    
+    {\large \textbf{Project Approval}}
+    
+    \vspace{1.2cm}
+\end{center}
+
+\noindent This is certified that this project is approved and recommended as fulfillment for the degree of ``BS Computer Science'' from the Department of Computer Science, University of Peshawar.
+
+\vspace{1.4cm}
+
+\noindent \textbf{Supervisor}
+
+\vspace{0.8cm}
+
+\noindent \rule{10cm}{0.5pt} \\[0.7cm]
+\noindent Dr. Javed Iqbal \\
+Assistant Professor, Department of Computer Science \\
+University of Peshawar, Pakistan.
+
+\vspace{1cm}
+
+\noindent \textbf{External Examiner}
+
+\vspace{0.8cm}
+
+\noindent  \rule{10cm}{0.5pt} \\[0.7cm]
+
+\vspace{0.8cm}
+
+\noindent \textbf{Chairman}
+
+\vspace{0.8cm}
+
+\noindent  \rule{10cm}{0.5pt} \\[0.7cm]
+\noindent Department of Computer Science \\
+University of Peshawar, Pakistan.
+
+\vfill
+
+
+
+\newpage
+
+% Acknowledgement Page
+\newpage
+\thispagestyle{plain}
+\vspace*{2cm}
+
+\begin{center}
+    {\Large\bfseries ACKNOWLEDGEMENT}
+\end{center}
+
+\vspace{1cm}
+
+First and foremost, all praise and gratitude are due to Almighty Allah for granting us the strength, patience, and perseverance to complete this project. Without His blessings, none of this would have been possible.
+
+We would like to extend our heartfelt appreciation to our supervisor, \textbf{Dr. Javed Iqbal}, for his invaluable guidance, support, and encouragement throughout the development of this project. His expertise and insight were instrumental in shaping the direction of our work, and his constant motivation inspired us to strive for excellence.
+
+We would also like to express our gratitude to our families and friends for their unwavering support, understanding, and encouragement during this journey. Their belief in us provided the motivation to overcome challenges and stay focused on our goals.
+
+Finally, we would like to thank everyone who contributed to the completion of this project in various ways. Your assistance, feedback, and support have been essential to our success, and we are deeply grateful.
+
+\vspace{1.7cm}
+\begin{flushright}
+Haneef Ur Rahman\\
+Syeda Dilawaiz
+\end{flushright}
+
+% Abstract
+\newpage
+\thispagestyle{plain}
+\begin{center}
+    {\Large \textbf{ABSTRACT}}
+\end{center}
+
+\vspace{0.7cm}
+
+This project report presents the design and development of BiblioTrack, a Smart Library Management System aimed at transforming the traditional departmental library of the Computer Science Department, University of Peshawar, into a modern digital platform. The system addresses critical challenges faced by students and library staff, including inefficient manual record-keeping, difficulty in tracking issued books, inconsistent fine calculation, and limited access to digital resources.
+
+\vspace{0.5cm}
+BiblioTrack provides a comprehensive web-based solution that manages both physical books and digital resources (PDFs) within a single integrated platform. The system features separate portals for students and administrators, ensuring secure access and efficient management of library operations. Key functionalities include smart multi-criteria search functionality, a first-come first-served reservation system for unavailable books, automated fine calculation with E-Challan generation and 1-Bill payment integration, and an AI-powered ChatBot assistant capable of answering library-related queries. Additionally, the system incorporates automated email notifications for important events such as account creation, book issuance, reservation confirmation, and fine alerts. Students can request new books, and generate clearance reports for degree completion verification.
+
+\vspace{0.4cm}
+Developed using React.js for the frontend with Tailwind CSS and Bootstrap for styling, and Node.js with Express.js for the backend, the platform offers a responsive, user-friendly interface accessible across various devices. Security is ensured through Bcrypt password hashing and session-based authentication.
+
+With its hybrid approach combining physical and digital resource management, AI-assisted user support, and locally-relevant payment integration, BiblioTrack provides a streamlined solution that enhances library efficiency, improves student access to learning materials, and demonstrates the effective application of technology to solve real-world academic challenges. Future enhancements may include mobile application development and integration with university-wide systems.
+
+% Table of Contents
+\newpage
+\renewcommand{\contentsname}{Table of Contents} % Customize heading text
+\tableofcontents
+
+% List of Figures
+%\newpage
+%\listoffigures
+
+% List of Tables
+%\newpage
+%\listoftabless
+
+% ======================================================================
+% CHAPTER 1: INTRODUCTION
+% ======================================================================
+\newpage
+\pagenumbering{arabic}
+\chapter{INTRODUCTION}
+
+\section{Project Background Overview}
+\label{sec:background}
+Libraries have long served as the cornerstone of academic institutions, providing students and faculty with access to knowledge, research materials, and educational resources. In the digital age, the role of libraries continues to evolve, with increasing expectations for instant access, automated processes, and seamless user experiences. Traditional library management approaches, however, often lag behind these technological advancements, particularly in departmental settings where resources for digitization may be limited.
+
+The Department of Computer Science at the University of Peshawar maintains its own library to support student learning and research activities. Despite the technical nature of the discipline, the library currently operates using manual record-keeping systems, including physical registers for book issuance, return tracking, and fine management. This conventional approach, while familiar, introduces significant inefficiencies in daily operations. Students frequently experience delays when searching for books, checking availability, or determining their outstanding fines. Librarians face challenges in maintaining accurate records, tracking overdue items, and managing the growing collection of both physical and digital resources.
+
+The transition toward digital learning environments has accelerated in recent years, with students expecting access to educational materials beyond traditional library hours. The COVID-19 pandemic particularly highlighted the need for remote access to learning resources, a capability that manual library systems cannot provide. Students require the flexibility to search catalogues, reserve books, and access digital materials from anywhere, at any time.
+
+Smart Library Management Systems have emerged as a solution to these challenges, offering integrated platforms that automate routine tasks, provide real-time information access, and enhance the overall library experience. These systems combine traditional library functions with modern features such as digital resource management, automated notifications, and intelligent search capabilities. By digitizing library operations, institutions can improve efficiency, reduce manual errors, and provide better service to their users.
+
+The proposed BiblioTrack system draws inspiration from existing library management solutions while incorporating innovative features tailored specifically for departmental library needs. Unlike generic library software that may be overly complex or expensive for smaller collections, BiblioTrack focuses on the essential functions required by the Computer Science Department while introducing modern capabilities such as AI-assisted user support and integrated digital resource management. The system aims to create a seamless bridge between physical and digital collections, ensuring that students can access learning materials regardless of format or location.
+
+
+% ----------------------------------------------------------------------
+\section{Problem Description}
+\label{sec:problem}
+
+The Computer Science Department Library faces several operational challenges that impact both students and library staff. These challenges stem primarily from the reliance on manual processes and the absence of an integrated digital system capable of managing the library's growing collection and diverse user needs.
+
+\subsection{Inefficient Book Search and Discovery}
+
+Students currently rely on physical browsing or word-of-mouth to locate books within the library. Without a centralized digital catalogue, students must scan shelves manually or ask librarians for assistance, a time-consuming process that often leads to frustration. When seeking specific titles or authors, students have no way to check book availability without visiting the library in person, resulting in wasted trips when desired materials are already issued to others.
+
+\subsection{Manual Issuance and Return Tracking}
+
+The library maintains paper registers to record book issuances and returns. This manual approach is prone to human error, with entries sometimes missing, illegible, or incorrectly recorded. Tracking which student has borrowed which book becomes increasingly difficult as the collection grows and the number of users increases. Lost or misplaced registers can result in permanent loss of transaction history.
+
+\subsection{Inconsistent Fine Calculation and Collection}
+
+When students return books after the due date, fines must be calculated manually based on the number of late days. This process is not only time-consuming for librarians but also susceptible to calculation errors or disputes. Students often remain unaware of accumulating fines until they attempt to borrow additional books or require clearance at the end of their degree program. No formal system exists for fine payment, with transactions typically handled in cash without proper receipts or record-keeping.
+
+\subsection{Limited Access to Digital Resources}
+
+The department possesses valuable digital learning materials, including PDF books, research papers, and lecture notes. However, these resources remain scattered across various storage locations—some on librarian computers, others on departmental servers, and many inaccessible to students. No centralized platform exists where students can browse, view, or download these digital materials, limiting their educational value.
+
+\subsection{No Reservation Mechanism for Books}
+
+When books are already issued to other students, those waiting have no way to reserve them for future availability. Students must repeatedly check with the librarian or rely on chance encounters to learn when desired books become available. This lack of a reservation system leads to inequitable access, with some students repeatedly missing opportunities to borrow high-demand materials.
+
+\subsection{Lack of Automated Communication}
+
+Students receive no notifications regarding important library events—when issued books are approaching their due dates, when reserved books become available, or when fines have been assessed. This communication gap results in unintentional late returns, missed borrowing opportunities, and last-minute surprises during degree clearance procedures.
+
+\subsection{Inefficient Degree Clearance Process}
+
+When students complete their programs, they must obtain library clearance certifying that no books or fines remain outstanding. Currently, this requires manual verification against paper registers—a tedious process that can delay graduation if records are incomplete or disputed.
+
+The BiblioTrack system is designed to address these multifaceted challenges by providing a comprehensive digital platform that streamlines library operations, enhances student access to resources, and automates routine tasks. By centralizing all library functions within a single web-based system, the project aims to transform the departmental library into a modern, efficient, and user-friendly facility that truly serves the academic needs of computer science students. 
+
+% ----------------------------------------------------------------------
+\section{Project Objectives}
+\label{sec:objectives}
+
+The development of the BiblioTrack Smart Library Management System is guided by a clear set of objectives aimed at addressing the identified problems while introducing innovative features that enhance the overall library experience.
+
+\begin{enumerate}
+    \item \textbf{Digitizing Library Operations:} To replace the existing manual register system with a centralized digital database that maintains accurate records of all books, students, transactions, and fines. This digitization will eliminate data redundancy, reduce human errors, and provide reliable historical records for audit and reporting purposes.
+
+    
+    \item \textbf{Implementing Smart Search Functionality:} To provide students with intuitive search capabilities that allow them to locate books quickly using various criteria including title, author, category, and availability status. The search system will display real-time information about whether books are currently available or issued to other students.  
+    
+    \item \textbf{Establishing a Digital Library Section:} To create a centralized repository for digital learning resources where administrators can upload PDF books and other materials, organized by category for easy browsing. Students will access these materials online or download them for offline study, supporting remote learning and 24/7 resource availability.
+    
+    \item \textbf{Developing a Reservation Queue System:} To implement a fair and transparent mechanism for students to reserve books that are currently unavailable. The system will maintain a first-come, first-served queue for each book and automatically issue it to the next waiting student when returned, eliminating manual waiting lists and inequitable access. 
+    \item \textbf{Integrating AI-Powered Chatbot Assistance:} To deploy an intelligent virtual assistant capable of answering student queries related to library services, including book availability, recommendations, fine details, and issued items. The chatbot will provide instant responses, reducing the burden on library staff while improving student access to information.
+    
+    \item \textbf{Automating Fine Calculation and Payment Processing:} To develop an automated fine calculation system that accurately determines penalties for overdue books based on fixed rates and late days. The system will generate electronic challans (E-Challans) for fine amounts and integrate with the 1-Bill payment platform, allowing students to pay online with subsequent admin verification.
+  
+    
+    \item \textbf{Enabling Automated Email Notifications:} To implement a comprehensive notification system that sends automated emails to students for important events including account creation confirmation, book issuance details, reservation confirmations, book request submissions, and fine alerts. These notifications will keep students informed and reduce unintentional violations.
+
+    
+    \item \textbf{Creating Student Book Request Feature:} To allow students to request new books that are not currently part of the library collection. These requests will be visible to administrators, who can use them to make informed decisions about collection development and expansion based on actual student needs.
+    
+    \item \textbf{Facilitating Clearance Report Generation:} To provide students with the ability to generate clearance reports summarizing their library status, including issued books and outstanding fines. This feature will streamline the degree clearance process by providing verified documentation for departmental authorities.
+\end{enumerate}
+
+
+% ----------------------------------------------------------------------
+\section{Project Motivation}
+\label{sec:motivation}
+
+The motivation behind the BiblioTrack project stems from direct observations of the challenges faced by students and library staff within the Computer Science Department. As computer science students ourselves, we have experienced firsthand the frustration of searching for books without knowing their availability, the inconvenience of repeated library visits to check for returned items, and the anxiety of uncertain fine calculations during degree clearance.
+
+Beyond personal experiences, we recognize the broader opportunity to apply our technical knowledge toward solving a real-world problem within our academic environment. The skills we have developed throughout our computer science education—in web development, database design, user interface creation, and system integration—can be meaningfully applied to create a solution that benefits our fellow students and contributes to departmental improvement.
+
+The growing emphasis on digital transformation in education further motivates this project. As universities worldwide adopt smart technologies to enhance learning experiences, departmental libraries must evolve accordingly to remain relevant and effective. BiblioTrack represents an opportunity to demonstrate how thoughtful technology application can modernize traditional services while maintaining focus on user needs.
+
+Additionally, the project provides valuable learning experience in full-stack development, requirement analysis, system design, and project management—skills essential for our future careers in technology. The challenges of building a production-ready system, from understanding user requirements to implementing secure authentication and payment processing, mirror the complexities encountered in professional software development environments.
+
+% ----------------------------------------------------------------------
+\section{Project Significance}
+\label{sec:significance}
+
+The BiblioTrack system holds significance across multiple dimensions, impacting students, faculty, library staff, and the broader departmental community.
+
+\subsection{For Students}
+
+The system democratizes access to library resources by providing equal opportunities for all students to discover, reserve, and borrow materials. The digital library component ensures that learning resources remain accessible even when physical books are unavailable or when students cannot visit the library during operating hours. Automated notifications keep students informed about their library activities, reducing unintentional violations and associated penalties. The AI chatbot provides immediate assistance without requiring librarian intervention, particularly valuable during evenings and weekends when staff may not be available.
+
+\subsection{For Library Staff}
+
+Administrative burden decreases significantly as routine tasks become automated. Rather than maintaining paper registers, calculating fines manually, or managing waiting lists, librarians can focus on higher-value activities such as collection development, user assistance, and service improvement. The digital record-keeping eliminates manual errors and provides reliable data for reporting and decision-making. Fine collection through the E-Challan system reduces cash handling and associated security concerns.
+
+\subsection{For the Department}
+
+The system demonstrates the department's commitment to leveraging technology for improved educational services. It provides a model for how other departmental facilities might similarly benefit from digitization. The collection development insights gained from student book requests enable more responsive acquisition decisions, ensuring that library resources align with actual student needs and curriculum requirements.
+
+% ----------------------------------------------------------------------
+\section{Project Uniqueness}
+\label{sec:uniqueness}
+
+While numerous library management systems exist commercially and as open-source solutions, BiblioTrack introduces distinctive features that differentiate it from generic alternatives and address the specific needs of departmental academic libraries.
+
+\subsection{Hybrid Physical-Digital Integration}
+
+Unlike systems that focus exclusively on physical book management or purely digital repositories, BiblioTrack seamlessly integrates both resource types within a unified platform. Students can search once and discover relevant materials regardless of whether they exist as physical books on shelves or digital PDFs in the online collection. This hybrid approach reflects the reality of modern academic libraries, where both formats coexist and complement each other.
+
+\subsection{Department-Specific Design}
+Rather than attempting to serve all possible library types, BiblioTrack is intentionally designed for departmental academic libraries with moderate collections and primarily student users. This focus allows for streamlined interfaces, relevant features, and appropriate complexity levels that match departmental needs. Features such as student book requests and clearance reports directly address academic context requirements that general-purpose systems may overlook.
+
+\subsection{AI Chatbot with Contextual Awareness}
+
+The integrated chatbot is specifically trained on library-related queries rather than attempting to answer general questions. This focused approach ensures accurate, relevant responses while maintaining appropriate boundaries (responding with "Sorry, I can only answer library-related questions" for unrelated queries). The chatbot's knowledge domain includes book recommendations, availability checking, fine inquiries, and issued items—precisely the information students most frequently seek.
+
+\subsection{First-Come First-Served Digital Queue}
+
+The reservation system implements transparent queuing mechanics that students can trust. Rather than opaque waiting lists that may be manipulated manually, the digital queue automatically maintains order and processes reservations fairly. Students can see their position in the queue and estimated wait times, reducing uncertainty and repeated inquiries.
+
+\subsection{Integrated E-Challan with 1-Bill Payment}
+
+The fine management system incorporates Pakistan-specific payment infrastructure through 1-Bill integration, recognizing the local context of banking and digital payments. This practical consideration ensures that the system works within existing financial ecosystems rather than requiring users to adapt to foreign payment methods.
+
+\subsection{Student-Driven Collection Development}
+
+The book request feature transforms students from passive consumers to active participants in library development. Administrators gain visibility into actual demand patterns, enabling evidence-based acquisition decisions that better serve the student community.
+
+
+% ----------------------------------------------------------------------
+\section{Project Scope}
+\label{sec:scope}
+
+The BiblioTrack system is designed to serve the specific needs of the Computer Science Department Library at the University of Peshawar, with careful consideration of the scope boundaries that define what the system will and will not include.
+
+\subsection{Included Within Scope}
+
+\begin{itemize}
+    \item \textbf{User Management:} Registration, authentication, and profile management for students and administrators. Student accounts will be created through registration forms with verification, while admin accounts will be pre-configured or created through authorized processes.
+    
+\newpage    
+    
+    \item \textbf{Book Management:} Complete cataloguing of physical books including title, author, category, ISBN, publication details, and multiple copies. Administrators can add, edit, and delete book records through an intuitive interface.
+    
+    \item \textbf{Digital Resource Management:} Upload, categorization, and delivery of PDF books and other digital learning materials. Students can view materials online or download them for offline access.
+    
+    \item \textbf{Search Functionality:} Multi-criteria search enabling students to find books by title, author, category, or keywords. Search results will display availability status in real-time.
+
+    \item \textbf{Issuance and Return Processing:} Digital recording of book check-outs and check-ins with automated due date calculation and tracking.
+    
+    \item \textbf{Reservation System:} Queue management for unavailable books with automatic issuance to next waiting student when books become available.
+    
+    \item \textbf{Fine Calculation and Payment:} Automated fine assessment for overdue books with E-Challan generation and 1-Bill payment integration.
+    
+    \item \textbf{AI Chatbot:} Virtual assistant capable of answering library-related queries and providing basic recommendations.
+    
+    \item \textbf{Email Notifications:} Automated email alerts for account creation, book issuance, reservation confirmation, due date reminders, and fine notifications.
+    
+    \item \textbf{Student Book Requests:} Feature allowing students to suggest new books for library acquisition.
+    
+    \item \textbf{Clearance Reports:} Generation of student library status reports for degree clearance purposes.
+\end{itemize}
+
+\subsection{Target Users}
+
+The system is designed for approximately 500-700 students enrolled in the Computer Science Department across various programs, plus 2-3 library administrators responsible for daily operations. This scale informs design decisions regarding performance, concurrent user handling, and data management requirements.
+
+\subsection{Implementation Timeline}
+
+The project will be developed over approximately 4-5 months, encompassing requirements analysis, system design, development, testing, and documentation phases. Deployment will occur within the Computer Science Department library environment, with training provided to administrators and orientation materials prepared for student users.
+
+% ======================================================================
+% CHAPTER 2: FEASIBILITY STUDY
+% ======================================================================
+\newpage
+\chapter{FEASIBILITY STUDY}
+
+% ----------------------------------------------------------------------
+\section{Existing System}
+\label{sec:existing}
+
+The Computer Science Department Library currently operates using a completely manual system for all its operations. This traditional approach, while functional, lacks the efficiency and capabilities expected in a modern academic environment. Understanding the existing system is essential to identify gaps and design appropriate solutions.
+
+\subsection{Manual Book Management}
+
+At present, all library records are maintained in physical registers. When new books are acquired, their details are manually entered into these registers, including title, author, publisher, and date of acquisition. Each book is assigned a physical location on shelves, but no centralized index exists to help users locate materials efficiently. Students must browse shelves or ask the librarian for assistance when searching for specific titles.
+
+The process of issuing books involves the librarian manually recording the student's name, book details, and issue date in a register. When books are returned, the corresponding entry is marked, and the book is placed back on shelves. This manual recording system is susceptible to several problems:
+
+\begin{itemize}
+    \item Entries may be missing or incomplete
+    \item Handwriting can be illegible, causing confusion
+    \item Mistakes in recording are common
+    \item Tracking which student has borrowed which book becomes difficult over time
+    \item Lost or damaged registers result in permanent loss of transaction history
+\end{itemize}
+
+\subsection{Fine Collection Process}
+
+When students return books after the due date, fines are calculated manually. The librarian counts the number of late days and multiplies by the fixed daily fine rate. This calculation is performed on paper, and students pay fines in cash. Receipts, if provided, are handwritten and no centralized record of fine collections is maintained.
+
+This manual fine system presents multiple challenges:
+
+\begin{itemize}
+    \item Calculations are prone to human error
+    \item Students often dispute fine amounts
+    \item No automated reminders about due dates
+    \item Students remain unaware of accumulating fines
+    \item Cash handling creates security concerns
+    \item No audit trail for payments received
+    \item Difficult to verify clearance during degree completion
+\end{itemize}
+
+
+\subsection{Search and Discovery Limitations}
+
+Students seeking books have no digital catalogue to consult. They must either:
+
+\begin{itemize}
+    \item Physically browse shelves hoping to find desired materials
+    \item Ask the librarian if specific books are available
+    \item Rely on recommendations from fellow students
+\end{itemize}
+
+When books are already issued to other students, those waiting have no way to know when they might become available. This leads to repeated, often wasted, trips to the library and frustration among users.
+
+\subsection{Digital Resource Management}
+
+The department possesses various digital learning materials including PDF books, research papers, and lecture notes. However, these resources are scattered across different storage locations. Some reside on librarian computers, others on departmental servers, and many remain inaccessible to students. No centralized platform exists where students can browse, view, or download these materials, significantly limiting their educational value.
+
+\subsection{Communication Gaps}
+
+Currently, no formal communication channel exists between the library and its users. Students receive no notifications about:
+
+\begin{itemize}
+    \item When issued books are approaching their due dates
+    \item When reserved books become available
+    \item When fines have been assessed
+    \item New book acquisitions
+    \item Changes in library policies or hours
+\end{itemize}
+
+This communication gap results in unintentional late returns, missed borrowing opportunities, and last-minute surprises during degree clearance.
+
+\subsection{Clearance Procedures}
+
+When students complete their degree programs, they must obtain library clearance certifying that no books or fines remain outstanding. This requires the librarian to manually check paper registers for each student—a time-consuming process that can delay graduation if records are incomplete or disputed.
+
+\subsection{Limitations of the Existing System}
+
+The manual system suffers from fundamental limitations that cannot be addressed through incremental improvements:
+
+\begin{itemize}
+    \item \textbf{Lack of Scalability:} As the collection grows and student numbers increase, manual processes become increasingly unmanageable.
+    \item \textbf{No Remote Access:} Students cannot access library services or check book availability outside library hours or from off-campus locations.
+    \item \textbf{Manual Errors:} Human error in recording transactions, calculating fines, and maintaining records is inevitable.
+    \item \textbf{Time Inefficiency:} Both students and staff waste significant time on routine transactions that could be automated.
+
+    \item \textbf{Poor User Experience:} Students face frustration due to lack of information, repeated library visits, and unclear processes.
+    \item \textbf{Limited Resource Utilization:} Books remain unused when students cannot discover them or when they are unaware of availability.
+    \item \textbf{No Data for Decision Making:} The department lacks data on which books are most used, which students use the library, or what materials are in demand.
+\end{itemize}
+
+These limitations highlight the urgent need for a digital solution that can transform library operations and better serve the academic community.
+
+
+% ----------------------------------------------------------------------
+\section{Proposed System}
+\label{sec:proposed}
+
+The BiblioTrack system is proposed as a comprehensive digital solution to address the limitations of the existing manual library system. It is designed specifically for the Computer Science Department Library, with features tailored to the needs of students and staff in an academic departmental setting.
+
+\subsection{System Overview}
+
+BiblioTrack is a web-based application that provides a complete digital platform for managing all library operations. It maintains a centralized database of all books, students, transactions, and digital resources. The system features separate portals for students and administrators, each with role-appropriate functionality and access controls.
+
+The proposed system transforms library operations by:
+
+\begin{itemize}
+    \item Replacing paper registers with a reliable digital database
+    \item Automating routine tasks such as fine calculation and notifications
+    \item Providing 24/7 access to library services and digital resources
+    \item Enabling smart search and discovery of materials
+    \item Implementing fair reservation mechanisms for popular books
+    \item Integrating digital payment for fines
+    \item Offering AI-powered assistance for common queries
+\end{itemize}
+
+\subsection{Core Features}
+\begin{itemize} 
+
+   \item \textbf{Digital Catalogue:} All physical books are catalogued in a centralized database with complete metadata including title, author, category, ISBN, publication details, and multiple copy tracking. This catalogue is searchable by students from anywhere, at any time.
+
+   \item \textbf{Smart Search:} Students can search for books using various criteria including title, author, category, or keywords. Search results display real-time availability information, showing whether books are currently available or issued to other students.
+
+   \item \textbf{Digital Library:} A dedicated section for digital resources allows administrators to upload PDF books and other materials, organized by category for easy browsing. Students can view materials online or download them for offline study.
+
+   \item \textbf{Online Issuance and Return:} Librarians process book check-outs and check-ins through the digital system, with automated due date calculation and tracking. Transaction history is maintained for all users.
+
+   \item \textbf{Reservation System:} When books are unavailable, students can add themselves to a reservation queue. The system maintains first-come, first-served order and automatically notifies students when books become available. The book is then automatically issued to the next waiting student.
+
+   \item \textbf{Automated Fine Management:} The system automatically calculates fines when books are returned after the due date, based on the number of late days and a fixed daily rate. E-Challans are generated for fine amounts, and students can pay through the integrated 1-Bill payment system. Administrators verify payments to clear fines.
+
+   \item \textbf{AI Chatbot Assistant:} An intelligent chatbot is integrated into the system to answer student queries. The chatbot can provide book recommendations, check availability, provide fine details, and inform students about issued and reserved books. For queries unrelated to the library, it responds appropriately.
+   
+\newpage   
+
+   \item \textbf{Email Notifications:} The system sends automated emails to students for important events including account creation, book issuance, reservation confirmation, book requests, and fine alerts. These notifications keep students informed and reduce unintentional violations.
+
+
+   \item \textbf{Student Book Requests:} Students can request new books that are not currently in the library collection. These requests are visible to administrators, who can use them to make informed acquisition decisions.
+
+   \item \textbf{Clearance Reports:} Students can generate clearance reports summarizing their library status, including issued books and outstanding fines. These reports facilitate smooth degree clearance procedures.
+   
+\end{itemize}
+
+\subsection{User Portals}
+
+\textbf{Student Portal:} Students access the system through a dedicated portal that provides:
+
+\begin{itemize}
+    \item Profile management
+    \item Book search and discovery
+    \item Digital library access
+    \item Reservation management
+    \item Issued books tracking
+    \item Fine viewing and payment
+    \item Book request submission
+    \item Clearance report generation
+    \item Chatbot assistance
+\end{itemize}
+\textbf{Admin Portal:} Administrators access a separate portal with capabilities for:
+
+\begin{itemize}
+    \item Dashboard overview of library activities
+    \item Book management (add, edit, delete)
+    \item Digital resource upload and management
+    \item Student management
+    \item Issue and return processing
+    \item Fine management and verification
+    \item E-Challan payment verification
+    \item Report generation
+\end{itemize}
+
+\subsection{Advantages Over Existing System}
+
+The proposed system offers numerous advantages compared to the current manual approach:
+
+\begin{itemize}
+    \item \textbf{Efficiency:} Routine transactions are completed in seconds rather than minutes, freeing staff for higher-value activities.
+    \item \textbf{Accuracy:} Automated calculations eliminate human errors in fine assessment and record-keeping.
+    \item \textbf{Accessibility:} Students access library services 24/7 from anywhere with internet connectivity.
+    \item \textbf{Transparency:} Students can see book availability, their position in reservation queues, and their fine status in real-time.
+    \item \textbf{Communication:} Automated notifications keep all users informed without staff intervention.
+    \item \textbf{Resource Utilization:} Better discovery and reservation mechanisms ensure books are used more effectively.
+    \item \textbf{Data Insights:} The department gains visibility into usage patterns, informing collection development decisions.
+    \item \textbf{Scalability:} The digital system can accommodate growing collections and increasing student numbers without additional staff burden.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\section{Feasibility Report}
+\label{sec:feasibility}
+
+The feasibility of the BiblioTrack system is assessed across three dimensions: technical feasibility, economic feasibility, and operational feasibility. Each aspect examines whether the proposed system can be successfully developed, deployed, and sustained within the departmental context.
+
+\subsection{Technical Feasibility}
+\label{subsec:technical}
+
+Technical feasibility examines whether the proposed system can be built using available technology, skills, and resources.
+
+\subsubsection{Technology Stack}
+
+The BiblioTrack system will be developed using modern, widely-adopted technologies that are well-documented and supported by active communities:
+
+\begin{itemize}
+    \item \textbf{Frontend:} React.js will be used to build the user interface. React is a robust JavaScript library with extensive community support, reusable component architecture, and excellent performance characteristics.
+    
+    \item \textbf{Styling:} Tailwind CSS and Bootstrap will be used for styling. This combination allows efficient development of professional, mobile-friendly interfaces.
+    
+    \item \textbf{Backend:} Node.js with Express.js will power the server-side logic. Node.js provides a fast, scalable runtime environment, while Express simplifies routing and API development.
+    
+    \item \textbf{Database:} MongoDB will serve as the primary database, offering flexibility in data modeling and horizontal scalability.
+    
+    \item \textbf{Authentication:} Session-based authentication with Bcrypt for password hashing ensures secure storage of user credentials.
+    
+    \item \textbf{Email Service:} NodeMailer with SMTP will handle automated email notifications.
+    
+    \item \textbf{Payment Integration:} The 1-Bill payment gateway will be integrated for fine collection.
+    
+    \item \textbf{AI Chatbot:} The chatbot will be implemented using predefined response patterns suitable for the limited domain of library queries.
+\end{itemize}
+
+
+\subsubsection{Infrastructure Requirements}
+
+The system requires standard computing infrastructure readily available within the department: development machines, a server for hosting, internet connectivity, and optional domain name and SSL certificate.
+
+\subsection{Economic Feasibility}
+\label{subsec:economic}
+
+Economic feasibility examines the costs associated with developing and operating the system compared to the expected benefits.
+
+\subsubsection{Development Costs}
+The BiblioTrack system leverages open-source technologies that incur no licensing fees:
+
+\begin{itemize}
+    \item React.js, Node.js, Express.js, MongoDB Community Edition (all open-source, free)
+    \item Tailwind CSS, Bootstrap (open-source, free)
+    \item Development tools (Visual Studio Code, Git - free)
+\end{itemize}
+
+Potential costs are minimal: domain name registration (optional, Rs. 2,000-3,000/year), cloud hosting testing (minimal, free tiers available), and possible 1-Bill integration fees.
+
+\subsubsection{Operational Costs}
+
+Ongoing operational costs include server hosting (departmental server eliminates costs), domain renewal (optional), SSL certificate (free options), maintenance updates, and transaction fees from 1-Bill.
+
+\subsubsection{Cost-Benefit Analysis}
+
+\textbf{Tangible Benefits:}
+\begin{itemize}
+    \item Reduced staff time spent on manual transactions
+    \item Elimination of paper and printing costs
+    \item Improved fine collection through automated tracking
+    \item Reduced errors and disputes saving administrative time
+    \item Faster clearance processes
+\end{itemize}
+
+\newpage
+
+\textbf{Intangible Benefits:}
+\begin{itemize}
+    \item Improved student satisfaction
+    \item Better learning outcomes
+    \item Enhanced departmental reputation
+    \item Data-driven collection development
+\end{itemize}
+
+The system requires minimal financial investment while offering significant operational improvements, making the project economically feasible.
+
+\subsection{Operational Feasibility}
+\label{subsec:operational}
+
+Operational feasibility examines whether the system will be accepted and effectively used by its intended users—students and library staff.
+
+\subsubsection{User Acceptance}
+
+Students are expected to welcome the system enthusiastically as it addresses long-standing frustrations:
+
+\begin{itemize}
+    \item No more wasted trips to check book availability
+    \item 24/7 access to digital resources
+    \item Ability to reserve popular books
+    \item Clear information about fines and due dates
+    \item Self-service clearance reports
+\end{itemize}
+
+Library staff will benefit from reduced routine workload, automated calculations eliminating errors, digital records replacing fragile paper registers, better visibility into library operations, and tools for informed decision-making.
+
+\subsubsection{Organizational Impact}
+
+The system introduces positive changes to established workflows: librarians shift from manual recording to digital transaction processing, students self-serve for many previously staff-mediated tasks, fine collection moves from cash to digital payments, and record-keeping becomes automated and reliable.
+
+\subsection{Overall Feasibility Conclusion}
+
+The BiblioTrack system is feasible across all three dimensions:
+
+\begin{itemize}
+    \item \textbf{Technical:} Modern, proven technologies aligned with team skills make development achievable.
+    \item \textbf{Economic:} Minimal costs with significant benefits justify the investment.
+    \item \textbf{Operational:} User needs are addressed, and change management strategies support adoption.
+\end{itemize}
+
+The project is therefore recommended to proceed to the detailed requirements and design phases.
+
+
+
+% ======================================================================
+% CHAPTER 3: REQUIREMENTS ANALYSIS
+% ======================================================================
+\newpage
+\chapter{REQUIREMENTS ANALYSIS}
+
+\section{Requirement Analysis}
+\label{sec:requirements}
+
+This chapter outlines the functional and non-functional requirements essential for the development of the BiblioTrack Smart Library Management System. These requirements specify what the system should do (functional requirements) and the qualities it should have (non-functional requirements). A well-defined set of requirements ensures the platform meets the expectations of students and library staff while providing a solid foundation for system design and development.
+
+\subsection{Functional Requirements}
+\label{subsec:functional}
+
+The functional requirements describe the specific behaviors and operations of the BiblioTrack system. These features directly support the platform's main objective of transforming the departmental library into a modern digital facility. They are designed to ensure the system achieves its primary purpose efficiently and effectively.
+
+\subsubsection{User Registration and Authentication}
+
+The system must provide secure registration and authentication mechanisms for both students and administrators:
+
+\begin{itemize}
+    \item \textbf{Student Registration:} Students must be able to create accounts by providing their name, email address, registration number, program of study, and password. The system shall validate that the email address and registration number are unique and not already registered.
+    
+\newpage    
+    
+    \item \textbf{Student Login:} Registered students must be able to log in using their email address and password. The system shall implement session-based authentication to maintain user sessions securely.
+    
+    \item \textbf{Admin Authentication:} Administrators shall have separate login credentials with elevated privileges. Admin accounts may be pre-configured or created through an authorized process.
+    
+    \item \textbf{Password Security:} All passwords shall be hashed using Bcrypt before storage. The system shall never store passwords in plain text.
+    
+    \item \textbf{Password Recovery:} Administrators must be able to reset a student’s forgotten password from the admin account, setting it to the default password.
+\end{itemize}
+
+\subsubsection{Book Management}
+
+The system must provide comprehensive book management capabilities for administrators:
+
+\begin{itemize}
+    \item \textbf{Add Books:} Administrators must be able to add new books to the catalogue by entering details including title, author, ISBN, publisher, category, edition, and number of copies available.
+    
+    \item \textbf{Edit Books:} Administrators must be able to update existing book information to correct errors or reflect changes.
+    
+    \item \textbf{Delete Books:} Administrators must be able to remove books from the catalogue that are no longer part of the library collection.
+    
+    \item \textbf{View Books:} Administrators and students must be able to view book details including availability status.
+    
+\item \textbf{Manual Book Entry:} The system shall allow administrators to add book records individually through a structured manual entry form. This feature facilitates initial data entry and catalog management by enabling administrators to input book details such as title, author, ISBN, category, and available copies. The system shall validate the entered information and store the record in the database.
+    
+    \item \textbf{Copy Management:} The system must track multiple copies of the same book separately, maintaining individual availability status for each copy.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Digital Resource Management}
+
+The system must provide functionality for managing digital learning materials:
+
+\begin{itemize}
+    \item \textbf{Upload Digital Resources:} Administrators must be able to upload PDF books, research papers, lecture notes, and other digital materials to the system.
+    
+    \item \textbf{Categorization:} Digital resources shall be organized by categories (e.g., Programming, Databases, Networking, Artificial Intelligence) for easy browsing.
+    
+    \item \textbf{Metadata:} Each digital resource shall include metadata such as title, author, description, and upload date.
+    
+    \item \textbf{Online Viewing:} Students must be able to view digital resources directly in their browser without downloading.
+    
+    \item \textbf{Download Option:} Students must be able to download digital resources for offline access.
+    
+\end{itemize}
+
+\subsubsection{Search Functionality}
+
+The system must provide robust search capabilities for students:
+
+\begin{itemize}
+    \item \textbf{Basic Search:} Students must be able to search for books by title, author, or keywords. The search should return matching results in real-time.
+    
+   \item \textbf{Advanced Search and Filtering:} Students shall be able to search and filter book records using multiple criteria, including Book ID, title, ISBN, author name, publisher, and category. The system shall provide an all-in-one search bar that matches the entered keyword against all relevant book attributes, as well as field-specific search inputs for targeted searching by title, author, ISBN, publisher, and category. Additionally, the system shall support alphabetical and numerical indexing (A--Z, 0--9), allowing students to filter books by the starting character of the title. Availability status filters shall also be provided to refine search results.
+    
+    \item \textbf{Availability Display:} Search results shall clearly indicate whether each book is currently available, issued, or reserved.
+    
+    \item \textbf{Sort Options:} Students must be able to sort search results by title, author, publication date, or relevance.
+    
+    \item \textbf{Digital Resource Search:} Search functionality shall include both physical books and digital resources in results.
+\end{itemize}
+
+\subsubsection{Issuance and Return Processing}
+
+The system must automate the book issuance and return process:
+
+\begin{itemize}
+    \item \textbf{Issue Book:} Administrators must be able to issue a book to a student by selecting the student and book from the system. The system shall record the issue date and automatically calculate the due date based on library policy.
+    
+    \item \textbf{Return Book:} Administrators must be able to process book returns. Upon return, the system shall record the return date and calculate any applicable fines automatically.
+    
+    \item \textbf{Due Date Calculation:} The system shall calculate due dates as a fixed number of days from the issue date (e.g., 14 days for standard loans).
+    
+    \item \textbf{Transaction History:} The system shall maintain complete history of all issuance and return transactions for each student and book.
+    
+    \item \textbf{Overdue Identification:} The system shall identify and flag overdue books automatically.
+\end{itemize}
+
+\subsubsection{Reservation System}
+
+The system must provide a fair reservation mechanism for unavailable books:
+
+\begin{itemize}
+    \item \textbf{Reserve Book:} When a book is unavailable, students must be able to add themselves to a reservation queue for that book.
+    
+    \item \textbf{Queue Management:} The system shall maintain a first-come, first-served queue for each book. Students shall be able to view their position in the queue.
+    
+    \item \textbf{Automatic Issuance:} When a reserved book becomes available, the system shall automatically issue it to the next student in the queue.
+    
+    \item \textbf{Reservation Notification:} The system shall notify students when their reserved book becomes available.
+    
+    \item \textbf{Cancel Reservation:} Students must be able to cancel their reservation at any time.
+    
+\end{itemize}
+
+\subsubsection{Fine Calculation and Payment}
+
+The system must automate fine calculation and facilitate digital payment:
+
+\begin{itemize}
+    \item \textbf{Fine Calculation:} When a book is returned after the due date, the system shall automatically calculate the fine using the formula: Fine = Late Days × Fixed Daily Rate.
+    
+    \item \textbf{Fine Display:} Students must be able to view their outstanding fines in their dashboard.
+    
+    \item \textbf{E-Challan Generation:} The system shall generate electronic challans (E-Challans) for fine amounts, including student details, fine amount, and unique transaction ID.
+    
+    \item \textbf{Payment Integration:} The system shall integrate with the 1-Bill payment gateway to allow students to pay fines online.
+    
+    \item \textbf{Payment Verification:} Administrators must be able to verify payments received through the system and clear outstanding fines.
+    
+    \item \textbf{Payment History:} The system shall maintain complete records of all fine payments for audit purposes.
+\end{itemize}
+
+\subsubsection{AI Chatbot Assistant}
+
+The system must provide an intelligent chatbot for student assistance:
+
+\begin{itemize}
+    \item \textbf{Query Response:} The chatbot shall respond to student queries related to book availability, recommendations, fine details, and issued items.
+    
+    \item \textbf{Book Recommendations:} The chatbot shall provide book recommendations based on student queries or interests.
+    
+    \item \textbf{Availability Checking:} The chatbot shall check and inform students about book availability in real-time.
+    
+    \item \textbf{Fine Inquiries:} The chatbot shall provide students with information about their outstanding fines.
+    
+    \item \textbf{Issued Items:} The chatbot shall inform students about books currently issued to them.
+    
+\newpage    
+    
+    \item \textbf{Boundary Responses:} For queries unrelated to the library, the chatbot shall respond with "Sorry, I can only answer library-related questions."
+\end{itemize}
+
+\subsubsection{Email Notifications}
+
+The system must send automated email notifications for important events:
+
+\begin{itemize}
+    \item \textbf{Account Creation:} Automated email confirming successful account creation with login details.
+    
+    \item \textbf{Book Issuance:} Email notification when a book is issued, including due date information.
+    
+    \item \textbf{Reservation Confirmation:} Email confirming successful reservation of an unavailable book.
+    
+    \item \textbf{Book Available:} Email notification when a reserved book becomes available for collection.
+    
+    \item \textbf{Due Date Reminder:} Automated reminder emails before books become overdue.
+    
+    \item \textbf{Fine Alert:} Email notification when fines are assessed or when fines remain unpaid.
+    
+    \item \textbf{Book Request Update:} Email updates on the status of student book requests.
+\end{itemize}
+
+\subsubsection{Student Book Requests}
+
+The system must allow students to request new books:
+
+\begin{itemize}
+    \item \textbf{Submit Request:} Students must be able to submit requests for books not currently in the library collection by providing title, author, and optional notes.
+    
+    \item \textbf{Request Tracking:} Students must be able to view the status of their submitted requests.
+    
+    \item \textbf{Admin Review:} Administrators must have an interface to view, review, and respond to student book requests.
+    
+    \item \textbf{Request Status Updates:} Administrators must be able to update request status (e.g., Pending, Approved, Rejected, Purchased).
+    
+    \item \textbf{Notification:} Students shall receive notifications when the status of their request changes.
+\end{itemize}
+
+\subsubsection{Clearance Reports}
+
+The system must provide clearance report generation functionality:
+
+\begin{itemize}
+    \item \textbf{Generate Report:} Students must be able to generate clearance reports summarizing their library status.
+    
+    \item \textbf{Report Contents:} Clearance reports shall include student details, currently issued books, outstanding fines, and transaction history.
+    
+    \item \textbf{PDF Export:} Students must be able to export clearance reports as PDF documents.
+    
+    \item \textbf{Admin Verification:} Administrators must be able to verify clearance reports and mark students as cleared when appropriate.
+    
+    \item \textbf{Digital Signature:} The system may incorporate digital signatures or QR codes for report authenticity.
+\end{itemize}
+
+\subsection{Non-Functional Requirements}
+\label{subsec:nonfunctional}
+
+Non-functional requirements specify the quality attributes of the BiblioTrack system, ensuring it meets usability, security, and performance standards. These requirements enhance the overall user experience and ensure the platform's reliability.
+\subsubsection{Usability}
+
+The platform must be intuitive and user-friendly for both students and administrators:
+
+\begin{itemize}
+    \item \textbf{Intuitive Interface:} Clean, organized interface with straightforward navigation.
+    \item \textbf{Minimal Learning Curve:} Users can perform basic tasks without extensive training.
+    \item \textbf{Responsive Design:} Accessible on desktops, tablets, and mobile devices.
+    \item \textbf{Consistent Layout:} Uniform layout and navigation across all pages.
+    \item \textbf{Error Messages:} Clear messages suggesting corrective actions.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Performance}
+
+The system must perform efficiently under expected usage loads:
+
+\begin{itemize}
+    \item \textbf{Page Load Time:} Pages shall load within 3 seconds.
+    \item \textbf{Search Response:} Search results within 2 seconds.
+    \item \textbf{Concurrent Users:} Support at least 50 concurrent users.
+    \item \textbf{Transaction Processing:} Transactions complete within 2 seconds.
+    \item \textbf{Scalability:} Architecture allows for horizontal scaling.
+    \item \textbf{Uptime:} 99.5\% availability during normal operating hours.
+\end{itemize}
+
+\subsubsection{Security}
+
+The system must protect user data and ensure secure operations:
+
+\begin{itemize}
+    \item \textbf{Authentication:} Passwords hashed using Bcrypt, protection against brute force.
+    \item \textbf{Session Management:} Sessions timeout after 30 minutes of inactivity.
+    \item \textbf{Data Encryption:} HTTPS with TLS 1.2 or higher for all transmissions.
+    \item \textbf{Input Validation:} Client and server-side validation to prevent injection attacks.
+    \item \textbf{Access Control:} Role-based access separating student and admin functions.
+    \item \textbf{Audit Trail:} Logs maintained for all critical operations.
+\end{itemize}
+
+\subsubsection{Reliability}
+
+The system must be reliable and maintain data integrity:
+
+\begin{itemize}
+    \item \textbf{Data Consistency:} Accurate book availability reflecting actual transactions.
+    \item \textbf{Transaction Integrity:} Atomic operations fully completed or rolled back.
+    \item \textbf{Backup and Recovery:} Daily database backups with 30-day retention.
+    \item \textbf{Fault Tolerance:} Graceful error handling without data corruption.
+    \item \textbf{Error Logging:} All system errors logged for debugging.
+\end{itemize}
+
+\subsubsection{Maintainability}
+
+The system must be easy to maintain and extend:
+
+\begin{itemize}
+    \item \textbf{Modular Architecture:} Clear separation between frontend, backend, and database.
+    \item \textbf{Code Documentation:} Well-documented source code with comments.
+    \item \textbf{Configuration Management:} Externalized environment configurations.
+    \item \textbf{Version Control:} Source code maintained in Git.
+    \item \textbf{Testing:} Unit and integration tests for regression testing.
+\end{itemize}
+
+\section{Persona}
+\label{sec:persona}
+
+Creating personas helps in understanding user needs and how they interact with the system. Below are example personas for the BiblioTrack system.
+
+\subsection{Student Persona: Ahmad Siyar}
+
+\begin{itemize}
+    \item \textbf{Name:} Ahmad Siyar
+    \item \textbf{Age:} 26 years
+    \item \textbf{Program:} BS Computer Science (7th Semester)
+    \item \textbf{Technical Proficiency:} High - comfortable with web applications and mobile apps
+\end{itemize}
+\textbf{Goals:}
+\begin{itemize}
+    \item Find books for his programming courses quickly without visiting the library
+    \item Access digital versions of textbooks for study at home
+    \item Reserve popular books that are often checked out by others
+    \item Track his issued books and due dates to avoid fines
+    \item Get quick answers about library services without waiting for staff
+\end{itemize}
+\textbf{Frustrations:}
+\begin{itemize}
+    \item Current manual system requires physical visits to check book availability
+    \item Often finds books unavailable after walking to the library
+    \item No way to know when reserved books become available
+    \item Unclear about accumulating fines until degree clearance time
+\end{itemize}
+\textbf{Expected Interactions:}
+\begin{itemize}
+    \item Search for books using his laptop between classes
+    \item Access digital resources from home during evenings
+    \item Use chatbot for quick queries like "Do you have books on Python?"
+    \item Reserve books for upcoming assignments
+    \item Generate clearance report at end of semester
+\end{itemize}
+
+\section{Use Cases}
+\label{sec:usecases}
+
+The following use cases describe common interactions between users and the BiblioTrack system.
+
+\subsection{Use Case 1: Student Searches for Books}
+
+\begin{itemize}
+    \item \textbf{Actor:} Student
+    \item \textbf{Precondition:} Student is logged into the system
+    \item \textbf{Main Flow:}
+    \begin{enumerate}
+        \item Student navigates to the search page
+        \item Student enters search criteria (title, author, or keywords)
+        \item System displays matching books with availability status
+        \item Student filters results by category or availability
+        \item Student views detailed information about a specific book
+    \end{enumerate}
+    \item \textbf{Postcondition:} Student successfully finds desired book information
+\end{itemize}
+
+\subsection{Use Case 2: Student Reserves Unavailable Book}
+
+\begin{itemize}
+    \item \textbf{Actor:} Student
+    \item \textbf{Precondition:} Student is logged in and finds a book that is currently issued
+    \item \textbf{Main Flow:}
+    \begin{enumerate}
+        \item Student views book details showing "Currently Issued" status
+        \item Student clicks "Reserve This Book" button
+        \item System confirms reservation and adds student to queue
+        \item System displays student's position in reservation queue
+    \end{enumerate}
+    \item \textbf{Postcondition:} Student is added to reservation queue
+\end{itemize}
+
+\subsection{Use Case 3: Administrator Issues Book to Student}
+
+\begin{itemize}
+    \item \textbf{Actor:} Administrator
+    \item \textbf{Precondition:} Student is present, book is available
+    \item \textbf{Main Flow:}
+    \begin{enumerate}
+        \item Administrator logs into admin portal
+        \item Administrator searches for student by name or registration number
+        \item Administrator searches for book by title or ISBN
+        \item Administrator selects specific copy of book
+        \item System verifies book is available
+        \item Administrator confirms issuance
+        \item System records transaction and calculates due date
+    \end{enumerate}
+    \item \textbf{Postcondition:} Book is marked as issued to student
+\end{itemize}
+
+\subsection{Use Case 4: System Calculates Fine on Book Return}
+
+\begin{itemize}
+    \item \textbf{Actor:} System (automated)
+    \item \textbf{Precondition:} Student returns a book that was issued
+    \item \textbf{Main Flow:}
+    \begin{enumerate}
+        \item Administrator processes book return in system
+        \item System records return date
+        \item System compares return date with due date
+        \item If return date is after due date, system calculates late days
+        \item System applies fine formula: Fine = Late Days × Fixed Daily Rate
+        \item System records fine amount in student's account
+    \end{enumerate}
+    \item \textbf{Postcondition:} Fine is recorded in student's account
+\end{itemize}
+
+\subsection{Use Case 5: Student Pays Fine Online}
+
+\begin{itemize}
+    \item \textbf{Actor:} Student
+    \item \textbf{Precondition:} Student has outstanding fines
+    \item \textbf{Main Flow:}
+    \begin{enumerate}
+        \item Student views dashboard showing outstanding fines
+        \item Student clicks "Pay Fines" button
+        \item System displays fine details and total amount
+        \item System generates E-Challan with unique transaction ID
+        \item Student completes payment through 1-Bill gateway
+        \item System marks payment as "Pending Verification"
+    \end{enumerate}
+    \item \textbf{Postcondition:} Payment is recorded and pending admin verification
+\end{itemize}
+
+\subsection{Use Case 6: Student Requests New Book}
+
+\begin{itemize}
+    \item \textbf{Actor:} Student
+    \item \textbf{Precondition:} Student is logged in and cannot find desired book
+    \item \textbf{Main Flow:}
+    \begin{enumerate}
+        \item Student navigates to "Book Requests" section
+        \item Student clicks "Request New Book"
+        \item Student enters book title and author
+        \item Student submits request
+        \item System records request with "Pending" status
+        \item Administrator reviews request in admin portal
+        \item Administrator updates request status
+    \end{enumerate}
+    \item \textbf{Postcondition:} Book request is recorded for review
+\end{itemize}
+
+\subsection{Use Case 7: Student Generates Clearance Report}
+
+\begin{itemize}
+    \item \textbf{Actor:} Student
+    \item \textbf{Precondition:} Student requires library clearance
+    \item \textbf{Main Flow:}
+    \begin{enumerate}
+        \item Student navigates to "Clearance" section
+        \item Student clicks "Generate Clearance Report"
+        \item System compiles student's library status
+        \item System generates report in PDF format
+        \item Student downloads report
+    \end{enumerate}
+    \item \textbf{Postcondition:} Student has documentation of library status
+\end{itemize}
+
+\begin{figure}[]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth]{LMS UseCase Diagram.png}}
+\caption{Use Case Diagram for BiblioTrack System}
+\label{fig:usecase}
+\end{figure}
+\newpage
+\section{Minimum Hardware and Software Requirements}
+\label{sec:requirements}
+
+\subsection{Development Requirements}
+\label{subsec:development}
+
+\begin{itemize}
+    \item \textbf{Operating System:} Windows 10/11, macOS, or Linux
+    \item \textbf{IDE:} Visual Studio Code
+    \item \textbf{Version Control:} Git, GitHub/GitLab
+    \item \textbf{Frontend:} Node.js, React.js, npm/yarn, Tailwind CSS, Bootstrap
+    \item \textbf{Backend:} Node.js with Express.js, Postman
+    \item \textbf{Database:} MongoDB, MongoDB Compass, Mongoose
+    \item \textbf{Testing:} Jest, React Testing Library
+    \item \textbf{Hardware:} Intel Core i5, 8GB RAM, 256GB SSD
+\end{itemize}
+
+\subsection{Execution Requirements}
+\label{subsec:execution}
+
+\subsubsection{Server Requirements}
+
+\begin{itemize}
+    \item \textbf{OS:} Ubuntu 20.04 LTS or Windows Server
+    \item \textbf{Web Server:} Nginx or Apache
+    \item \textbf{Runtime:} Node.js 16+
+    \item \textbf{Database:} MongoDB
+    \item \textbf{Memory:} 4GB RAM minimum
+    \item \textbf{Storage:} 50GB minimum
+\end{itemize}
+
+\subsubsection{Client Requirements}
+
+\begin{itemize}
+    \item \textbf{Browsers:} Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+    \item \textbf{Internet:} 1 Mbps minimum
+    \item \textbf{Devices:} Desktops, laptops, tablets, smartphones
+    \item \textbf{Resolution:} 320px minimum width
+\end{itemize}
+
+\section{System Architecture Diagram}
+\label{sec:architecture}
+
+\subsection{Architecture Overview}
+
+The system employs a three-tier architecture:
+
+\begin{itemize}
+    \item \textbf{Presentation Tier:} React.js single-page application
+    \item \textbf{Application Tier:} Node.js with Express.js
+    \item \textbf{Data Tier:} MongoDB database
+\end{itemize}
+
+\subsection{Component Description}
+
+\begin{itemize}
+    \item \textbf{User Interface:} Web-based interface for students and administrators
+    \item \textbf{Frontend Framework:} React.js for dynamic user experience
+    \item \textbf{Backend Server:} Node.js with Express.js handling business logic and APIs
+    \item \textbf{Database:} MongoDB storing users, books, transactions, and digital resources
+    \item \textbf{Payment Gateway:} 1-Bill integration for fine payments
+    \item \textbf{Email Service:} NodeMailer for automated notifications
+    \item \textbf{AI Chatbot:} Module for answering student queries
+\end{itemize}
+
+\subsection{Data Flow}
+
+\begin{enumerate}
+    \item User accesses application through web browser
+    \item React frontend renders appropriate interface
+    \item User actions trigger API calls to backend
+    \item Backend processes requests and interacts with MongoDB
+    \item Database returns requested data
+    \item Backend sends responses to frontend
+    \item Frontend updates user interface
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth]{LMS System Architecture Diagram.png}}
+\caption{System Architecture Diagram of BiblioTrack}
+\label{fig:architecture}
+\end{figure}
+
+% ======================================================================
+% CHAPTER 4: SYSTEM DESIGN
+% ======================================================================
+\newpage
+\chapter{SYSTEM DESIGN}
+
+This chapter presents the system design for the BiblioTrack Smart Library Management System, covering the architecture, component-level design, data structure, and user interface. Each part is tailored to fulfill the system requirements efficiently, providing a foundation for a robust and user-friendly platform.
+
+\section{Architecture Design}
+\label{sec:architecturedesign}
+
+The BiblioTrack system employs a client-server architecture, which separates the frontend and backend. This design allows for scalability and flexibility in user interactions and data management.
+
+\begin{itemize}
+    \item \textbf{Frontend:} The user interface is developed using React.js. React's component-based structure enhances the development of dynamic, reusable UI elements, making the platform responsive and interactive. The frontend communicates with the backend through RESTful APIs.
+    
+    \item \textbf{Backend:} Node.js with Express.js handles server-side operations, including API requests, user authentication, data validation, and business logic processing. Express is selected for its lightweight, efficient handling of HTTP requests, ideal for real-time web applications.
+    
+    \item \textbf{Database:} MongoDB, a NoSQL database, is chosen for data storage, allowing flexible data models. MongoDB stores user profiles, book records, digital resource metadata, transaction history, reservation queues, and fine records.
+\end{itemize}
+
+The client-server model ensures that the platform can handle multiple concurrent users, allowing for a smooth user experience and data consistency.
+
+\section{Component-Level Design}
+\label{sec:componentdesign}
+
+The component-level design focuses on the key frontend and backend modules necessary to implement the BiblioTrack system's features.
+
+\subsection{Frontend Components}
+
+The frontend consists of several reusable components to streamline the development and management of the user interface:
+
+\begin{itemize}
+    \item \textbf{Authentication Component:} Handles user login and registration. Includes forms for student signup and login, with validation and error handling.
+    
+    \item \textbf{Search Component:} Allows users to search for books by title, author, category, or keywords. Includes filter options and real-time availability display.
+    
+    \item \textbf{Book Details Component:} Displays complete information about a specific book including title, author, ISBN, category, availability status, and location.
+    
+    \item \textbf{Digital Library Component:} Provides interface for browsing, viewing, and downloading PDF resources organized by category.
+    
+    \item \textbf{Reservation Component:} Enables students to reserve unavailable books and view their position in reservation queues.
+    
+    \item \textbf{Student Dashboard Component:} Displays student-specific information including issued books, fines, reservations, and book requests.
+    
+    \item \textbf{Admin Dashboard Component:} Provides administrators with overview of library activities and access to management functions.
+    
+    \item \textbf{Fine Payment Component:} Interface for viewing fines and processing payments through 1-Bill integration.
+    
+    \item \textbf{Book Request Component:} Allows students to submit requests for new books and track request status.
+    
+    \item \textbf{Clearance Component:} Generates and displays clearance reports for students.
+    
+    \item \textbf{Chatbot Component:} Floating chat interface providing AI-powered assistance for student queries.
+\end{itemize}
+
+\subsection{Backend Modules}
+
+The backend is structured around several core modules that handle data processing and business logic:
+
+\begin{itemize}
+    \item \textbf{User Module:} Manages user registration, authentication, and profile management. Handles password encryption using Bcrypt and session management.
+    
+    \item \textbf{Book Module:} Handles all book-related operations including adding, editing, deleting, and searching books. Manages book metadata and copy tracking.
+    
+    \item \textbf{Digital Resource Module:} Manages upload, categorization, and delivery of PDF books and digital materials.
+    
+    \item \textbf{Transaction Module:} Processes book issuances and returns, calculates due dates, and maintains transaction history.
+    
+    \item \textbf{Reservation Module:} Manages reservation queues, enforces first-come first-served ordering, and handles automatic issuance when books become available.
+    
+    \item \textbf{Fine Module:} Calculates fines for overdue books, generates E-Challans, and tracks payment status.
+    
+    \item \textbf{Payment Module:} Integrates with 1-Bill payment gateway for processing fine payments and verifying transactions.
+    
+    \item \textbf{Notification Module:} Sends automated email notifications using NodeMailer for account creation, issuances, reservations, and fine alerts.
+    
+    \item \textbf{Chatbot Module:} Processes user queries and returns appropriate responses based on predefined patterns and database queries.
+    
+    \item \textbf{Report Module:} Generates clearance reports and other statistical reports for students and administrators.
+\end{itemize}
+
+\section{Data Design}
+\label{sec:datadesign}
+
+The data design includes key entities required to support system operations, along with their attributes and relationships.
+
+\subsection{Entities}
+
+The main entities in the BiblioTrack system are:
+
+\begin{itemize}
+    \item \textbf{User:} Stores details of both students and administrators.
+    \begin{itemize}
+        \item Attributes: userID, name, cnic, email, password (hashed), role (student/admin), program, createdAt
+    \end{itemize}
+    
+    \item \textbf{Book:} Stores information about physical books.
+    \begin{itemize}
+        \item Attributes: bookID, title, author, ISBN, category, publisher, edition, totalCopies, availableCopies
+    \end{itemize}
+    
+    \item \textbf{DigitalResource:} Stores metadata for digital materials.
+    \begin{itemize}
+        \item Attributes: resourceID, title, author, category, filePath, fileSize, uploadDate, description, downloadCount
+    \end{itemize}
+    
+    \item \textbf{Transaction:} Records book issuance and return activities.
+    \begin{itemize}
+        \item Attributes: transactionID, userID, bookID, issueDate, dueDate, returnDate, status (issued/returned), fineAmount
+    \end{itemize}
+    
+    \item \textbf{Reservation:} Manages book reservation queue.
+    \begin{itemize}
+        \item Attributes: reservationID, userID, bookID, reserveDate, queuePosition, status (waiting/fulfilled/cancelled), notificationSent
+    \end{itemize}
+    
+    \item \textbf{Fine:} Tracks fines and payments.
+    \begin{itemize}
+        \item Attributes: fineID, userID, transactionID, amount, calculatedDate, status (unpaid/paid), challanNumber, paymentDate, paymentMethod
+    \end{itemize}
+    
+    \item \textbf{BookRequest:} Stores student requests for new books.
+    \begin{itemize}
+        \item Attributes: requestID, userID, bookTitle, bookAuthor, notes, requestDate, status (pending/approved/rejected/purchased), adminResponse
+    \end{itemize}
+    
+    \item \textbf{Notification:} Logs sent notifications.
+    \begin{itemize}
+        \item Attributes: notificationID, userID, type, subject, message, sentDate, status
+    \end{itemize}
+\end{itemize}
+
+\subsection{Entity Relationships}
+
+\begin{itemize}
+    \item One User can have multiple Transactions (one-to-many)
+    \item One User can have multiple Reservations (one-to-many)
+    \item One User can have multiple Fines (one-to-many)
+    \item One User can make multiple BookRequests (one-to-many)
+    \item One Book can be involved in multiple Transactions (one-to-many)
+    \item One Book can have multiple Reservations (one-to-many)
+    \item One Transaction can generate one Fine (one-to-one)
+    \item One Reservation is associated with one User and one Book (many-to-one)
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth]{ ERD Diagram.png }}
+\caption{Entity - Relationship Diagram}
+\label{fig:Level0DFD}
+\end{figure}
+
+\section{User Interface Design}
+\label{sec:uidesign}
+
+The user interface of the BiblioTrack system is designed to provide a simple, user-friendly experience for both students and administrators.
+
+\subsection{Design Principles}
+
+\begin{itemize}
+    \item \textbf{Simplicity:} Clean, uncluttered interfaces focusing on essential functions.
+    \item \textbf{Consistency:} Uniform layout, colors, and navigation across all pages.
+    \item \textbf{Responsiveness:} Adapts seamlessly to different screen sizes.
+    \item \textbf{Feedback:} Clear visual feedback for all user actions.
+    \item \textbf{Accessibility:} Readable fonts, sufficient contrast, and intuitive controls.
+\end{itemize}
+
+\subsection{Key Interface Components}
+
+\textbf{Student Portal:}
+
+\begin{itemize}
+    \item \textbf{Login/Register Page:} Forms for student signup and login.
+    \item \textbf{Dashboard:} Overview showing issued books, fines, reservations, and quick links.
+    \item \textbf{Search Page:} Search bar, filter options, and search results with availability.
+    \item \textbf{Book Details Page:} Complete book information and reservation option.
+    \item \textbf{Digital Library Page:} Category-based browsing of PDF resources.
+    \item \textbf{My Account Page:} Profile management and transaction history.
+    \item \textbf{Reservations Page:} List of active reservations with queue positions.
+    \item \textbf{Fines Page:} Outstanding fines with payment option.
+    \item \textbf{Book Requests Page:} Form to request new books and track status.
+    \item \textbf{Clearance Page:} Generate and download clearance report.
+    \item \textbf{Chatbot:} Floating chat widget for instant assistance.
+\end{itemize}
+\textbf{Admin Portal:}
+
+\begin{itemize}
+    \item \textbf{Login Page:} Separate admin authentication.
+    \item \textbf{Dashboard:} Statistics overview and recent activities.
+    \item \textbf{Book Management:} Add, edit, delete books; manage copies.
+    \item \textbf{Digital Resource Management:} Upload and organize PDF materials.
+    \item \textbf{Student Management:} View and manage student accounts.
+    \item \textbf{Issue/Return Page:} Process book issuances and returns.
+    \item \textbf{Reservation Management:} View and manage reservation queues.
+    \item \textbf{Fine Management:} View fines and verify payments.
+    \item \textbf{Book Requests Review:} Respond to student book requests.
+    \item \textbf{Reports:} Generate various library reports.
+\end{itemize}
+
+\subsection{Color Scheme and Typography}
+
+\begin{itemize}
+    \item \textbf{Primary Color:} Navy blue for headers and primary buttons
+    \item \textbf{Secondary Color:} Light gray for backgrounds and cards
+    \item \textbf{Accent Color:} Orange for calls-to-action and highlights
+    \item \textbf{Success Color:} Green for available status and success messages
+    \item \textbf{Warning Color:} Red for overdue and fine indicators
+    \item \textbf{Font:} Arial or Roboto for clean readability
+\end{itemize}
+
+\section{System Flow Diagram}
+\label{sec:systemflow}
+
+The system flow illustrates how different components interact during key operations.
+
+\subsection{Book Search Flow}
+
+\begin{enumerate}
+    \item Student logs into system
+    \item Student navigates to search page
+    \item Student enters search criteria
+    \item Frontend sends search request to backend API
+    \item Backend queries MongoDB for matching books
+    \item Database returns matching records
+    \item Backend formats response with availability status
+    \item Frontend displays search results to student
+\end{enumerate}
+
+\subsection{Book Issuance Flow}
+
+\begin{enumerate}
+    \item Administrator logs into admin portal
+    \item Administrator selects student from database
+    \item Administrator searches and selects book
+    \item Backend verifies book availability
+    \item Backend creates transaction record
+    \item Backend updates book available copies
+    \item Backend calculates and stores due date    
+    \item Notification module sends email to student
+    \item Frontend confirms successful issuance
+\end{enumerate}
+
+\subsection{Book Return and Fine Calculation Flow}
+
+\begin{enumerate}
+    \item Administrator processes return in system
+    \item Backend records return date
+    \item Backend compares return date with due date
+    \item If overdue, backend calculates fine amount
+    \item Backend creates fine record for student
+    \item Backend updates book available copies
+    \item Backend updates transaction status
+    \item Notification module sends fine alert email
+    \item Frontend displays fine information
+\end{enumerate}
+
+\subsection{Reservation Flow}
+
+\begin{enumerate}
+    \item Student requests reservation for unavailable book
+    \item Backend checks current queue for that book
+    \item Backend adds student to queue with next position
+    \item Backend creates reservation record
+    \item Notification module sends confirmation email
+    \item When book returned, system identifies next in queue
+    \item System automatically issues book to next student
+    \item Notification module sends availability notification
+\end{enumerate}
+
+\newpage
+
+\subsection{Payment Flow}
+
+\begin{enumerate}
+    \item Student views fines and selects pay option
+    \item Backend generates E-Challan with unique ID
+    \item Frontend redirects to 1-Bill payment gateway
+    \item Student completes payment
+    \item Payment gateway returns status to backend
+    \item Backend updates fine status to pending verification
+    \item Administrator verifies payment in admin portal
+    \item Backend marks fine as paid
+    \item Notification module sends payment confirmation email
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth]{Book Issuance Sequence Diagram.png}}
+\caption{Book Issuance Sequence Diagram}
+\label{fig:BookIssueSeq}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth, height=0.4\textheight]{Book Return with Fine Calculation.png}}
+\caption{Book Return with Fine Calculation Sequence Diagram}
+\label{fig:BookReturnSeq}
+\end{figure}
+
+\vfill
+\begin{center}
+\fbox{\includegraphics[width=0.9\textwidth, height=0.4\textheight]{Reservation Process Sequence Diagram.png}}
+\captionof{figure}{Reservation Process Sequence Diagram}
+\label{fig:BookReservationSeq}
+\end{center}
+\vfill
+
+\newpage
+
+\subsection{AI Workflow}
+\label{subsec:aiworkflow}
+
+The AI Chatbot module operates through a unified workflow that manages both query validation and response generation. This workflow ensures that student queries are properly analyzed, processed, and responded to in a structured and efficient manner.
+
+\vspace{0.7cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=0.7\textwidth]{AI Work Flow.png}}
+\caption{AI Chatbot Workflow}
+\label{fig:aiworkflow}
+\end{figure}
+
+\newpage
+
+The workflow proceeds through the following steps:
+
+\begin{itemize}
+    \item \textbf{Start:} The process begins when the chatbot session is initiated.
+    
+    \item \textbf{User Query Input:} The student enters a query into the chatbot interface.
+        
+    \item \textbf{Library-Related Check:} The system evaluates whether the query is related to library services such as books, fines, or reservations.
+    
+    \item \textbf{If Not Library-Related:} The system displays an error message indicating that only library-related queries are supported, and the process ends.
+    
+    \item \textbf{If Library-Related:} The system proceeds with user authentication using a secure token.
+    
+    \item \textbf{User Authentication:} The chatbot verifies the user's identity to ensure secure access to personal library data.
+    
+    \item \textbf{Fetch User Data:} Relevant user information is retrieved from the MongoDB database.
+    
+    \item \textbf{Recommendation Check:} The system determines whether the query is related to book recommendations.
+    
+    \item \textbf{If Recommendation Query:}
+    \begin{itemize}
+        \item The system calls the Google Books API to retrieve relevant book data.
+        \item A ranking mechanism is applied to filter and display the top three recommended books.
+    \end{itemize}
+    
+    \item \textbf{If Not Recommendation Query:} The system directly proceeds to response generation using the retrieved database information.
+    
+    \item \textbf{Generate Response:} A structured response is created based on the query type and available data.
+    
+    \item \textbf{Display Response:} The final response is presented to the user through the chatbot interface.
+    
+    \item \textbf{End:} The workflow concludes after delivering the response.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Key Features of the Workflow}
+
+\begin{itemize}
+    \item \textbf{Intent Detection:} The system distinguishes between library-related and unrelated queries.
+    
+    \item \textbf{Secure Access:} User authentication ensures that sensitive data is accessed securely.
+        
+    \item \textbf{Data Integration:} Combines internal database (MongoDB) with external APIs such as Google Books.
+    
+    \item \textbf{Recommendation System:} Provides ranked book suggestions based on user queries.
+    
+    \item \textbf{Error Handling:} Handles invalid queries with clear and user-friendly messages.
+    
+    \item \textbf{Efficient Response Generation:} Produces accurate and structured responses in real-time.
+\end{itemize}
+
+This unified workflow streamlines the chatbot's operation by integrating query validation, data retrieval, and response generation into a single continuous process, ensuring a smooth and effective user experience.
+
+% ======================================================================
+% CHAPTER 5: IMPLEMENTATION
+% ======================================================================
+\newpage
+\chapter{IMPLEMENTATION}
+
+This chapter describes the implementation of the BiblioTrack Smart Library Management System. It covers the development tools used, the implementation of key modules, database implementation, and the user interface implementation.
+
+\section{Development Tools and Technologies}
+\label{sec:devtools}
+
+The BiblioTrack system is implemented using a modern technology stack that ensures scalability, maintainability, and optimal performance.
+
+\subsection{Frontend Technologies}
+
+\begin{itemize}
+    \item \textbf{React.js:} A JavaScript library for building user interfaces. React's component-based architecture allows for reusable UI components, efficient updates through virtual DOM, and improved development speed.
+    
+    \item \textbf{Tailwind CSS:} A utility-first CSS framework used for styling the application. It enables rapid UI development with pre-defined classes while maintaining consistency across the interface.
+    
+    \item \textbf{Bootstrap:} Used alongside Tailwind for additional pre-built components and responsive grid system, ensuring mobile-friendly design.
+    
+    \item \textbf{Axios:} A promise-based HTTP client used for making API requests from the frontend to the backend server.
+    
+    \item \textbf{React Router:} Handles navigation and routing within the single-page application, enabling seamless page transitions without full page reloads.
+\end{itemize}
+
+\subsection{Backend Technologies}
+
+\begin{itemize}
+    \item \textbf{Node.js:} A JavaScript runtime built on Chrome's V8 engine, used for building the server-side application. It provides event-driven, non-blocking I/O for efficient handling of multiple concurrent requests.
+    
+    \item \textbf{Express.js:} A minimalist web framework for Node.js used to create RESTful APIs, handle routing, and implement middleware for request processing.
+    
+    \item \textbf{MongoDB:} A NoSQL database used for storing all application data. Its document-based structure aligns well with JavaScript objects and allows for flexible schema design.
+    
+    \item \textbf{Mongoose:} An Object Data Modeling (ODM) library for MongoDB and Node.js, providing schema validation, data modeling, and easy database interactions.
+    
+    \item \textbf{Bcrypt:} A library for password hashing, ensuring secure storage of user credentials.
+    
+    \item \textbf{Express-session:} Middleware for managing user sessions and maintaining authentication state.
+    
+    \item \textbf{Nodemailer:} A module for sending automated email notifications from the application.
+    
+    \item \textbf{JSON Web Tokens (JWT):} Used for secure authentication and information exchange between frontend and backend.
+\end{itemize}
+
+\subsection{Development Environment}
+
+\begin{itemize}
+    \item \textbf{Visual Studio Code:} Primary integrated development environment (IDE) used for coding, with extensions for React, Node.js, and MongoDB.
+    
+    \item \textbf{Postman:} Used for testing API endpoints during development and debugging.
+    
+    \item \textbf{MongoDB Compass:} GUI tool for visualizing and managing database collections and documents.
+    
+    \item \textbf{Git:} Version control system for tracking code changes and collaborating.
+    
+    \item \textbf{GitHub:} Remote repository hosting for code backup and version management.
+\end{itemize}
+
+\section{Implementation of Key Modules}
+\label{sec:keymodules}
+
+This section describes the implementation of major functional modules in the BiblioTrack system.
+
+\subsection{User Authentication Module}
+
+The authentication module handles user registration, login, and session management:
+
+\begin{itemize}
+    \item \textbf{Registration:} Students provide name, email, registration number, and password. The system validates input, checks for existing users, hashes the password using Bcrypt, and stores user data in the database.
+    
+    \item \textbf{Login:} Users enter email and password. The system verifies credentials by comparing hashed passwords, creates a session, and generates a session token stored in cookies.
+    
+    \item \textbf{Session Management:} User sessions are maintained using express-session with a 30-minute timeout. Session data is stored server-side with a unique session ID sent to the client.
+    
+    \item \textbf{Password Security:} All passwords are hashed using Bcrypt with salt rounds of 10 before storage. The system never stores or transmits plain text passwords.
+    
+    \item \textbf{Role-Based Access:} User roles (student or admin) are stored in the database and checked for each protected route. Admin routes are inaccessible to students.
+\end{itemize}
+
+\subsection{Book Management Module}
+
+The book management module enables administrators to manage the library collection:
+
+\begin{itemize}
+    \item \textbf{Add Book:} Administrators can add new books through a form that collects title, author, ISBN, category, publisher, publication year, edition, total copies, and shelf location. The system validates input and creates a new book record in the database.
+    
+    \item \textbf{Edit Book:} Administrators can update existing book information. Changes are validated and saved to the database.
+    
+\newpage    
+    
+    \item \textbf{Delete Book:} Administrators can remove books from the catalogue. The system checks if any copies are currently issued before allowing deletion.
+    
+    \item \textbf{Copy Management:} Each book record tracks total copies and available copies. When books are issued, available copies decrease; when returned, they increase.
+    
+    \item \textbf{Book Listing:} The system provides paginated lists of all books with search and filter capabilities for administrators.
+\end{itemize}
+
+\subsection{Search Module}
+
+The search module provides fast and accurate book discovery:
+
+\begin{itemize}
+    \item \textbf{Basic Search:} Students can search by title, author, or keywords. The system performs case-insensitive text search across relevant fields.
+    
+    \item \textbf{Advanced Search:} Students can filter by category, publication year, and availability status. Multiple filters can be combined.
+    
+    \item \textbf{Real-time Availability:} Search results display current availability status by checking available copies against total copies for each book.
+    
+    \item \textbf{Search Indexing:} MongoDB text indexes are created on title and author fields to optimize search performance.
+    
+    \item \textbf{Result Sorting:} Results can be sorted by relevance, title, author, or publication year.
+\end{itemize}
+
+\subsection{Issuance and Return Module}
+
+This module handles all book transaction processing:
+
+\begin{itemize}
+    \item \textbf{Book Issuance:} The administrator selects a student and book through the interface. The system verifies book availability and checks if the student has any overdue books or outstanding fines. If valid, it creates a transaction record with current date as issue date and calculates due date (typically 14 days from issue). Book available copies are decremented, and the student receives an email notification.
+    
+    \item \textbf{Book Return:} The administrator processes return by selecting the transaction. The system records return date, calculates any fines if overdue, updates book available copies, and marks transaction as returned.
+    
+    \item \textbf{Due Date Calculation:} Due dates are calculated by adding the loan period (e.g., 14 days) to the issue date. The system accounts for holidays if configured.
+    
+    \item \textbf{Transaction History:} All issuances and returns are stored permanently, providing complete audit trail for each book and student.
+\end{itemize}
+
+\subsection{Reservation Module}
+
+The reservation module manages queues for unavailable books:
+
+\begin{itemize}
+    \item \textbf{Create Reservation:} When a student requests to reserve an unavailable book, the system checks the current queue length, assigns the next position number, and creates a reservation record with status "waiting".
+    
+    \item \textbf{Queue Management:} Reservations are ordered by reservation date. When a book becomes available, the system identifies the earliest waiting reservation.
+    
+    \item \textbf{Automatic Issuance:} When a book is returned, the system automatically creates an issuance for the next student in the reservation queue and updates reservation status to "fulfilled".
+    
+    \item \textbf{Queue Position Display:} Students can view their current position in the queue for each reserved book.
+    
+    \item \textbf{Cancel Reservation:} Students can cancel reservations at any time. The system removes the reservation and adjusts queue positions for remaining students.
+\end{itemize}
+
+\subsection{Fine Calculation and Payment Module}
+
+This module automates fine management and payment processing:
+
+\begin{itemize}
+    \item \textbf{Fine Calculation:} When a book is returned after the due date, the system calculates late days by subtracting due date from return date. Fine amount is calculated using the formula: Fine = Late Days × Fixed Daily Rate (e.g., Rs. 10 per day).
+    
+    \item \textbf{Fine Recording:} Calculated fines are stored in the database linked to the student and transaction, with initial status "unpaid".
+    
+    \item \textbf{E-Challan Generation:} When a student initiates payment, the system generates a unique challan number, records the payment attempt, and creates a payment record with status "pending".
+    
+    \item \textbf{Payment Gateway Integration:} The system redirects students to the 1-Bill payment gateway with necessary parameters (amount, challan number, student details). After payment, the gateway returns a status response.
+    
+    \item \textbf{Payment Verification:} Administrators can view pending payments in the admin panel and verify them upon confirmation from the payment gateway. Once verified, fine status is updated to "paid".
+\end{itemize}
+
+\subsection{Digital Library Module}
+
+The digital library module manages PDF resources:
+
+\begin{itemize}
+    \item \textbf{File Upload:} Administrators can upload PDF files through a form that also captures metadata (title, author, category, description). Files are stored on the server file system with secure naming, and file paths are stored in the database.
+    
+    \item \textbf{Categorization:} Digital resources are organized into categories (e.g., Programming, Databases, Networking) for easy browsing.
+    
+    \item \textbf{PDF Viewing:} Students can view PDFs directly in the browser using PDF.js or browser's built-in PDF viewer.
+    
+    \item \textbf{Download Functionality:} Students can download PDF files for offline access. Download counts are tracked for analytics.
+    
+    \item \textbf{Search:} Digital resources are included in the global search, allowing students to find both physical and digital materials.
+\end{itemize}
+
+\subsection{AI Chatbot Module}
+
+The chatbot module provides automated student assistance:
+
+\begin{itemize}
+    \item \textbf{Query Processing:} The chatbot receives user messages through a chat interface. It parses the input to identify intent and relevant entities.
+    
+    \item \textbf{Intent Recognition:} The system uses keyword matching and pattern recognition to identify query types: book availability, recommendations, fine inquiries, issued books, etc.
+    
+\newpage    
+    
+    \item \textbf{Database Queries:} For availability checks, the chatbot queries the database and returns real-time information about specific books or general availability.
+    
+    \item \textbf{Response Generation:} Based on intent, the chatbot generates appropriate responses using predefined templates populated with dynamic data from the database.
+    
+    \item \textbf{Boundary Handling:} For queries outside library scope, the chatbot responds with a standard message: "Sorry, I can only answer library-related questions."
+\end{itemize}
+
+\subsection{Notification Module}
+
+The notification module handles all email communications:
+
+\begin{itemize}
+    \item \textbf{Email Templates:} Predefined HTML templates are used for different notification types: account creation, book issuance, reservation confirmation, due date reminders, fine alerts, etc.
+    
+    \item \textbf{Automated Triggers:} Notifications are automatically triggered by system events: user registration, book issuance, reservation creation, book returns with fines, etc.
+    
+    \item \textbf{Due Date Reminders:} A scheduled job runs daily to identify books due in the next 2 days and sends reminder emails to students.
+    
+    \item \textbf{Email Queue:} Notifications are queued to prevent overwhelming the email server during high-volume periods.
+    
+    \item \textbf{Logging:} All sent notifications are logged in the database for audit purposes.
+\end{itemize}
+
+\subsection{Book Request Module}
+
+This module manages student requests for new books:
+
+\begin{itemize}
+    \item \textbf{Request Submission:} Students submit requests through a form providing book title, author, and optional notes. The system creates a request record with status "pending".
+    
+    \item \textbf{Request Listing:} Administrators can view all requests in the admin panel, sorted by date.
+    
+    \item \textbf{Request Processing:} Administrators review requests and update status to "approved", "rejected", or "purchased". They can add admin comments for student reference.
+    
+\newpage    
+    
+    \item \textbf{Status Notifications:} Students receive email notifications when their request status changes.
+    
+    \item \textbf{Request History:} Students can view all their past requests and current statuses in their dashboard.
+\end{itemize}
+
+\subsection{Clearance Report Module}
+
+The clearance module generates official library status reports:
+
+\begin{itemize}
+    \item \textbf{Report Generation:} Students can request clearance reports at any time. The system compiles all relevant information: currently issued books, outstanding fines, transaction history, and reservation history.
+    
+    \item \textbf{PDF Generation:} Reports are generated in PDF format using a PDF generation library, with proper formatting including student details, date, and official headers.
+    
+    \item \textbf{Digital Signature:} Reports include a QR code for verification, allowing administrators to authenticate the document.
+    
+    \item \textbf{Admin Verification:} Administrators can view and verify clearance reports, marking students as cleared when appropriate.
+    
+    \item \textbf{Download and Print:} Students can download or print reports for submission to the department.
+\end{itemize}
+
+\section{Database Implementation}
+\label{sec:databaseimpl}
+
+The database is implemented using MongoDB with the following collections and schema designs.
+
+\subsection{Collection Structure}
+
+\begin{itemize}
+    \item \textbf{users:} Stores student and administrator information.
+    \begin{itemize}
+        \item Fields: \_id, name, cnic, email, password, role, program, createdAt, updatedAt
+        \item Indexes: cnic (unique), email (unique), userid (unique)
+    \end{itemize}
+    
+    \item \textbf{books:} Stores physical book records.
+    \begin{itemize}
+        \item Fields: \_id, title, author, isbn, category, publisher, edition, totalCopies, availableCopies, createdAt, updatedAt
+        \item Indexes: title, author, isbn, category
+    \end{itemize}
+    
+    \item \textbf{digitalresources:} Stores digital material metadata.
+    \begin{itemize}
+        \item Fields: \_id, title, author, category, filePath, fileSize, uploadDate, description, downloadCount
+        \item Indexes: title, author, category
+    \end{itemize}
+    
+    \item \textbf{transactions:} Stores book issuance and return records.
+    \begin{itemize}
+        \item Fields: \_id, userId, bookId, issueDate, dueDate, returnDate, status, fineAmount, createdAt
+        \item Indexes: userId, bookId, status, dueDate
+    \end{itemize}
+    
+    \item \textbf{reservations:} Stores book reservation queue.
+    \begin{itemize}
+        \item Fields: \_id, userId, bookId, reserveDate, queuePosition, status, notificationSent, createdAt
+        \item Indexes: userId, bookId, status
+    \end{itemize}
+    
+    \item \textbf{fines:} Stores fine records.
+    \begin{itemize}
+        \item Fields: \_id, userId, transactionId, amount, calculatedDate, dueDate, status, challanNumber, paymentDate, paymentMethod, verifiedBy, createdAt
+        \item Indexes: userId, status
+    \end{itemize}
+    
+    \item \textbf{bookrequests:} Stores student book requests.
+    \begin{itemize}
+        \item Fields: \_id, userId, bookTitle, bookAuthor, notes, requestDate, status, adminResponse, respondedBy, respondedAt
+        \item Indexes: userId, status
+    \end{itemize}
+    
+    \item \textbf{notifications:} Stores notification logs.
+    \begin{itemize}
+        \item Fields: \_id, userId, type, subject, message, sentDate, status
+        \item Indexes: userId, sentDate
+    \end{itemize}
+\end{itemize}
+
+\subsection{Data Relationships}
+
+Relationships between collections are maintained through reference fields:
+
+\begin{itemize}
+    \item \textbf{transactions.userId} references \_id in users collection
+    \item \textbf{transactions.bookId} references \_id in books collection
+    \item \textbf{reservations.userId} references \_id in users collection
+    \item \textbf{reservations.bookId} references \_id in books collection
+    \item \textbf{fines.userId} references \_id in users collection
+    \item \textbf{fines.transactionId} references \_id in transactions collection
+    \item \textbf{bookrequests.userId} references \_id in users collection
+    \item \textbf{notifications.userId} references \_id in users collection
+\end{itemize}
+
+\subsection{Data Validation}
+
+Mongoose schemas include validation rules:
+
+\begin{itemize}
+    \item Required fields for all critical data
+    \item Email format validation for user emails
+    \item Minimum password length of 6 characters
+    \item ISBN format validation where applicable
+    \item Numeric validation for copy counts and fine amounts
+    \item Date validation for issue and return dates
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth]{Database Schema Diagram.png}}
+\caption{Database Schema Diagram}
+\label{fig:databaseschema}
+\end{figure}
+
+\section{User Interface Implementation}
+\label{sec:uiimpl}
+
+The user interface is implemented using React.js with functional components and hooks.
+
+\subsection{Component Structure}
+
+\begin{itemize}
+    \item \textbf{App Component:} Root component handling routing and global state.
+    
+    \item \textbf{Layout Components:} Header, Footer, Sidebar providing consistent structure.
+    
+    \item \textbf{Auth Components:} LoginForm, RegisterForm, ForgotPassword.
+    
+    \item \textbf{Student Components:} StudentDashboard, SearchBooks, BookDetails, DigitalLibrary, MyReservations, MyFines, BookRequests, ClearanceReport, Chatbot.
+    
+    \item \textbf{Admin Components:} AdminDashboard, ManageBooks, ManageDigital, ManageStudents, IssueReturn, ManageReservations, ManageFines, ReviewRequests, Reports.
+    
+    \item \textbf{Shared Components:} BookCard, SearchBar, FilterPanel, Pagination, LoadingSpinner, ErrorMessage, ConfirmationDialog.
+\end{itemize}
+
+\subsection{State Management}
+
+\begin{itemize}
+    \item \textbf{React Hooks:} useState for component-level state, useEffect for side effects and data fetching.
+    
+    \item \textbf{Context API:} Used for authentication state (user info, login status) and theme preferences.
+    
+    \item \textbf{Local Storage:} Stores authentication tokens and user preferences persistently.
+    
+    \item \textbf{Session Storage:} Maintains temporary UI state during user sessions.
+\end{itemize}
+
+\subsection{API Integration}
+
+\begin{itemize}
+    \item \textbf{Axios Configuration:} Base URL set for API endpoints, interceptors added for authentication headers.
+    
+    \item \textbf{API Service Modules:} Separate modules for each resource type (auth, books, transactions, etc.) encapsulating API calls.
+    
+    \item \textbf{Error Handling:} Consistent error handling with user-friendly messages and retry options.
+    
+    \item \textbf{Loading States:} Visual indicators during API calls to improve user experience.
+\end{itemize}
+
+\subsection{Responsive Design Implementation}
+
+\begin{itemize}
+    \item \textbf{Mobile-First Approach:} Designs created for mobile screens first, then enhanced for larger screens.
+    
+    \item \textbf{Flexbox and Grid:} CSS Flexbox and Grid used for flexible, responsive layouts.
+    
+    \item \textbf{Media Queries:} Breakpoints defined for tablets and desktops to adjust layouts.
+    
+    \item \textbf{Responsive Components:} Components adapt to available space (e.g., navigation collapses to hamburger menu on mobile).
+\end{itemize}
+
+\subsection{Key UI Features Implemented}
+
+\begin{itemize}
+    \item \textbf{Live Search:} Search results update as user types with debouncing to prevent excessive API calls.
+    
+    \item \textbf{Real-time Availability:} Book availability status updates dynamically based on current data.
+    
+    \item \textbf{Queue Position Display:} Students see their position in reservation queues updated in real-time.
+    
+    \item \textbf{Floating Chatbot:} Persistent chat widget accessible from any page.
+    
+    \item \textbf{PDF Viewer:} Embedded PDF viewer for digital resources with download option.
+    
+    \item \textbf{Print-Friendly Reports:} Clearance reports formatted for printing with proper headers and footers.
+\end{itemize}
+
+\section{Security Implementation}
+\label{sec:securityimpl}
+
+Security measures implemented in the system:
+
+\begin{itemize}
+    \item \textbf{Password Hashing:} Bcrypt with salt rounds ensures passwords cannot be recovered from database.
+    
+    \item \textbf{Session Security:} HTTP-only cookies for session tokens, secure flag in production, same-site strict policy.
+    
+    \item \textbf{Input Sanitization:} All user inputs sanitized to prevent XSS attacks.
+    
+    \item \textbf{SQL/NoSQL Injection Prevention:} Parameterized queries and Mongoose schema validation.
+    
+    \item \textbf{Rate Limiting:} API rate limiting to prevent brute force attacks on login endpoints.
+    
+    \item \textbf{CORS Configuration:} Proper CORS settings to restrict API access to authorized domains.
+    
+    \item \textbf{HTTPS Enforcement:} All traffic encrypted using TLS in production.
+    
+    \item \textbf{Role-Based Access Control:} Middleware checks user roles before processing protected routes.
+\end{itemize}
+
+\section{Testing Approach}
+\label{sec:testingapproachl}
+
+The testing strategy employed for this system is discussed in detail in Chapter 6 (TESTING). 
+A comprehensive testing approach including unit testing, integration testing, functional 
+testing, and user acceptance testing was followed to ensure system quality and reliability.
+
+
+\section{Deployment Implementation}
+\label{sec:deploymentimpl}
+
+The Department Library Management System is deployed locally for development and testing purposes. The following configuration is used:
+
+\subsection{Development Environment}
+
+The system runs on a Windows operating system. The entire MERN stack (MongoDB, Express.js, React.js, Node.js) is installed and executed locally on the same machine.
+
+\subsection{Starting the Application}
+
+The backend server is initiated using the command \texttt{node server.js} or \texttt{npm start} from the terminal. The Node.js server runs on \texttt{localhost} with a specified port (typically port 5000).
+
+\subsection{Frontend Execution}
+
+The React.js frontend is started using the command \texttt{npm start}, which launches the development server on \texttt{localhost:3000}. The frontend communicates with the backend API through proxy configuration or direct API calls.
+
+\subsection{Database Setup}
+
+MongoDB Community Edition is installed locally as a Windows service. The database runs in the background and connects to the backend using the connection string \texttt{mongodb://localhost:27017/libraryDB}.
+
+\subsection{Accessing the System}
+
+Once both frontend and backend servers are running, the system can be accessed by opening a web browser and navigating to \texttt{http://localhost:3000}.
+
+\subsection{Simplified Deployment Approach}
+
+For the purpose of this thesis project, complex production-level deployment features such as auto-restart mechanisms, SSL certificates, and automated backup scheduling are not implemented. The system is designed to demonstrate functional completeness rather than production-grade deployment readiness. For actual production deployment, additional configurations including process management, HTTPS encryption, and backup strategies would be required.
+
+Figure \ref{fig:deploymentDiag} illustrates the local deployment architecture of the system.
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth]{Deployment Diagram2.png}}
+\caption{Deployment Architecture Diagram for Windows Environment}
+\label{fig:deploymentDiag}
+\end{figure}
+
+\newpage
+%---------------------------------------------------
+%---------------------------------------------------
+ %           Chap : 6 (Testing)
+%---------------------------------------------------
+%---------------------------------------------------
+
+\chapter{TESTING}
+
+\section{Testing Objectives}
+
+The testing phase of the Department Library Management System was conducted with the following primary objectives:
+
+\begin{itemize}
+    \item To verify that each functional requirement documented in Chapter 3 is correctly implemented
+    \item To identify and resolve any logical errors or bugs present in the system
+    \item To ensure that the system behaves as expected under normal and abnormal conditions
+    \item To validate that the system meets the expectations of end-users
+    \item To assess the overall quality, reliability, and usability of the application
+\end{itemize}
+
+\section{Testing Environment}
+
+All testing activities were performed in a local development environment that mirrors the actual deployment setup. Table \ref{tab:testenv} presents the specifications of the testing environment.
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Component} & \textbf{Specification} \\
+\hline
+Operating System & Windows 11 \\
+\hline
+Backend Runtime & Node.js \\
+\hline
+Database & MongoDB (Windows Service) \\
+\hline
+Frontend Framework & React.js \\
+\hline
+Web Browser & Google Chrome, Mozilla Firefox \\
+\hline
+Testing Tools & Manual testing, Browser console \\
+\hline
+\end{tabular}
+\caption{Testing Environment Specifications}
+\label{tab:testenv}
+\end{table}
+
+\section{Types of Testing Performed}
+
+\subsection{Unit Testing}
+
+Unit testing was performed to validate individual functions and components in isolation. Each module was tested independently to ensure it produces the correct output for given inputs. The following components underwent unit testing:
+
+\begin{itemize}
+    \item User registration and login validation functions
+    \item Password encryption and comparison logic
+    \item Book search and filter operations
+    \item Fine calculation algorithm based on due dates
+    \item Date difference computation for overdue books
+    \item Clearance report data aggregation logic
+\end{itemize}
+
+\subsection{Integration Testing}
+
+Integration testing was conducted to verify that different modules of the system work together correctly. The following workflows were tested end-to-end:
+
+\begin{itemize}
+    \item Complete book search to reservation workflow
+    \item Book issuance to fine calculation workflow
+    \item Fine generation to online payment workflow
+    \item Payment confirmation to clearance report workflow
+    \item Student book request to admin approval workflow
+\end{itemize}
+
+\subsection{Functional Testing}
+
+Functional testing was performed to validate that each feature meets its specified requirements. Every system feature was tested against its intended functionality. Table \ref{tab:functionaltests} lists the main functional areas tested.
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{5.5cm}|c|c|}
+\hline
+\textbf{Functional Area} & \textbf{Test Cases} & \textbf{Status} \\
+\hline
+User Authentication & 5 & Pass \\
+\hline
+Book Search and Filters & 6 & Pass \\
+\hline
+Book Issuance and Return & 5 & Pass \\
+\hline
+Fine Calculation and Payment & 7 & Pass \\
+\hline
+Book Reservation & 6 & Pass \\
+\hline
+AI Chatbot & 7 & Pass \\
+\hline
+Clearance Report & 6 & Pass \\
+\hline
+\end{tabular}
+\caption{Functional Testing Summary}
+\label{tab:functionaltests}
+\end{table}
+
+\subsection{User Acceptance Testing}
+
+User Acceptance Testing (UAT) was conducted with real end-users to evaluate the system from their perspective. Five students from the department were invited to test all features of the system and provide their feedback through a structured questionnaire.
+
+\section{Test Cases and Results}
+
+\subsection{User Authentication Test Cases}
+
+Table \ref{tab:authcases} presents the test cases designed for user authentication functionality.
+
+\vspace{0.5cm}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|c|c|}
+\hline
+\textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+\hline
+TA-01 & Student login with correct username and password & Redirect to student dashboard & As expected & Pass \\
+\hline
+TA-02 & Student login with incorrect password & Display error message & As expected & Pass \\
+\hline
+TA-03 & Student login with unregistered username & Show user not found error & As expected & Pass \\
+\hline
+TA-04 & Admin login with valid credentials & Redirect to admin dashboard & As expected & Pass \\
+\hline
+TA-05 & Logout functionality & Session terminated successfully & As expected & Pass \\
+\hline
+\end{tabularx}
+\caption{User Authentication Test Cases}
+\label{tab:authcases}
+\end{table}
+
+\newpage
+
+\subsection{Book Search Test Cases}
+
+Table \ref{tab:searchcases} presents the test cases for the book search and discovery feature.
+
+\vspace{0.1cm}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|c|c|}
+\hline
+\textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+\hline
+TS-01 & Search by book title & Display books matching the title & As expected & Pass \\
+\hline
+TS-02 & Search by author name & Display books by that author & As expected & Pass \\
+\hline
+TS-03 & Search by category & Display books from that category & As expected & Pass \\
+\hline
+TS-04 & Search with non-existent keyword & Show no results found message & As expected & Pass \\
+\hline
+TS-05 & Filter by available books & Show only currently available books & As expected & Pass \\
+\hline
+TS-06 & Combined search with multiple filters & Show results matching all criteria & As expected & Pass \\
+\hline
+\end{tabularx}
+\caption{Book Search Test Cases}
+\label{tab:searchcases}
+\end{table}
+
+
+\subsection{Book Issuance and Return Test Cases}
+
+Table \ref{tab:issuecases} presents the test cases for book issuance and return management.
+
+\vspace{0.1cm}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|c|c|}
+\hline
+\textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+\hline
+TI-01 & Student issues available book from student portal & Book status changes to "Issued" & As expected & Pass \\
+\hline
+TI-02 & Attempt to issue already issued book & Show "Already Issued" error message & As expected & Pass \\
+\hline
+TR-01 & Student returns book before due date & No fine calculated, status updated & As expected & Pass \\
+\hline
+TR-02 & Student returns book on exact due date & No fine calculated & As expected & Pass \\
+\hline
+TR-03 & Student returns book after due date & Fine calculated automatically & As expected & Pass \\
+\hline
+\end{tabularx}
+\caption{Book Issuance, Reservation and Return Test Cases}
+\label{tab:issuecases}
+\end{table}
+
+\newpage
+
+\subsection{Fine Calculation and Payment Test Cases}
+
+Table \ref{tab:finecases} presents the test cases for fine calculation and online payment.
+
+\vspace{0.2cm}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|c|c|}
+\hline
+\textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+\hline
+TF-01 & Student clicks on "Generate Challan" button & Challan is generated and displayed on screen & As expected & Pass \\
+\hline
+TF-02 & Calculate fine when book returned 1 day after due date & Fine = Daily Rate × 1 day & As expected & Pass \\
+\hline
+TF-03 & Calculate fine when book returned multiple days after due date & Fine = Daily Rate × Number of days overdue & As expected & Pass \\
+\hline
+TF-04 & Student views pending fine amount in student portal & System displays correct total fine amount & As expected & Pass \\
+\hline
+TF-05 & Student clicks "I have paid" button after making payment & Admin receives payment verification request & As expected & Pass \\
+\hline
+TF-06 & Admin verifies payment & Fine amount is cleared to zero & As expected & Pass \\
+\hline
+TF-07 & Student clicks on "Download Challan" button & "Challan Downloaded" success message appears & As expected & Pass \\
+\hline
+\end{tabularx}
+\caption{Fine Calculation and Payment Test Cases}
+\label{tab:finecases}
+\end{table}
+
+\newpage
+
+\subsection{Book Reservation Test Cases}
+
+Table \ref{tab:reservationcases} presents the test cases for book reservation management when books are not available for immediate issuance.
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|c|c|}
+\hline
+\textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+\hline
+BR-01 & Book not available for issue, "Reserve" button appears & "Reserve" button is displayed instead of "Issue" button & As expected & Pass \\
+\hline
+BR-02 & Student clicks "Reserve" button for unavailable book & Book is successfully reserved and added to reservation list & As expected & Pass \\
+\hline
+BR-03 & Reserved book status updates on student dashboard & Dashboard shows the book as "Reserved" with status & As expected & Pass \\
+\hline
+BR-04 & Student views reserved books on reservation page & All reserved books are displayed on reservation page & As expected & Pass \\
+\hline
+BR-05 & Student clicks "Cancel" button on reservation page & Reservation is cancelled successfully and removed from list & As expected & Pass \\
+\hline
+BR-06 & Book becomes available after being reserved & Book is automatically issued to the student who reserved it & As expected & Pass \\
+\hline
+\end{tabularx}
+\caption{Book Reservation Test Cases}
+\label{tab:reservationcases}
+\end{table}
+
+\newpage
+
+\subsection{AI Chatbot Test Cases}
+
+Table \ref{tab:chatcases} presents the test cases for the AI library assistant chatbot.
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|c|c|}
+\hline
+\textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+\hline
+TC-01 & Student without login asks chatbot about fine, issued books, or reserved books & Chatbot shows "Please login first" message instead of response & As expected & Pass \\
+\hline
+TC-02 & Student requests book recommendations & System displays top 3 recommended books & As expected & Pass \\
+\hline
+TC-03 & Ask about current fine & Display fine amount if logged in & As expected & Pass \\
+\hline
+TC-04 & Ask about current fine & Display fine amount if logged in & As expected & Pass \\
+\hline
+TC-05 & Student asks chatbot about issued and reserved books & Chatbot displays number of books issued and reserved & As expected & Pass \\
+\hline
+TC-06 & Ask unrelated query & Show appropriate fallback response & As expected & Pass \\
+\hline
+TC-07 & Ask same question in different words & Understand intent and respond correctly & As expected & Pass \\
+\hline
+\end{tabularx}
+\caption{AI Chatbot Test Cases}
+\label{tab:chatcases}
+\end{table}
+
+
+\newpage
+
+\subsection{Clearance Report Test Cases}
+
+Table \ref{tab:clearcases} presents the test cases for library clearance report generation.
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|c|c|}
+\hline
+\textbf{Test ID} & \textbf{Test Description} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+\hline
+TCL-01 & Student views clearance report & Report displays number of issued books & As expected & Pass \\
+\hline
+TCL-02 & Student views clearance report & Report displays number of reserved books & As expected & Pass \\
+\hline
+TCL-03 & Student views clearance report & Report displays pending fine amount & As expected & Pass \\
+\hline
+TCL-04 & Student has 0 issued books, 0 reserved books, and 0 fine & Report shows "Cleared" status at the bottom & As expected & Pass \\
+\hline
+TCL-05 & Student has issued books or reserved books or fine greater than zero & Report shows "Not Cleared" status at the bottom & As expected & Pass \\
+\hline
+TCL-06 & Student clicks download button & Downloaded and "Downloaded Successfully" message appears & As expected & Pass \\
+\hline
+\end{tabularx}
+\caption{Clearance Report Test Cases}
+\label{tab:clearcases}
+\end{table}
+
+
+
+
+\newpage
+
+\section{User Acceptance Testing}
+
+\subsection{Testing Overview}
+
+To validate the real-world effectiveness of the developed Library Management System, a formal User Acceptance Testing (UAT) phase was conducted. This phase focused on assessing whether the system fulfills the operational needs and expectations of its primary users, i.e., the students of the department. A total of five students actively participated in this evaluation process. Each participant was given sufficient time to explore and use every functional module of the system, including book search, borrowing, returning, reservation, fine handling, chatbot interaction, and report generation. After completing the hands-on usage session, each student was asked to share their feedback through a structured data collection instrument.
+
+\subsection{Feedback Collection Instrument}
+
+A standardized questionnaire was developed to gather quantitative feedback from the participating students. The instrument employed a five-point Likert scale to record the level of agreement or disagreement with a series of statements. The scale values were defined as follows:
+
+\begin{itemize}
+     \item 1 = Strongly Disagree
+    \item 2 = Disagree
+    \item 3 = Neutral
+    \item 4 = Agree
+    \item 5 = Strongly Agree
+\end{itemize}
+
+The questionnaire comprised fifteen distinct statements. These statements were carefully designed to cover every major functional area of the system. The evaluated aspects included webpage loading performance, login and signup experience, book search accuracy, visibility of book availability status, simplicity of the issuance and return process, correctness of the fine payment module, usefulness of the digital library section, effectiveness of the book reservation and waiting list mechanism, helpfulness of the AI-powered chatbot, timeliness of notification messages, utility of the wishlist and book request feature, ease of generating clearance reports, clarity of dashboard information, visual design quality of the interface, and overall user satisfaction with the complete system.
+
+Figure \ref{fig:questionnaire} presents the actual questionnaire form that was distributed to the student participants for collecting their responses.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=0.9\textwidth]{questionnaire.png}}
+\caption{Student Feedback Questionnaire (Likert Scale)}
+\label{fig:questionnaire}
+\end{figure}
+
+\newpage
+
+\subsection{Participant Information}
+
+Five students from the Computer Science department participated in the user acceptance testing. Table \ref{tab:participants} presents the participant information.
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|l|l|}
+\hline
+\textbf{Enrollment No. } & \textbf{Program} & \textbf{Year of Study} \\
+\hline
+bs25-157 & Computer Science & Final Year \\
+\hline
+bs25-163 & Computer Science & Final Year \\
+\hline
+bs25-165 & Computer Science & Final Year \\
+\hline
+bs25-194 & Computer Science & Final Year \\
+\hline
+bs25-200 & Computer Science & Final Year \\
+\hline
+\end{tabular}
+\caption{Participant Demographics}
+\label{tab:participants}
+\end{table}
+
+\subsection{UAT Results}
+
+Table \ref{tab:uatresults} presents the individual responses collected from all five participants.
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Question} & \textbf{bs25-157} & \textbf{bs25-163} & \textbf{bs25-165} & \textbf{bs25-194} & \textbf{bs25-200} \\
+\hline
+Q1 & 5 & 4 & 5 & 5 & 5 \\
+\hline
+Q2 & 4 & 5 & 5 & 5 & 4 \\
+\hline
+Q3 & 5 & 4 & 5 & 4 & 5 \\
+\hline
+Q4 & 4 & 5 & 4 & 5 & 4 \\
+\hline
+Q5 & 4 & 4 & 5 & 4 & 5 \\
+\hline
+Q6 & 5 & 5 & 4 & 5 & 4 \\
+\hline
+Q7 & 4 & 5 & 4 & 4 & 5 \\
+\hline
+Q8 & 4 & 4 & 5 & 4 & 4 \\
+\hline
+Q9 & 5 & 5 & 4 & 5 & 4 \\
+\hline
+Q10 & 4 & 5 & 4 & 5 & 5 \\
+\hline
+Q11 & 4 & 4 & 5 & 4 & 4 \\
+\hline
+Q12 & 5 & 5 & 4 & 5 & 4 \\
+\hline
+Q13 & 4 & 5 & 4 & 5 & 5 \\
+\hline
+Q14 & 5 & 4 & 5 & 5 & 4 \\
+\hline
+Q15 & 5 & 5 & 5 & 5 & 5 \\
+\hline
+\end{tabular}
+\caption{Individual Student Responses to Questionnaire}
+\label{tab:uatresults}
+\end{table}
+
+\newpage
+
+\subsection{Average Ratings per Feature}
+
+Table \ref{tab:avgratings} presents the average rating for each statement across all five participants.
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|X|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Statement}} & \multicolumn{1}{c|}{\textbf{Average Rating}} \\
+\hline
+The website loads quickly and is responsive & 4.8 \\
+\hline
+The login and signup process is smooth and easy & 4.6 \\
+\hline
+Searching for books is easy and gives accurate results & 4.6 \\
+\hline
+Book availability status is clearly displayed & 4.4 \\
+\hline
+The book issuance and return process is simple to use & 4.4 \\
+\hline
+The fine payment section works properly & 4.6 \\
+\hline
+The digital library section has useful resources & 4.4 \\
+\hline
+The book reservation and waiting list feature works well & 4.4 \\
+\hline
+The AI chatbot responds helpfully to my queries & 4.6 \\
+\hline
+I receive timely notifications about due dates and reminders & 4.6 \\
+\hline
+The wishlist and book request feature is useful & 4.5 \\
+\hline
+The library clearance report feature is easy to generate & 4.6 \\
+\hline
+The dashboard shows all borrowed books and fines clearly & 4.6 \\
+\hline
+The website design is clean, professional, and easy to navigate & 4.6 \\
+\hline
+Overall, I am satisfied with this library management website & 5.0 \\
+\hline
+\end{tabularx}
+\caption{Average Ratings per Feature (out of 5)}
+\label{tab:avgratings}
+\end{table}
+
+\subsection{Analysis of UAT Results}
+
+The user acceptance testing yielded positive results overall. The key findings from the feedback analysis are as follows:
+
+\begin{itemize}
+    \item The overall average satisfaction rating across all participants was 5.0 out of 5
+    \item The website loading speed and responsiveness received the highest rating of 4.8
+    \item The login process, search functionality, fine payment, chatbot, notifications, clearance report, and dashboard all received strong ratings of 4.6
+    \item The book reservation and waiting list feature received a rating of 4.4, indicating good acceptance with minor room for improvement
+    \item The wishlist and book request feature received a rating of 4.5
+    \item All participants rated the system positively with no average score below 4.0
+    \item Students particularly appreciated the online fine payment integration and the AI chatbot assistance
+\end{itemize}
+
+\subsection{Qualitative Feedback from Students}
+
+Students also provided qualitative feedback through the final comments section of the questionnaire. The main suggestions and observations were:
+
+\begin{itemize}
+        \item "Adding more digital books would improve the digital library section
+        \item "The AI chatbot could be enhanced by using a pro version of the model for better responses."
+         \item The interface is clean and easy to navigate.
+\end{itemize}
+
+\section{Bugs Encountered and Fixes Applied}
+
+During the testing process, few issues were identified and subsequently resolved. Table \ref{tab:bugs} presents the bugs encountered and their resolution status.
+
+\vspace{0.3cm}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|c|X|c|c|X|}
+\hline
+\textbf{ID} & \textbf{Description} & \textbf{Severity} & \textbf{Status} & \textbf{Resolution} \\
+\hline
+BUG-01 & Student name animation re-triggers on each page navigation via sidebar & Minor & Fixed & Used localStorage to store student name \\
+\hline
+BUG-02 & Dashboard layout misaligned on smaller screens & Minor & Fixed & CSS media queries adjusted \\
+\hline
+BUG-03 & Layout issue in Student Status section & Minor & Fixed & CSS media queries adjusted \\
+\hline
+BUG-04 & AI Chatbot stops responding due to single model dependency & Major & Fixed & Implemented fallback mechanism with 3 different models using if-else conditions; if one model fails, another takes over \\
+\hline
+\end{tabularx}
+\caption{Bug Reports and Fixes}
+\label{tab:bugs}
+\end{table}
+
+\newpage
+
+\section{Testing Summary and Conclusion}
+
+The Department Library Management System underwent comprehensive testing across multiple dimensions including unit testing, integration testing, functional testing, and user acceptance testing.
+
+\textbf{Key Outcomes:}
+
+\begin{itemize}
+    \item A total of 42 test cases were designed and executed
+    \item All test cases passed successfully with expected results
+    \item User acceptance testing yielded an average satisfaction rating of 4.6 out of 5
+    \item Five bugs were identified and fixed during the testing process
+    \item No critical security vulnerabilities were found in the system
+    \item The system meets all functional requirements specified in Chapter 3
+\end{itemize}
+
+\textbf{Conclusion:}
+
+The testing phase confirmed that the Department Library Management System is stable, functional, and ready for use. The positive feedback from actual users indicates that the system effectively addresses the problems identified in the existing manual library management system. The system successfully meets all project objectives and is ready for deployment in the department library environment.
+
+
+
+
+\newpage
+%---------------------------------------------------
+ %           Chap : 7 (User Interface)
+%---------------------------------------------------
+            
+\chapter{User Interface}
+\label{chap:userinterface}
+
+This chapter provides a comprehensive overview of the user interface of the Library Management System, highlighting the design, structure, and functionality of its various components. It explains how the interface is organized to ensure ease of use, accessibility, and efficient interaction for both administrators and students. The chapter covers all available features, demonstrating how different modules support tasks such as book management, user management, and system navigation.
+
+Furthermore, detailed screenshots of each module and functionality are included to visually represent the system’s layout and workflow. These illustrations help in understanding how users interact with the system in real-world scenarios, offering a clear depiction of the overall user experience and operational flow.
+
+\section{Common Pages}
+\label{sec:common}
+
+Before accessing the main functionalities, users are greeted with the following common pages that provide information about the system and its services.
+
+\subsection{Welcome Page}
+\label{subsec:welcome}
+
+The welcome page serves as the landing page for all users, providing an overview of the library system and options to navigate to different sections.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Welcome Page.png}}
+\caption{Welcome Page - Landing Screen}
+\label{fig:welcome}
+\end{figure}
+
+\vspace{1cm}
+
+\subsection{Contact Us}
+\label{subsec:contact}
+
+The contact page provides a communication channel between users and the library administration for various inquiries and support requests. Users can reach out to report technical issues with online journals or e-books, request research-oriented book recommendations, inquire about computer lab availability within the Department of Computer Science, or suggest new books and resources for library acquisition. A structured contact form is provided on this page, which captures essential information including the user's name, email address, subject of the inquiry, and the detailed message. Upon submission, the library staff reviews each request and aims to respond within 24 hours on regular working days. This systematic approach ensures that all user concerns are properly documented and addressed in a timely manner.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth, height=12cm]{Contact Us.png}}
+\caption{Contact Us Page}
+\label{fig:contactUs}
+\end{figure}
+
+\vspace{1cm}
+
+\subsection{About Us}
+\label{subsec:about}
+
+The About Us page presents the departmental library's vision, mission, and key services. The library aims to be the primary information resource center for the Computer Science department. Its mission is to provide seamless access to relevant resources, research assistance, and a modern learning environment. Key services include book lending, research support, digital access, workshops, and dedicated study spaces.
+
+\newpage
+
+\vspace{2cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{About Us.png}}
+\caption{About Us Page}
+\label{fig:aboutUs}
+\end{figure}
+
+\newpage
+\section{Admin Site}
+\label{sec:admin}
+
+The admin site provides comprehensive management capabilities for library administrators. It includes authentication and a sidebar with multiple management modules.
+
+\subsection{Admin Authentication}
+\label{subsec:adminauth}
+
+Administrators are required to register and log in to gain access to the system’s management features. Once authenticated, they can securely manage student records, monitor issued books, handle fines, and perform other administrative tasks. The login and registration process ensures that only authorized personnel can access sensitive operations, maintaining the integrity and security of the library management system.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin Signup.png}}
+\caption{Admin Signup Page}
+\label{fig:adminsignup}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin Login.png}}
+\caption{Admin Login Page}
+\label{fig:adminlogin}
+\end{figure}
+
+\subsection{Admin Sidebar Navigation}
+\label{subsec:adminsidebar}
+
+After successful login, administrators are presented with a sidebar containing all available management modules.
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=\textwidth]{media/admin-sidebar.png}
+% \caption{Admin Sidebar Navigation Menu}
+% \label{fig:adminsidebar}
+% \end{figure}
+
+\subsection{Home Dashboard}
+\label{subsec:adminhome}
+
+The admin home page provides a comprehensive overview of the library’s operations through key statistics and metrics. It displays the total number of registered students, active loans (currently issued books), and the various book categories available. Additionally, the page highlights new book requests and presents detailed statistics, including the number of books issued and the students who recently borrowed them. This feature enables administrators to monitor library activity efficiently and make informed management decisions.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin Home.png}}
+\caption{Admin Dashboard }
+\label{fig:adminhome}
+\end{figure}
+
+\vspace{1cm}
+
+\subsection{Student Management}
+\label{subsec:studentmanagement}
+
+The student management module provides comprehensive control over student records, with dynamically rendered views to support different administrative tasks. It includes an “All Students” section where administrators can view, edit, and delete student records as needed.
+
+Additionally, the module displays student status along with relevant details such as issued books, associated fines, and a return option to process book submissions. A “Recently Added Students” section highlights newly registered users for quick access, while the “Add Student” feature allows administrators to create new student accounts directly within the system.
+
+\vspace{1cm}
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (All Students).png}}
+\caption{All Students Page - View, Update, and Delete Student Records}
+\label{fig:allstudents}
+\end{figure}
+
+\vspace{2cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Students Status).png}}
+\caption{Student Status Management}
+\label{fig:studentstatus}
+\end{figure}
+
+\vspace{2cm}
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth, height=0.3\textheight]{Admin (Recently Added Students).png}}
+\caption{Recently Added Students}
+\label{fig:recentstudents}
+\end{figure}
+
+\vspace{2cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Add Student).png}}
+\caption{Add New Student Page}
+\label{fig:addstudent}
+\end{figure}
+
+\newpage
+
+\subsection{Book Management}
+\label{subsec:bookmanagement}
+
+The book management module allows administrators to handle all book-related operations with multiple conditional views.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (All Books).png}}
+\caption{All Books Page - View, Update, and Delete Books}
+\label{fig:allbooks}
+\end{figure}
+
+\vspace{1.5cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Recently isssued Books).png}}
+\caption{Recently Issued Books}
+\label{fig:recentissued}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Recently Added Books).png}}
+\caption{Recently Added Books}
+\label{fig:recentbooks}
+\end{figure}
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Add Book).png}}
+\caption{Add New Book Page}
+\label{fig:addbook}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Books Request).png}}
+\caption{Book Requests from Students - Request to Purchase New Books}
+\label{fig:bookrequests}
+\end{figure}
+
+\vspace{1cm}
+
+\subsection{Fine Management}
+\label{subsec:adminfine}
+
+Administrators can view all pending fines across the library system.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Fine).png}}
+\caption{Pending Fines Overview}
+\label{fig:adminfines}
+\end{figure}
+
+\newpage
+
+\subsection{Payment Verification}
+\label{subsec:paymentverify}
+
+Admins can verify payment requests received from students for fines or other charges.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Admin (Payment).png}}
+\caption{Payment Verification - Student Payment Requests}
+\label{fig:paymentrequests}
+\end{figure}
+
+\vspace{1cm}
+
+\subsection{Admin Profile Management}
+\label{subsec:adminprofile}
+
+Administrators have full control over their profile and can update all personal and account information through the system. This includes editing details such as name, email, contact information, and login credentials, ensuring that their profile remains accurate and up to date.
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth, height=0.7\textheight]{Admin (Update Profile).png}}
+\caption{Admin Update Profile Page}
+\label{fig:adminprofile}
+\end{figure}
+
+\newpage
+\section{Student Site}
+\label{sec:student}
+
+The student site provides library members with interfaces to access library services and manage their account.
+
+\subsection{Student Authentication}
+\label{subsec:studentauth}
+
+Students are required to complete the registration process and log in to access the library system. Through signup, users can create their accounts by providing the necessary details, after which they can securely log in using their credentials. Once authenticated, students gain access to personalized features and services, including their individual dashboard, where they can manage their activities and interact with the system efficiently.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student Signup.png}}
+\caption{Student Signup Page}
+\label{fig:studentsignup}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student Login.png}}
+\caption{Student Login Page}
+\label{fig:studentlogin}
+\end{figure}
+
+\subsection{Student Sidebar Navigation}
+\label{subsec:studentsidebar}
+
+After login, students are presented with a sidebar containing all available student modules.
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=\textwidth]{media/student-sidebar.png}
+% \caption{Student Sidebar Navigation Menu}
+% \label{fig:studentsidebar}
+% \end{figure}
+
+\subsection{Student Home}
+\label{subsec:studenthome}
+
+The student home page provides access to a wide range of books and library resources in an organized and user-friendly layout. Each listed book includes an option to view detailed information, offering a complete overview such as the author, category, and other relevant attributes.
+
+In addition, the page features advanced search functionality, allowing students to locate books efficiently through multiple filters, including alphabetical search, author name, book title, book ID, and ISBN. A wishlist option is also available, enabling students to save selected books for future reference and easy access.
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (Home).png}}
+\caption{Student Home Page - Browse Books}
+\label{fig:studenthome}
+\end{figure}
+
+\subsection{Student Dashboard}
+\label{subsec:studentdashboard}
+
+The student dashboard provides a comprehensive view of all student activities with multiple sections for different functionalities.
+
+\subsubsection{All Books}
+\label{sssec:allbooks}
+
+This page displays all available books in the library that students can browse and issue.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (All Books).png}}
+\caption{Student Dashboard - All Books Page}
+\label{fig:studentallbooks}
+\end{figure}
+
+\subsubsection{Issued Books}
+\label{sssec:issuedbooks}
+
+Students can view all books currently issued to them along with due dates.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (Books Issued).png}}
+\caption{Student Dashboard - Issued Books Page}
+\label{fig:studentissuedbooks}
+\end{figure}
+
+\subsubsection{Books to Return}
+\label{sssec:returnbooks}
+
+This page shows books that are due for return with overdue status and fine calculation.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (Books to Return).png}}
+\caption{Student Dashboard - Books to Return Page}
+\label{fig:studentreturnbooks}
+\end{figure}
+
+\newpage
+
+\subsubsection{Request New Book}
+\label{sssec:requestbook}
+
+Students can request new books that are not currently available in the library collection.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (Request New Books).png}}
+\caption{Student Dashboard - Request New Book Page}
+\label{fig:studentrequestbook}
+\end{figure}
+
+\subsection{Digital Library}
+\label{subsec:digitallibrary}
+
+The digital library provides access to PDF resources and e-books.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (Digital Library).png}}
+\caption{Digital Library - PDF Resources}
+\label{fig:digitallibrary}
+\end{figure}
+
+\newpage
+
+\subsection{Book Reservation}
+\label{subsec:reservation}
+
+Students can reserve books that are currently unavailable for issuance.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (Reservation).png}}
+\caption{Book Reservation Page}
+\label{fig:reservation}
+\end{figure}
+
+\subsection{Wishlist}
+\label{subsec:wishlist}
+
+Students can save books to their wishlist for future reference.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth]{Student (WishList).png}}
+\caption{Student Wishlist - Save Books for Later}
+\label{fig:wishlist}
+\end{figure}
+
+\newpage
+
+\subsection{Library Clearance Report}
+\label{subsec:clearance}
+
+Students can generate and view their library clearance report through the system. The report summarizes key details, including the number of reserved books, issued books, and any outstanding fines.
+
+In addition, the clearance report is available for download, enabling students to save or print it for official use. This feature ensures convenience and supports the documentation requirements for academic or administrative purposes.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth, height=0.6\textheight]{Student (Clearance Report).png}}
+\caption{Library Clearance Report}
+\label{fig:clearance}
+\end{figure}
+
+\newpage
+
+\subsection{Fine Payment}
+\label{subsec:studentfine}
+
+Students are provided with the facility to view and pay their fines through the E-Challan system. This module presents a detailed record of the student’s information along with the generated challan number for each transaction. It also displays a clear breakdown of all fines incurred, including the specific books against which the fines have been applied. By offering this structured and transparent information, the system enables students to easily review their outstanding dues and complete the payment process in a convenient and organized manner.
+
+\vspace{1cm}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth, height=0.6\textheight]{Student (Fine Payment).png}}
+\caption{Fine Payment Page with E-Challan}
+\label{fig:studentfines}
+\end{figure}
+
+\newpage
+
+\subsection{Student Profile Management}
+\label{subsec:studentprofile}
+
+Students are able to view their profile information within the system; however, they are not permitted to modify their personal details. The only setting available for modification is the account password, allowing users to maintain the security of their accounts while ensuring the integrity of stored profile data.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\textwidth, height=0.7\textheight]{Student (Update Profile).png}}
+\caption{Student Update Profile Page}
+\label{fig:studentprofile}
+\end{figure}
+
+\newpage
+
+\subsection{Library Assistant Chatbot}
+\label{subsec:libraryassistant}
+
+Students can interact with the library assistant chatbot to inquire about fines, issued books, and reservations in real-time.
+
+The chatbot provides instant responses to student queries regarding:
+\begin{itemize}
+    \item Current fine amounts
+    \item Number of books issued
+    \item Number of books reserved
+    \item Book Recommendation
+    \item General library inquiries
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=0.8\textwidth, height=0.6\textheight]{ChatBot.png}}
+\caption{Library Assistant Chatbot Interface}
+\label{fig:libraryassistant}
+\end{figure}
+
+\section{Summary}
+\label{sec:summary}
+
+This chapter provided a comprehensive overview of the Library Management System's user interface. The system is divided into two main portals:
+
+\textbf{Admin Site} includes:
+\begin{itemize}[leftmargin=*]
+    \item Authentication (Signup/Login)
+    \item Home Dashboard with statistics
+    \item Student Management (view, update, delete, status, add)
+    \item Book Management (all books, recently issued, recently added, book requests, add books)
+    \item Fine Management
+    \item Payment Verification
+    \item Profile Management
+\end{itemize}
+
+\textbf{Student Site} includes:
+\begin{itemize}[leftmargin=*]
+    \item Authentication (Signup/Login)
+    \item Home Page (browse books)
+    \item Dashboard (books issued, to return, request new book)
+    \item Digital Library (PDF resources)
+    \item Book Reservation
+    \item Wishlist
+    \item Library Clearance Report
+    \item Fine Payment (E-Challan)
+    \item Profile Management
+    \item Library Assistant Chatbot
+\end{itemize}
+
+All interfaces are designed with user experience in mind, ensuring intuitive navigation and efficient task completion for both administrators and students.
+
+% ======================================================================
+% BIBLIOGRAPHY
+% ======================================================================
+\newpage
+% Step 1: Increment chapter counter
+\refstepcounter{chapter} 
+
+% Step 2: Add entry to TOC with chapter number
+\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}BIBLIOGRAPHY}
+
+\begin{thebibliography}{99}
+
+% React and Frontend
+\bibitem{react}
+Meta. (2023). \textit{React - A JavaScript Library for Building User Interfaces}. 
+Available: https://reactjs.org
+
+\bibitem{tailwind}
+Tailwind Labs. (2023). \textit{Tailwind CSS Documentation}. 
+Available: https://tailwindcss.com/docs
+
+\bibitem{bootstrap}
+Bootstrap Core Team. (2023). \textit{Bootstrap Documentation}. 
+Available: https://getbootstrap.com/docs
+
+% Backend Technologies
+\bibitem{nodejs}
+Node.js Foundation. (2023). \textit{Node.js Documentation}. 
+Available: https://nodejs.org/en/docs/
+
+\bibitem{express}
+Express.js Project. (2023). \textit{Express - Fast, Minimalist Web Framework for Node.js}. 
+Available: https://expressjs.com
+
+\bibitem{mongodb}
+MongoDB, Inc. (2023). \textit{MongoDB Documentation}. 
+Available: https://docs.mongodb.com
+
+\bibitem{mongoose}
+Mongoose.js. (2023). \textit{Mongoose ODM Documentation}. 
+Available: https://mongoosejs.com/docs
+
+% Security and Authentication
+\bibitem{bcrypt}
+NPM. (2023). \textit{Bcrypt - Password Hashing Library}. 
+Available: https://www.npmjs.com/package/bcrypt
+
+\bibitem{expresssession}
+NPM. (2023). \textit{Express-Session Documentation}. 
+Available: https://www.npmjs.com/package/express-session
+
+\bibitem{jwt}
+JSON Web Tokens. (2023). \textit{JWT Introduction}. 
+Available: https://jwt.io/introduction
+
+% Email and Notifications
+\bibitem{nodemailer}
+Nodemailer. (2023). \textit{Nodemailer Documentation}. 
+Available: https://nodemailer.com/about
+
+% Payment Integration
+\bibitem{onebill}
+1-Bill. (2023). \textit{1-Bill Payment Gateway Documentation}. 
+Available: https://www.1bill.pk
+
+% Development Tools
+\bibitem{vscode}
+Microsoft. (2023). \textit{Visual Studio Code Documentation}. 
+Available: https://code.visualstudio.com/docs
+
+\bibitem{postman}
+Postman, Inc. (2023). \textit{Postman API Documentation}. 
+Available: https://www.postman.com/product/agentclient/
+
+\bibitem{git}
+Git. (2023). \textit{Git Documentation}. 
+Available: https://git-scm.com/doc
+
+% Testing Tools
+\bibitem{jest}
+Meta. (2023). \textit{Jest - JavaScript Testing Framework}. 
+Available: https://jestjs.io/docs/getting-started
+
+\bibitem{reacttesting}
+React Testing Library. (2023). \textit{React Testing Library Documentation}. 
+Available: https://testing-library.com/docs/react-testing-library/intro
+
+% Academic References
+\bibitem{spector2014}
+J. M. Spector, M. D. Merrill, J. van Merriënboer, and M. P. Driscoll, 
+\textit{Handbook of Research on Educational Communications and Technology}. 
+New York, NY, USA: Routledge, 2014.
+
+\bibitem{wilson2023}
+M. Wilson, "Increasing Accessibility in Education through Technology," 
+\textit{International Journal of E-Learning and Distance Education}, 
+vol. 29, no. 3, pp. 23-35, Aug. 2023.
+
+\bibitem{brown2023}
+R. Brown, "Effective Feedback in Online Education: Challenges and Solutions," 
+\textit{Journal of Educational Technology Systems}, 
+vol. 52, no. 2, pp. 145-157, 2023.
+
+\bibitem{norman2013}
+D. Norman, \textit{The Design of Everyday Things}. 
+New York, NY, USA: Basic Books, 2013.
+
+\bibitem{jansen2022}
+M. Jansen, "Design Principles for Scalable and Maintainable Backend Systems," 
+\textit{Journal of Systems and Software Engineering}, 
+vol. 68, no. 4, pp. 221-235, 2022.
+
+\bibitem{hattie2021}
+L. Hattie, "Visible Learning: A Synthesis of Over 800 Meta-Analyses Relating to Achievement," 
+\textit{Educational Researcher}, 
+vol. 33, no. 8, pp. 104-107, 2021.
+
+\bibitem{lee2022}
+K. Lee, "The Growing Market for Online Tutoring Services," 
+\textit{Education Skills Today}, 
+vol. 42, no. 1, pp. 11-19, 2022.
+
+\bibitem{davidson2012}
+D. Davidson and L. Wormack, \textit{Scaling MongoDB: Sharding, Cluster Management, and Security}. 
+Sebastopol, CA, USA: O'Reilly Media, 2012.
+
+\bibitem{ding2023}
+L. Ding and E. R. Hall, "Designing User-Friendly Interfaces for Educational Platforms," 
+\textit{Journal of User Experience in Digital Education}, 
+vol. 10, no. 3, pp. 42-55, 2023.
+
+\bibitem{masse2011}
+M. Masse, \textit{REST API Design Rulebook}. 
+Sebastopol, CA, USA: O'Reilly Media, 2011.
+
+% Library Management References
+\bibitem{chowdhury2010}
+G. G. Chowdhury, \textit{Introduction to Digital Libraries}. 
+London, UK: Facet Publishing, 2010.
+
+\bibitem{armstrong2020}
+K. Armstrong, "Modern Library Management Systems: A Comparative Analysis," 
+\textit{Library Technology Reports}, 
+vol. 56, no. 4, pp. 12-28, 2020.
+
+\bibitem{sharma2021}
+R. Sharma and A. Gupta, "Automation of Library Services in Academic Institutions," 
+\textit{International Journal of Library and Information Science}, 
+vol. 13, no. 2, pp. 45-58, 2021.
+
+% AI and Chatbot References
+\bibitem{patel2022}
+S. Patel, "AI-Powered Chatbots in Academic Libraries," 
+\textit{Journal of Library Automation}, 
+vol. 45, no. 3, pp. 78-92, 2022.
+
+\bibitem{ahmad2023}
+M. Ahmad, "Natural Language Processing for Educational Applications," 
+\textit{International Journal of Artificial Intelligence in Education}, 
+vol. 33, no. 1, pp. 112-128, 2023.
+
+% Web Development References
+\bibitem{harrington2021}
+N. Harrington, "Full-Stack Development with MERN," 
+\textit{Web Development Today}, 
+vol. 18, no. 5, pp. 34-41, 2021.
+
+\bibitem{roberts2022}
+T. Roberts, "RESTful API Design Best Practices," 
+\textit{API Development Journal}, 
+vol. 9, no. 2, pp. 22-35, 2022.
+
+% Database References
+\bibitem{sullivan2020}
+D. Sullivan, \textit{NoSQL Database Design Patterns}. 
+Sebastopol, CA, USA: O'Reilly Media, 2020.
+
+\bibitem{chodorow2013}
+K. Chodorow, \textit{MongoDB: The Definitive Guide}. 
+Sebastopol, CA, USA: O'Reilly Media, 2013.
+
+% Security References
+\bibitem{owasp2023}
+OWASP Foundation. (2023). \textit{OWASP Top Ten Web Application Security Risks}. 
+Available: https://owasp.org/www-project-top-ten/
+
+\bibitem{stripe2023}
+Stripe. (2023). \textit{Security at Stripe}. 
+Available: https://stripe.com/docs/security/stripe
+
+% AWS and Cloud References
+\bibitem{aws2023}
+Amazon Web Services. (2023). \textit{AWS Documentation}. 
+Available: https://docs.aws.amazon.com
+
+\bibitem{awssecurity2023}
+Amazon Web Services. (2023). \textit{AWS Security Documentation}. 
+Available: https://aws.amazon.com/security
+
+% Online Learning Resources
+\bibitem{mdn2023}
+Mozilla Developer Network. (2023). \textit{MDN Web Docs}. 
+Available: https://developer.mozilla.org
+
+\bibitem{w3schools2023}
+W3Schools. (2023). \textit{W3Schools Online Web Tutorials}. 
+Available: https://www.w3schools.com
+
+\end{thebibliography}
+
+\end{document}
