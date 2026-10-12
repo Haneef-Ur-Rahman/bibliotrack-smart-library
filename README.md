@@ -132,19 +132,17 @@ Deployed on **Vercel** with a fully functional frontend and backend integration.
 
 <table>
   <tr>
-    <td align="center" colspan="2">
+    <td align="center" width="33%">
       <h3>🎓 Dr. Javed Iqbal</h3>
       <p><strong>Supervisor</strong></p>
       <p>Assistant Professor, Department of Computer Science, University</p>
     </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
+    <td align="center" width="33%">
       <h3>🎨 Syeda Dilawaiz</h3>
       <p><strong>Designer</strong></p>
       <p>UI/UX Design &amp; Visual Experience</p>
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="33%">
       <h3>💻 Haneef Ur Rahman</h3>
       <p><strong>Developer</strong></p>
       <p>Full-Stack Development &amp; System Architecture</p>
