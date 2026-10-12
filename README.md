@@ -135,7 +135,7 @@ Deployed on **Vercel** with a fully functional frontend and backend integration.
     <td align="center" width="33%">
       <h3>🎓 Dr. Javed Iqbal</h3>
       <p><strong>Supervisor</strong></p>
-      <p>Assistant Professor, Department of Computer Science, University</p>
+      <p>Assistant Professor, Department of Computer Science, University of Peshawar, Pakistan</p>
     </td>
     <td align="center" width="33%">
       <h3>🎨 Syeda Dilawaiz</h3>
